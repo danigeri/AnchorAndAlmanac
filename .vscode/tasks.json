@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run game",
+		 	"command": "godot",
+			"problemMatcher": []
+		},
+		{
+			"label": "Format all",
+			"detail": "gdformat $(find . -name '*.gd')",
+			"type": "shell",
+			"command": "gdformat $(find . -name '*.gd')",
+			"problemMatcher": []
+		},
+		{
+			"label": "Lint all",
+			"detail": "gdlint $(find . -name '*.gd')",
+			"type": "shell",
+			"command": "gdlint $(find . -name \"*.gd\")",
+			"problemMatcher": []
+		},
+		{
+			// Godot_v4.1.2-stable_win64.exe ItsSpreadingTheGame\project.godot
+			"label": "Open editor",
+			"command": "godot",
+			"args": ["${workspaceFolder}\\project.godot"],
+			"problemMatcher": []
+		},
+		{
+			"label": "Export HTML",
+			"command": "godot",
+			"args": [
+				"--path ${workspaceFolder}\\project.godot",
+				"--export-release \"Web\"",
+				"release_name.zip",
+				"--headless",
+				"--verbose"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Export Windows",
+			"command": "godot",
+			"args": [
+				"--path ${workspaceFolder}\\project.godot",
+				"--export-release \"Windows Desktop\"",
+				"release_name.exe",
+				"--headless",
+				"--verbose"
+			],
+			"problemMatcher": []
+		},
+	]
+}

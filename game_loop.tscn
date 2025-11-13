@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp03gm3dbew5m"]
+
+[ext_resource type="Script" path="res://game_loop.gd" id="1_7f3si"]
+
+[node name="GameLoop" type="Node2D"]
+script = ExtResource("1_7f3si")
