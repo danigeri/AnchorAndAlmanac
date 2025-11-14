@@ -1,0 +1,11 @@
+extends Control
+
+@onready var pointer: TextureRect = $Pointer
+@onready var strength_label: Label = $Panel/StrengthLabel
+
+
+func _on_wind_update_wind(dir: Variant, strength: Variant) -> void:
+	if pointer:
+		printerr(dir)
+		pointer.rotation = dir.angle()
+		strength_label.text = "%s" % strength

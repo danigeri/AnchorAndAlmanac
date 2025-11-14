@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://o8or5o3p05wo"]
+
+[ext_resource type="Script" uid="uid://b7qcdj0w4ux4n" path="res://WindMeter/wind_meter.gd" id="1_cr3qh"]
+[ext_resource type="Texture2D" uid="uid://dhpwngei0wx84" path="res://Wind/windmeter_base.png" id="2_uodxg"]
+[ext_resource type="Texture2D" uid="uid://4571qhluuj4k" path="res://Wind/windmeter_pointer.png" id="3_ucha1"]
+
+[node name="WindMeter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1007.0
+offset_right = 1047.0
+offset_bottom = 40.0
+script = ExtResource("1_cr3qh")
+
+[node name="Base" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_uodxg")
+
+[node name="Pointer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(75, 75)
+texture = ExtResource("3_ucha1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 76.0
+offset_right = 103.0
+offset_bottom = 108.0
+
+[node name="StrengthLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 30.0
+text = "10"
+horizontal_alignment = 1
