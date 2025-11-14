@@ -10,6 +10,7 @@ var world_position: Vector2
 @onready var temp_boat: CharacterBody2D = $TempBoat
 @onready var fog_texture := ImageTexture.new()
 
+
 func _process(_delta):
 	if temp_boat.global_position.distance_squared_to(last_boat_pos) > 1:
 		update_fog()
