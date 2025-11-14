@@ -1,0 +1,70 @@
+[gd_scene load_steps=14 format=3 uid="uid://bogiyxh8easoc"]
+
+[ext_resource type="Script" uid="uid://cxbrsias4g1ak" path="res://FogOfWar/fog_of_war.gd" id="1_11jub"]
+[ext_resource type="Texture2D" uid="uid://sg5bnaqaiwkd" path="res://FogOfWar/temp-water.jpg" id="1_ckcga"]
+[ext_resource type="Script" uid="uid://b3tejupb2hcyd" path="res://FogOfWar/temp_boat.gd" id="2_es5fq"]
+[ext_resource type="Texture2D" uid="uid://bpk8mwrd5w4tv" path="res://icon.svg" id="4_30hum"]
+[ext_resource type="Shader" uid="uid://ccxx3tdw0hxub" path="res://FogOfWar/FogOfWar.gdshader" id="5_30hum"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11jub"]
+radius = 29.0
+height = 102.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_30hum"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_11jub"]
+offsets = PackedFloat32Array(0.2581967, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_30hum"]
+gradient = SubResource("Gradient_11jub")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.74358976, 0.31196582)
+
+[sub_resource type="Gradient" id="Gradient_30hum"]
+colors = PackedColorArray(0.22816366, 0.6047343, 0.8099484, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xe8np"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qqsbm"]
+noise = SubResource("FastNoiseLite_xe8np")
+color_ramp = SubResource("Gradient_30hum")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xe8np"]
+shader = ExtResource("5_30hum")
+shader_parameter/noise = SubResource("NoiseTexture2D_qqsbm")
+shader_parameter/scroll = Vector2(0.05, 0.05)
+
+[node name="FogOfWar" type="Node2D"]
+script = ExtResource("1_11jub")
+
+[node name="TempGround" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ckcga")
+
+[node name="TempBoat" type="CharacterBody2D" parent="."]
+position = Vector2(559, 353)
+scale = Vector2(-0.20320097, 0.48000002)
+script = ExtResource("2_es5fq")
+
+[node name="TempBoatCollison" type="CollisionShape2D" parent="TempBoat"]
+scale = Vector2(2.771645, 1.4166666)
+shape = SubResource("CapsuleShape2D_11jub")
+
+[node name="TempBoatImage" type="Sprite2D" parent="TempBoat"]
+texture = ExtResource("4_30hum")
+
+[node name="Vision" type="Sprite2D" parent="TempBoat"]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_30hum")
+texture = SubResource("GradientTexture2D_30hum")
+
+[node name="Fog" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xe8np")
+centered = false
