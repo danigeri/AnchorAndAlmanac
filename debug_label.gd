@@ -17,7 +17,4 @@ func _on_ship_speed_change(speed: Variant) -> void:
 
 
 func update_text() -> void:
-	text = (
-		"speed: %.1f m/s\nsail state: %d"
-		% [_speed_mps, _sail_state]
-	)
+	text = ("speed: %.1f m/s\nsail state: %d" % [_speed_mps, _sail_state])

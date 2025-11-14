@@ -30,13 +30,13 @@ var wind_strength: int
 
 func _ready() -> void:
 	current_speed_mps = 0
-	
+
 	sail_state = SailStates.SAIL_STATE_ANCHORED
 	sail_state_change.emit(sail_state)
 
 	direction = Vector2.RIGHT
 	facing_rad = direction.angle()
-	
+
 	set_rotation_degrees(90)
 
 
@@ -91,7 +91,7 @@ func turn(directional_multiplier: int, delta: float) -> void:
 
 
 func _set_speed(delta: float) -> void:
-	var dummy_wind_strenght: float = (wind_strength/10.0)
+	var dummy_wind_strenght: float = wind_strength / 10.0
 	var target_speed_mps: float = (
 		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power() * dummy_wind_strenght
 	)
@@ -112,7 +112,7 @@ func _set_speed(delta: float) -> void:
 func _wind_angle_to_power() -> float:
 	var angle: float = direction.dot(wind_direction)
 	var wind_power: float = (2 * angle + 1) / 3 if angle > -0.5 else 0.01
-	var dummy_wind_strenght: float = (wind_strength/10.0)
+	var dummy_wind_strenght: float = wind_strength / 10.0
 
 	return wind_power * dummy_wind_strenght
 
