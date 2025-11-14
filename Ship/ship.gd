@@ -16,25 +16,27 @@ const SAIL_SPEED_DICT = {
 # The quotient of how the turn speed is dependent of the current speed.
 const TURN_SPEED_QUOTIENT: float = 0.5
 
-@export var max_speed_mps: int = 100
-@export var turn_rad: float = PI / 6
+@export var max_speed_mps: int = 50
+@export var turn_rad: float = PI / 12
 @export var inertia: float = 0.1
 
 var current_speed_mps: float
 var direction: Vector2
 var facing_rad: float
 var sail_state: SailStates
-var wind: Vector2
+var wind_direction: Vector2
+var wind_strength: int
 
 
 func _ready() -> void:
 	current_speed_mps = 0
-	facing_rad = 0
+	
 	sail_state = SailStates.SAIL_STATE_ANCHORED
 	sail_state_change.emit(sail_state)
 
-	direction = Vector2(1, 0)
-
+	direction = Vector2.RIGHT
+	facing_rad = direction.angle()
+	
 	set_rotation_degrees(90)
 
 
@@ -89,12 +91,13 @@ func turn(directional_multiplier: int, delta: float) -> void:
 
 
 func _set_speed(delta: float) -> void:
-	var _target_speed_mps: float = (
-		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_to_wind_power(direction)
+	var dummy_wind_strenght: float = (wind_strength/10.0)
+	var target_speed_mps: float = (
+		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power() * dummy_wind_strenght
 	)
 
-	if current_speed_mps != _target_speed_mps:
-		var prefix = 1 if current_speed_mps < _target_speed_mps else -1
+	if current_speed_mps != target_speed_mps:
+		var prefix = 1 if current_speed_mps < target_speed_mps else -1
 
 		current_speed_mps += prefix * inertia * delta
 
@@ -103,26 +106,27 @@ func _set_speed(delta: float) -> void:
 		current_speed_mps = snapped(current_speed_mps, 0.0000001)
 
 		speed_change.emit(current_speed_mps)
-		_animate_speed(current_speed_mps)
+		#_animate_speed(current_speed_mps)
 
 
-func _wind_to_wind_power(direction: Vector2) -> float:
-	var angle = direction.dot(wind)
+func _wind_angle_to_power() -> float:
+	var angle = direction.dot(wind_direction)
 
 	# The default wind angle to wind power function is
 	# if angle > -0.5 : y = (2x + 1)/3
-	# if angle <= -0.5: y = 0
+	# if angle <= -0.5: y = 0.01
 
 	var wind_power: float = (2 * angle + 1) / 3 if angle > -0.5 else 0.01
-
+	# add wind strength here
 	return wind_power
 
 
 func _animate_speed(speed: float) -> void:
 	var speed_scale = speed / max_speed_mps
 	print("Speed scale changed to %s" % speed_scale)
-	# $AnimationPlayer.speed_scale = speed_scale
+	$AnimationPlayer.speed_scale = speed_scale
 
 
-func _on_wind_update_wind(wind_vector):
-	wind = wind_vector
+func _on_wind_update_wind(dir, strength) -> void:
+	wind_direction = dir
+	wind_strength = strength

@@ -20,4 +20,4 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 
 
 func go_to_main_menu() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://MainMenu/main_menu.tscn")
