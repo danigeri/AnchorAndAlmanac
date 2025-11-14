@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cets1rd56c807"]
+
+[ext_resource type="Shader" uid="uid://bec5aotr5xs64" path="res://WaterShader/water.gdshader" id="1_7wcun"]
+[ext_resource type="Texture2D" uid="uid://dwbaac08njg38" path="res://WaterShader/temp-water.png" id="1_kpad1"]
+[ext_resource type="Texture2D" uid="uid://dpubcany77dgc" path="res://WaterShader/water_noise.tres" id="2_dcmoc"]
+[ext_resource type="Texture2D" uid="uid://17q0y8nq3fxo" path="res://WaterShader/water_noise2.tres" id="4_x4ob8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcmoc"]
+shader = ExtResource("1_7wcun")
+shader_parameter/noise = ExtResource("2_dcmoc")
+shader_parameter/noise2 = ExtResource("4_x4ob8")
+shader_parameter/scroll = Vector2(0.05, 0.05)
+shader_parameter/scroll2 = Vector2(-0.026, -0.05)
+shader_parameter/distortion = 0.05600005015999998
+shader_parameter/tone_color = Color(0.21555871, 0.40884915, 0.75832754, 0.827451)
+shader_parameter/top_color = Color(1, 1, 1, 1)
+shader_parameter/light_start = 0.58800002793
+shader_parameter/light_end = 0.64400003059
+shader_parameter/time_slowdown = Vector2(1.5, 1)
+
+[node name="Water" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1312.125, 883.125)
+scale = Vector2(0.46601102, 0.46109754)
+texture = ExtResource("1_kpad1")
+
+[node name="Shader" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dcmoc")
+position = Vector2(1315, 890)
+scale = Vector2(0.38784143, 0.37843928)
+texture = ExtResource("1_kpad1")
