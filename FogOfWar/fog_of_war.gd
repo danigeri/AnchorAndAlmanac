@@ -1,16 +1,14 @@
 extends Node2D
 
+var last_boat_pos: Vector2
+var fog_image: Image
+var vision_image: Image
+var world_position: Vector2
+
 @onready var fog: Sprite2D = $Fog
 @onready var temp_ground: Sprite2D = $TempGround
 @onready var temp_boat: CharacterBody2D = $TempBoat
 @onready var fog_texture := ImageTexture.new()
-var last_boat_pos: Vector2
-
-var fog_image: Image
-var vision_image: Image
-
-var world_position: Vector2
-
 
 func _process(_delta):
 	if temp_boat.global_position.distance_squared_to(last_boat_pos) > 1:
