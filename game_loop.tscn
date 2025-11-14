@@ -1,11 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=8 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
+[ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
+[ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://wind.gd" id="2_x7b5a"]
+[ext_resource type="Script" uid="uid://bg1hcdly8natw" path="res://debug_label.gd" id="3_ksmgf"]
+[ext_resource type="Texture2D" uid="uid://dhpwngei0wx84" path="res://Wind/windmeter_base.png" id="5_u6nhp"]
+[ext_resource type="Texture2D" uid="uid://4571qhluuj4k" path="res://Wind/windmeter_pointer.png" id="6_4dmyq"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u6nhp"]
+a = Vector2(1150, 15)
+b = Vector2(0, 15)
 
 [node name="GameLoop" type="Node2D"]
 script = ExtResource("1_7f3si")
 
-[node name="Ship" type="Sprite2D" parent="."]
+[node name="Wind" type="Node2D" parent="."]
+script = ExtResource("2_x7b5a")
+
+[node name="Ship" parent="." instance=ExtResource("2_u3r3m")]
+position = Vector2(547, 312)
+inertia = 10.0
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -28,3 +42,61 @@ offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
 layout_mode = 2
+
+[node name="DebugLabel" type="Label" parent="UserInterface/DebugPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_ksmgf")
+
+[node name="WindMeter" type="Control" parent="UserInterface"]
+anchors_preset = 0
+offset_left = 1007.0
+offset_right = 1047.0
+offset_bottom = 40.0
+
+[node name="WindMeterBase" type="TextureRect" parent="UserInterface/WindMeter"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_u6nhp")
+
+[node name="WindMeterPointer" type="TextureRect" parent="UserInterface/WindMeter"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_4dmyq")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="CoastlineCollider_N" type="StaticBody2D" parent="Objects"]
+position = Vector2(894, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/CoastlineCollider_N"]
+position = Vector2(-894, 3)
+shape = SubResource("SegmentShape2D_u6nhp")
+
+[node name="CoastlineCollider_S" type="StaticBody2D" parent="Objects"]
+position = Vector2(894, 610)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/CoastlineCollider_S"]
+position = Vector2(-894, 3)
+shape = SubResource("SegmentShape2D_u6nhp")
+
+[node name="CoastlineCollider_W" type="StaticBody2D" parent="Objects"]
+position = Vector2(731, 610)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/CoastlineCollider_W"]
+position = Vector2(-693, -878)
+rotation = 1.5707964
+shape = SubResource("SegmentShape2D_u6nhp")
+
+[node name="CoastlineCollider_E" type="StaticBody2D" parent="Objects"]
+position = Vector2(1833, 594)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/CoastlineCollider_E"]
+position = Vector2(-693, -878)
+rotation = 1.5707964
+shape = SubResource("SegmentShape2D_u6nhp")
+
+[connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
+[connection signal="sail_state_change" from="Ship" to="UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel" method="_on_ship_sail_state_change"]
+[connection signal="speed_change" from="Ship" to="UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel" method="_on_ship_speed_change"]
