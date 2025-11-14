@@ -110,15 +110,11 @@ func _set_speed(delta: float) -> void:
 
 
 func _wind_angle_to_power() -> float:
-	var angle = direction.dot(wind_direction)
-
-	# The default wind angle to wind power function is
-	# if angle > -0.5 : y = (2x + 1)/3
-	# if angle <= -0.5: y = 0.01
-
+	var angle: float = direction.dot(wind_direction)
 	var wind_power: float = (2 * angle + 1) / 3 if angle > -0.5 else 0.01
-	# add wind strength here
-	return wind_power
+	var dummy_wind_strenght: float = (wind_strength/10.0)
+
+	return wind_power * dummy_wind_strenght
 
 
 func _animate_speed(speed: float) -> void:

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _on_wind_change():
 	direction = Vector2(randf_range(-1, 1), randf_range(-1, 1))
-	strength = randi_range(0, 10)
+	strength = randi_range(1, 10)
 
 	# @todo: This should change incrementally
 	update_wind.emit(direction, strength)

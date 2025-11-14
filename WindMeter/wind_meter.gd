@@ -6,6 +6,5 @@ extends Control
 
 func _on_wind_update_wind(dir: Variant, strength: Variant) -> void:
 	if pointer:
-		printerr(dir)
 		pointer.rotation = dir.angle()
 		strength_label.text = "%s" % strength
