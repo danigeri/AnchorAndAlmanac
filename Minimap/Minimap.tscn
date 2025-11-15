@@ -8,12 +8,14 @@ script = ExtResource("1_tcfph")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+offset_top = 384.0
 offset_right = 256.0
-offset_bottom = 256.0
+offset_bottom = 640.0
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(128, 128)
+size = Vector2i(200, 200)
 render_target_update_mode = 4
 
-[node name="MinimapCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.05, 0.05)

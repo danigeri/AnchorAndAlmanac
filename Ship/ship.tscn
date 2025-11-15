@@ -16,3 +16,5 @@ texture = ExtResource("2_q4ev1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_q4ev1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
