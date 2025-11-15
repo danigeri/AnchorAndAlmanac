@@ -5,14 +5,19 @@ extends Control
 
 
 func _ready() -> void:
-	video_player.play()
-	video_player.paused = true
-
-
-func _on_timer_timeout() -> void:
-	video_player.paused = false
-	audio_player.play()
+	if OS.is_debug_build():
+		call_deferred("go_to_main_menu")
+	else:
+		video_player.play()
+		video_player.paused = true
+		await get_tree().create_timer(2.0).timeout
+		video_player.paused = false
+		audio_player.play()
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	go_to_main_menu()
+
+
+func go_to_main_menu() -> void:
+	get_tree().change_scene_to_file("res://MainMenu/main_menu.tscn")
