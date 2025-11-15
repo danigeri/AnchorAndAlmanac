@@ -64,6 +64,7 @@ offset_left = 1017.0
 offset_right = 1057.0
 
 [node name="Minimap" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("8_lxk7w")]
+position = Vector2(4, 0)
 player = NodePath("../../Ship")
 
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
