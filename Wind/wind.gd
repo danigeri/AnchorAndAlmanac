@@ -10,7 +10,6 @@ signal update_wind(direction, power)
 
 func _ready() -> void:
 	update_wind.emit(direction, strength)
-	update_wind.emit(direction, strength)
 	timer.timeout.connect(_on_wind_change)
 
 
