@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bogiyxh8easoc"]
+[gd_scene load_steps=15 format=3 uid="uid://bogiyxh8easoc"]
 
 [ext_resource type="Script" uid="uid://cxbrsias4g1ak" path="res://FogOfWar/fog_of_war.gd" id="1_11jub"]
 [ext_resource type="Texture2D" uid="uid://sg5bnaqaiwkd" path="res://FogOfWar/temp-water.jpg" id="1_ckcga"]
 [ext_resource type="Script" uid="uid://b3tejupb2hcyd" path="res://FogOfWar/temp_boat.gd" id="2_es5fq"]
 [ext_resource type="Texture2D" uid="uid://bpk8mwrd5w4tv" path="res://icon.svg" id="4_30hum"]
 [ext_resource type="Shader" uid="uid://ccxx3tdw0hxub" path="res://FogOfWar/FogOfWar.gdshader" id="5_30hum"]
+[ext_resource type="PackedScene" uid="uid://br2d7secgwnnl" path="res://Minimap/Minimap.tscn" id="6_xe8np"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11jub"]
 radius = 29.0
@@ -68,3 +69,6 @@ texture = SubResource("GradientTexture2D_30hum")
 [node name="Fog" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xe8np")
 centered = false
+
+[node name="Minimap" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_xe8np")]
+player = NodePath("../TempBoat")
