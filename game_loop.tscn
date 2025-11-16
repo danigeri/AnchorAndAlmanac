@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=10 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://bogiyxh8easoc" path="res://FogOfWar/FogOfWar.tscn" id="2_4dmyq"]
 [ext_resource type="PackedScene" uid="uid://cets1rd56c807" path="res://WaterShader/water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
-[ext_resource type="Script" path="res://debug_label.gd" id="3_ksmgf"]
-[ext_resource type="PackedScene" uid="uid://o8or5o3p05wo" path="res://WindMeter/wind_meter.tscn" id="5_nbfos"]
-[ext_resource type="PackedScene" uid="uid://br2d7secgwnnl" path="res://Minimap/Minimap.tscn" id="8_lxk7w"]
+[ext_resource type="PackedScene" uid="uid://675p0otu3tys" path="res://UI/UI.tscn" id="5_vfyqg"]
+[ext_resource type="PackedScene" uid="uid://cii0yvyu1gclv" path="res://Checkpoint/Checkpoint.tscn" id="9_vfyqg"]
+[ext_resource type="Texture2D" uid="uid://bj550qfk1ber3" path="res://Checkpoint/templadmark.png" id="10_v6ba6"]
+[ext_resource type="Texture2D" uid="uid://da5qsg08d482g" path="res://Checkpoint/templadmark_green.png" id="11_pyewy"]
 
 [node name="GameLoop" type="Node2D"]
 script = ExtResource("1_7f3si")
@@ -16,9 +17,6 @@ script = ExtResource("1_7f3si")
 position = Vector2(537, 311)
 scale = Vector2(3, 3)
 
-[node name="FogOfWar" parent="." node_paths=PackedStringArray("temp_boat") instance=ExtResource("2_4dmyq")]
-temp_boat = NodePath("../Ship")
-
 [node name="Wind" type="Node2D" parent="."]
 script = ExtResource("2_x7b5a")
 
@@ -26,48 +24,24 @@ script = ExtResource("2_x7b5a")
 wait_time = 15.0
 autostart = true
 
-[node name="Ship" parent="." instance=ExtResource("2_u3r3m")]
+[node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
 position = Vector2(552, 335)
 inertia = 10.0
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" parent="." instance=ExtResource("5_vfyqg")]
 
-[node name="UserInterface" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Checkpoint" parent="." instance=ExtResource("9_vfyqg")]
+position = Vector2(746, 329)
+landmark_texture = ExtResource("10_v6ba6")
 
-[node name="DebugPanel" type="Panel" parent="UI/UserInterface"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 210.0
-offset_bottom = 50.0
+[node name="Checkpoint2" parent="." instance=ExtResource("9_vfyqg")]
+position = Vector2(893, 329)
+landmark_texture = ExtResource("11_pyewy")
+landmark_type = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/UserInterface/DebugPanel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/UserInterface/DebugPanel/MarginContainer"]
-layout_mode = 2
-
-[node name="DebugLabel" type="Label" parent="UI/UserInterface/DebugPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-script = ExtResource("3_ksmgf")
-
-[node name="WindMeter" parent="UI/UserInterface" instance=ExtResource("5_nbfos")]
-layout_mode = 0
-offset_left = 1017.0
-offset_right = 1057.0
-
-[node name="Minimap" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("8_lxk7w")]
-position = Vector2(4, 0)
-player = NodePath("../../Ship")
+[node name="FogOfWar" parent="." node_paths=PackedStringArray("temp_boat") instance=ExtResource("2_4dmyq")]
+temp_boat = NodePath("../Ship")
 
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
-[connection signal="update_wind" from="Wind" to="UI/UserInterface/WindMeter" method="_on_wind_update_wind"]
-[connection signal="sail_state_change" from="Ship" to="UI/UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel" method="_on_ship_sail_state_change"]
-[connection signal="speed_change" from="Ship" to="UI/UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel" method="_on_ship_speed_change"]
+[connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
+[connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
