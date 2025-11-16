@@ -5,6 +5,7 @@ var _sail_state: int = 0
 @onready var checkpoint_counter: Label = $UserInterface/CheckpointCounter
 @onready var debug_label: Label = $UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.checkpoint_collected.connect(_on_checkpoint_collected)
