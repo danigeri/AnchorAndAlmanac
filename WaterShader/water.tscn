@@ -21,12 +21,9 @@ shader_parameter/time_slowdown = Vector2(1.5, 1)
 [node name="Water" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1312.125, 883.125)
-scale = Vector2(0.46601102, 0.46109754)
+position = Vector2(1, 4)
 texture = ExtResource("1_kpad1")
 
 [node name="Shader" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_dcmoc")
-position = Vector2(1315, 890)
-scale = Vector2(0.38784143, 0.37843928)
 texture = ExtResource("1_kpad1")

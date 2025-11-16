@@ -1,14 +1,15 @@
 extends Node2D
 
+@export var temp_boat: CharacterBody2D
+
 var last_boat_pos: Vector2
 var fog_image: Image
 var vision_image: Image
 var world_position: Vector2
 
 @onready var fog: Sprite2D = $Fog
-@onready var temp_ground: Sprite2D = $TempGround
-@onready var temp_boat: CharacterBody2D = $TempBoat
 @onready var fog_texture := ImageTexture.new()
+@onready var vision: Sprite2D = %Vision
 
 
 func _process(_delta):
@@ -23,14 +24,14 @@ func _ready() -> void:
 
 
 func generate_fog():
-	var world_dimension = Vector2(3000, 3000)
-	world_position = Vector2(3000, 3000)
+	var world_dimension = Vector2(5000, 5000)
+	world_position = Vector2(5000, 5000)
 
 	fog_image = Image.create(world_dimension.x, world_dimension.y, false, Image.Format.FORMAT_RGBAH)
 	fog_image.fill(Color.BLACK)
 	fog_texture = ImageTexture.create_from_image(fog_image)
 	fog.texture = fog_texture
-	vision_image = temp_boat.vision.texture.get_image()
+	vision_image = vision.texture.get_image()
 	vision_image.convert(Image.Format.FORMAT_RGBAH)
 	var vision_scale = Vector2(vision_image.get_size()) * 5
 	vision_image.resize(vision_scale.x, vision_scale.y)
