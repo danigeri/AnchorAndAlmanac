@@ -43,4 +43,5 @@ centered = false
 [node name="Vision" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_30hum")
+scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_30hum")

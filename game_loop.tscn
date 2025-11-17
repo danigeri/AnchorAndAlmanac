@@ -30,14 +30,36 @@ inertia = 10.0
 
 [node name="UI" parent="." instance=ExtResource("5_vfyqg")]
 
-[node name="Checkpoint" parent="." instance=ExtResource("9_vfyqg")]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Node2D" instance=ExtResource("9_vfyqg")]
 position = Vector2(746, 329)
 landmark_texture = ExtResource("10_v6ba6")
 
-[node name="Checkpoint2" parent="." instance=ExtResource("9_vfyqg")]
+[node name="Checkpoint2" parent="Node2D" instance=ExtResource("9_vfyqg")]
 position = Vector2(893, 329)
 landmark_texture = ExtResource("11_pyewy")
 landmark_type = 1
+
+[node name="Checkpoint3" parent="Node2D" instance=ExtResource("9_vfyqg")]
+position = Vector2(1015, 329)
+landmark_texture = ExtResource("10_v6ba6")
+landmark_type = 2
+
+[node name="Checkpoint4" parent="Node2D" instance=ExtResource("9_vfyqg")]
+position = Vector2(1160, 329)
+landmark_texture = ExtResource("11_pyewy")
+landmark_type = 3
+
+[node name="Checkpoint5" parent="Node2D" instance=ExtResource("9_vfyqg")]
+position = Vector2(1300, 329)
+landmark_texture = ExtResource("10_v6ba6")
+landmark_type = 4
+
+[node name="Checkpoint6" parent="Node2D" instance=ExtResource("9_vfyqg")]
+position = Vector2(1451, 329)
+landmark_texture = ExtResource("11_pyewy")
+landmark_type = 5
 
 [node name="FogOfWar" parent="." node_paths=PackedStringArray("temp_boat") instance=ExtResource("2_4dmyq")]
 temp_boat = NodePath("../Ship")
