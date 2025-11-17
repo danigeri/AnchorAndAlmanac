@@ -10,11 +10,11 @@ func _ready() -> void:
 func _on_checkpoint_collected(_type: int) -> void:
 	print("call check")
 	is_checkpoints_collected()
-	
+
+
 func is_checkpoints_collected() -> bool:
-	if (Globals.all_checkpoints_collected() == true):
+	if Globals.all_checkpoints_collected() == true:
 		print("all checkpoints collected")
 		return true
-	else: 
-		print("1 or more checkpoints are not collected yet")
-		return false
+	print("1 or more checkpoints are not collected yet")
+	return false
