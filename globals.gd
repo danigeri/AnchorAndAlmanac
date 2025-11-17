@@ -20,7 +20,7 @@ func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 	if not collected_landmarks[type]:
 		collected_landmarks[type] = true
 		last_checkpoint_positon = checkpoint_position
-		print("collected checkpoints: ",collected_landmarks)
+		print("collected checkpoints: ", collected_landmarks)
 		print("last checkpoint positon: ", last_checkpoint_positon)
 		are_all_checkpoints_collected()
 		## later can be used for UI updates and checkpoint related tasks like ship journey dialog
@@ -32,6 +32,7 @@ func all_checkpoints_collected() -> bool:
 		if not collected_landmarks[value]:
 			return false
 	return true
+
 
 func are_all_checkpoints_collected() -> bool:
 	if all_checkpoints_collected() == true:
