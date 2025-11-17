@@ -15,6 +15,10 @@ run/main_scene="uid://dhd8r8ji7gn64"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://globals.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

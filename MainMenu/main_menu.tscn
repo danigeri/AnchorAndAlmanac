@@ -1,20 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdwedeohryclo"]
+[gd_scene load_steps=2 format=3 uid="uid://cdwedeohryclo"]
 
-[sub_resource type="GDScript" id="GDScript_4kp2s"]
-script/source = "extends Button
-
-
-func _on_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://game_loop.tscn\")
-"
-
-[sub_resource type="GDScript" id="GDScript_xatx2"]
-script/source = "extends Button
-
-
-func _on_pressed() -> void:
-	get_tree().quit()
-"
+[ext_resource type="Script" uid="uid://1ik2fjtqa7qp" path="res://MainMenu/main_menu.gd" id="1_nhkf3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nhkf3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -45,13 +32,13 @@ text = "GerappaGamesTemplate"
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Start"
-script = SubResource("GDScript_4kp2s")
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Exit
 "
-script = SubResource("GDScript_xatx2")
 
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_pressed"]
