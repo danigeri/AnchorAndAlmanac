@@ -12,8 +12,7 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		print("boat entered checkpoint area")
-		Globals.mark_collected(landmark_type)
+		Globals.mark_collected(landmark_type, position)
 		animation_player.play("pickup")
 
 
