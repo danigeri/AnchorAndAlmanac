@@ -4,7 +4,7 @@ uniform vec2 scroll = vec2(0.05, 0.05);
 
 void fragment() {
 	vec4 text = texture(TEXTURE, UV);
-	vec4 noise_updated = texture(noise, UV + scroll * TIME / vec2(5));
+	vec4 noise_updated = texture(noise, UV + scroll * TIME);
 
 	text.a -= text.r;
 	text.rgb = noise_updated.rgb;

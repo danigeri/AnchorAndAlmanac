@@ -20,3 +20,9 @@ func mark_collected(type: int) -> void:
 		print(collected_landmarks)
 		## later can be used for UI updates and checkpoint related tasks like ship journey dialog
 		emit_signal("checkpoint_collected", type)
+
+func all_checkpoints_collected() -> bool:
+	for value in LandmarkType.values():
+		if not collected_landmarks[value]:
+			return false
+	return true

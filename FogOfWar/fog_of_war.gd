@@ -6,7 +6,7 @@ var last_boat_pos: Vector2
 var fog_image: Image
 var vision_image: Image
 var world_position: Vector2
-
+var vision_size: int = 5
 @onready var fog: Sprite2D = $Fog
 @onready var fog_texture := ImageTexture.new()
 @onready var vision: Sprite2D = %Vision
@@ -33,7 +33,7 @@ func generate_fog():
 	fog.texture = fog_texture
 	vision_image = vision.texture.get_image()
 	vision_image.convert(Image.Format.FORMAT_RGBAH)
-	var vision_scale = Vector2(vision_image.get_size()) * 5
+	var vision_scale = Vector2(vision_image.get_size()) * vision_size
 	vision_image.resize(vision_scale.x, vision_scale.y)
 
 
