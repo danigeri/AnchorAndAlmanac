@@ -17,8 +17,8 @@ func _input(event: InputEvent) -> void:
 		if event.keycode == KEY_Q:
 			questlog.visible = !questlog.visible
 			get_tree().paused = questlog.visible
-		
-			
+
+
 func _on_checkpoint_collected(_type: int) -> void:
 	## temp code to show collected checkpoints on the UI
 	var collected_names = ""

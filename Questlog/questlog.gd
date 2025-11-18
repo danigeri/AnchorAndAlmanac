@@ -7,8 +7,10 @@ extends Node2D
 @onready var questlog_item_5: Sprite2D = $QuestlogItem5
 @onready var questlog_item_6: Sprite2D = $QuestlogItem6
 
+
 func _ready() -> void:
 	Globals.checkpoint_collected.connect(show_questlog_item)
+
 
 func show_questlog_item(checkpoint_number: int) -> void:
 	print(checkpoint_number)
