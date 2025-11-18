@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://675p0otu3tys"]
+[gd_scene load_steps=5 format=3 uid="uid://675p0otu3tys"]
 
 [ext_resource type="Script" uid="uid://bdhfe81q16ew7" path="res://UI/ui.gd" id="1_qui0h"]
 [ext_resource type="PackedScene" uid="uid://o8or5o3p05wo" path="res://WindMeter/wind_meter.tscn" id="3_0mc3e"]
-[ext_resource type="Texture2D" uid="uid://drhjoreit125a" path="res://UI/temp-quest-book.png" id="3_f1fl4"]
 [ext_resource type="PackedScene" uid="uid://br2d7secgwnnl" path="res://Minimap/Minimap.tscn" id="4_2n5f6"]
 [ext_resource type="PackedScene" uid="uid://b1vpe7qknj640" path="res://Questlog/Questlog.tscn" id="4_e707p"]
 
@@ -49,15 +48,6 @@ offset_right = 988.0
 offset_bottom = 638.0
 text = "Landmarks collected:"
 
-[node name="QuestlogButton" type="TextureButton" parent="UserInterface"]
-process_mode = 3
-layout_mode = 0
-offset_left = 939.0
-offset_top = 18.0
-offset_right = 1008.0
-offset_bottom = 81.0
-texture_normal = ExtResource("3_f1fl4")
-
 [node name="Questlog" parent="." instance=ExtResource("4_e707p")]
 visible = false
 z_index = 99
@@ -66,5 +56,3 @@ scale = Vector2(0.76, 0.76)
 
 [node name="Minimap" parent="." instance=ExtResource("4_2n5f6")]
 position = Vector2(60, -4)
-
-[connection signal="pressed" from="UserInterface/QuestlogButton" to="." method="_on_questlog_button_pressed"]

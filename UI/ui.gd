@@ -9,7 +9,16 @@ var _sail_state: int = 0
 
 func _ready() -> void:
 	Globals.checkpoint_collected.connect(_on_checkpoint_collected)
-	
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_Q:
+			questlog.visible = !questlog.visible
+			get_tree().paused = questlog.visible
+		
+			
 func _on_checkpoint_collected(_type: int) -> void:
 	## temp code to show collected checkpoints on the UI
 	var collected_names = ""
@@ -34,8 +43,3 @@ func _on_ship_speed_change(speed: Variant) -> void:
 func update_text() -> void:
 	if debug_label:
 		debug_label.text = ("speed: %.1f m/s\nsail state: %d" % [_speed_mps, _sail_state])
-
-
-func _on_questlog_button_pressed() -> void:
-	questlog.visible = !questlog.visible
-	get_tree().paused = questlog.visible
