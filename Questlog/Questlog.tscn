@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1vpe7qknj640"]
+
+[ext_resource type="Texture2D" uid="uid://c27qcea7m4fe3" path="res://Questlog/temp_questlog_background.png" id="1_jsbvd"]
+[ext_resource type="Script" uid="uid://du4mqeob0p2ak" path="res://Questlog/questlog.gd" id="1_t2jcq"]
+[ext_resource type="Texture2D" uid="uid://baotbgcylycam" path="res://Questlog/quest_text.png" id="2_t2jcq"]
+
+[node name="Questlog" type="Node2D"]
+script = ExtResource("1_t2jcq")
+
+[node name="QuestlogBackground" type="Sprite2D" parent="."]
+texture = ExtResource("1_jsbvd")
+
+[node name="QuestlogItem" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(3, -222)
+texture = ExtResource("2_t2jcq")
+
+[node name="QuestlogItem2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(7, -130)
+texture = ExtResource("2_t2jcq")
+
+[node name="QuestlogItem3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, -42)
+texture = ExtResource("2_t2jcq")
+
+[node name="QuestlogItem4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(7, 34)
+texture = ExtResource("2_t2jcq")
+
+[node name="QuestlogItem5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6, 125)
+texture = ExtResource("2_t2jcq")
+
+[node name="QuestlogItem6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, 215)
+texture = ExtResource("2_t2jcq")
