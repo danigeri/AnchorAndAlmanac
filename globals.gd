@@ -1,7 +1,7 @@
 extends Node
 
 signal checkpoint_collected(type: int)
-signal all_checkpoints_collected()
+signal all_checkpoints_collected
 
 enum LandmarkType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH }
 
@@ -24,7 +24,7 @@ func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 		print("collected checkpoints: ", collected_landmarks)
 		print("last checkpoint positon: ", last_checkpoint_positon)
 		emit_signal("checkpoint_collected", type)
-		if(are_all_checkpoints_collected()):
+		if are_all_checkpoints_collected():
 			all_checkpoints_collected.emit()
 
 

@@ -42,6 +42,7 @@ func _ready() -> void:
 
 	set_rotation_degrees(90)
 
+
 func _input(event: InputEvent) -> void:
 	if (event as InputEvent).is_action_pressed("ui_up") and sail_state < SailStates.SAIL_STATE_UP:
 		sail_state += 1
@@ -79,8 +80,10 @@ func _physics_process(delta: float) -> void:
 	velocity.y = direction.y * current_speed_mps
 	move_and_slide()
 
+
 func get_camera() -> Camera2D:
 	return camera_2d
+
 
 func turn(directional_multiplier: int, delta: float) -> void:
 	var facing_chage_rad: float = (

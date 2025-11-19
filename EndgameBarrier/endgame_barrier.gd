@@ -4,11 +4,14 @@ extends Node2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
+
 func remove_barrier() -> void:
 	static_body_2d.queue_free()
+
 
 func get_camera() -> Camera2D:
 	return camera_2d

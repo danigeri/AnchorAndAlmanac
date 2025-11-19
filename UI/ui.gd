@@ -21,6 +21,7 @@ func _input(event: InputEvent) -> void:
 			minimap.visible = !minimap.visible
 			minimap_icon.visible = !minimap_icon.visible
 
+
 func _on_ship_sail_state_change(sail_state: Variant) -> void:
 	_sail_state = sail_state
 	update_text()

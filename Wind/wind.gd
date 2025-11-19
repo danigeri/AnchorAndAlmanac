@@ -11,6 +11,7 @@ func _ready() -> void:
 	update_wind.emit(direction, strength)
 	create_wind_timer()
 
+
 func create_wind_timer():
 	var timer := Timer.new()
 	timer.wait_time = wind_change_time_frequency
@@ -19,6 +20,7 @@ func create_wind_timer():
 	add_child(timer)
 
 	timer.timeout.connect(_on_wind_change)
+
 
 func _on_wind_change():
 	direction = Vector2(randf_range(-1, 1), randf_range(-1, 1))
