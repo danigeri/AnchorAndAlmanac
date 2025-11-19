@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=12 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://bogiyxh8easoc" path="res://FogOfWar/FogOfWar.tscn" id="2_4dmyq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://v4jrth8hl4h6" path="res://EndgameBarrier/EndgameBarrier.tscn" id="5_v6ba6"]
 [ext_resource type="PackedScene" uid="uid://675p0otu3tys" path="res://UI/UI.tscn" id="5_vfyqg"]
 [ext_resource type="PackedScene" uid="uid://cii0yvyu1gclv" path="res://Checkpoint/Checkpoint.tscn" id="9_vfyqg"]
+[ext_resource type="PackedScene" uid="uid://b3rw3vuine4lr" path="res://ShipLog/ShipLogSound.tscn" id="10_eufeh"]
 [ext_resource type="Texture2D" uid="uid://bj550qfk1ber3" path="res://Checkpoint/templadmark.png" id="10_v6ba6"]
 [ext_resource type="Texture2D" uid="uid://da5qsg08d482g" path="res://Checkpoint/templadmark_green.png" id="11_pyewy"]
 
@@ -34,33 +35,36 @@ scale = Vector2(1, 3.92)
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(713, 329)
+position = Vector2(770, 362)
 landmark_texture = ExtResource("10_v6ba6")
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(760, 329)
+position = Vector2(853, 226)
 landmark_texture = ExtResource("11_pyewy")
 landmark_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(805, 329)
+position = Vector2(916, 374)
 landmark_texture = ExtResource("10_v6ba6")
 landmark_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(838, 329)
+position = Vector2(1001, 245)
 landmark_texture = ExtResource("11_pyewy")
 landmark_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(868, 329)
+position = Vector2(1071, 464)
 landmark_texture = ExtResource("10_v6ba6")
 landmark_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(891, 329)
+position = Vector2(1178, 329)
 landmark_texture = ExtResource("11_pyewy")
 landmark_type = 5
+
+[node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
+position = Vector2(770, 362)
 
 [node name="FogOfWar" parent="." node_paths=PackedStringArray("temp_boat") instance=ExtResource("2_4dmyq")]
 temp_boat = NodePath("../Ship")

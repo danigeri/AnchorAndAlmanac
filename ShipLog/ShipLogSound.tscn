@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3rw3vuine4lr"]
+
+[ext_resource type="Script" uid="uid://ddkyicba7y46u" path="res://ShipLog/ship_log_sound.gd" id="1_3f07h"]
+
+[node name="ShipLogSound" type="Node2D"]
+script = ExtResource("1_3f07h")
