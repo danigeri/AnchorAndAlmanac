@@ -10,10 +10,12 @@ var checkpoint_stories = {
 	5: preload("res://ShipLog/6_cp_story.mp3")
 }
 
+
 func _ready() -> void:
 	## set to always so ship log sound doesn't stop on pause
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	Globals.checkpoint_collected.connect(on_play_checkpoint_story)
+
 
 func on_play_checkpoint_story(checkpoint_number: int) -> void:
 	if checkpoint_stories.has(checkpoint_number):
