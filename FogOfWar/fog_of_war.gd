@@ -6,17 +6,20 @@ var last_boat_pos: Vector2
 var fog_image: Image
 var vision_image: Image
 var world_position: Vector2
-var vision_size: int = 7
+var vision_size: int = 9
+var update_interval: float= 0.1 
+var time_since_last_update: float = 0.0
 @onready var fog: Sprite2D = $Fog
 @onready var fog_texture := ImageTexture.new()
 @onready var vision: Sprite2D = %Vision
 
 
-func _process(_delta):
-	if temp_boat.global_position.distance_squared_to(last_boat_pos) > 1:
-		update_fog()
-		last_boat_pos = temp_boat.global_position
-
+func _process(delta):
+	time_since_last_update += delta
+	if time_since_last_update >= update_interval:
+			update_fog()
+			last_boat_pos = temp_boat.global_position
+			time_since_last_update = 0.0
 
 func _ready() -> void:
 	generate_fog()
