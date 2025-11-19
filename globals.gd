@@ -21,7 +21,6 @@ func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 	if not collected_landmarks[type]:
 		collected_landmarks[type] = true
 		last_checkpoint_positon = checkpoint_position
-		print("collected checkpoints: ", collected_landmarks)
 		print("last checkpoint positon: ", last_checkpoint_positon)
 		emit_signal("checkpoint_collected", type)
 		if are_all_checkpoints_collected():

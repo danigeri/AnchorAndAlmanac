@@ -9,6 +9,7 @@ var _sail_state: int = 0
 
 
 func _ready() -> void:
+	## set to always so unpause is possible with InputEvent
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 

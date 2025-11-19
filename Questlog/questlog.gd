@@ -13,7 +13,6 @@ func _ready() -> void:
 
 
 func _on_show_questlog_item(checkpoint_number: int) -> void:
-	print(checkpoint_number)
 	match checkpoint_number:
 		0:
 			questlog_item.show()
