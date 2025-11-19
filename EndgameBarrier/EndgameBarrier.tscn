@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://v4jrth8hl4h6"]
+
+[ext_resource type="Script" uid="uid://crnqk7esdquo" path="res://EndgameBarrier/endgame_barrier.gd" id="1_xpcmi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvspd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpcmi"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p7103"]
+
+[sub_resource type="Animation" id="Animation_xpcmi"]
+resource_name = "destroy"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.76666665, 0.93333334, 1.1, 1.2666667, 1.4333333, 1.5333333, 1.6333333, 1.7333333, 1.8333334, 1.9, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.017453292519943295, 0.017453292519943295, -0.017453292519943295, 0.017453292519943295, -0.017453292519943295, 0.017453292519943295, 0.017453292, -0.017453292519943295, 0.017453292, -0.017453292519943295, 0.017453292]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"remove_barrier"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_p7103"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kpbc"]
+_data = {
+&"RESET": SubResource("Animation_p7103"),
+&"destroy": SubResource("Animation_xpcmi")
+}
+
+[node name="EndgameBarrier" type="Node2D"]
+script = ExtResource("1_xpcmi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1, 5.48)
+physics_material_override = SubResource("PhysicsMaterial_nvspd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_xpcmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_p7103")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8kpbc")
+}

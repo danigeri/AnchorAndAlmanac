@@ -9,10 +9,10 @@ extends Node2D
 
 
 func _ready() -> void:
-	Globals.checkpoint_collected.connect(show_questlog_item)
+	Globals.checkpoint_collected.connect(_on_show_questlog_item)
 
 
-func show_questlog_item(checkpoint_number: int) -> void:
+func _on_show_questlog_item(checkpoint_number: int) -> void:
 	print(checkpoint_number)
 	match checkpoint_number:
 		0:

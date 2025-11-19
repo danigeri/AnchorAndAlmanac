@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://675p0otu3tys"]
+[gd_scene load_steps=6 format=3 uid="uid://675p0otu3tys"]
 
 [ext_resource type="Script" uid="uid://bdhfe81q16ew7" path="res://UI/ui.gd" id="1_qui0h"]
 [ext_resource type="PackedScene" uid="uid://o8or5o3p05wo" path="res://WindMeter/wind_meter.tscn" id="3_0mc3e"]
+[ext_resource type="Texture2D" uid="uid://chv8ycjg2gk65" path="res://UI/temp-quest-book-icon.png" id="3_f1fl4"]
 [ext_resource type="PackedScene" uid="uid://br2d7secgwnnl" path="res://Minimap/Minimap.tscn" id="4_2n5f6"]
 [ext_resource type="PackedScene" uid="uid://b1vpe7qknj640" path="res://Questlog/Questlog.tscn" id="4_e707p"]
 
@@ -40,13 +41,9 @@ layout_mode = 0
 offset_left = 1017.0
 offset_right = 1057.0
 
-[node name="CheckpointCounter" type="Label" parent="UserInterface"]
-layout_mode = 0
-offset_left = 815.0
-offset_top = 615.0
-offset_right = 988.0
-offset_bottom = 638.0
-text = "Landmarks collected:"
+[node name="QuestLogIcon" type="Sprite2D" parent="UserInterface"]
+position = Vector2(977, 40)
+texture = ExtResource("3_f1fl4")
 
 [node name="Questlog" parent="." instance=ExtResource("4_e707p")]
 visible = false
