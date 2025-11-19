@@ -6,7 +6,7 @@ var last_boat_pos: Vector2
 var fog_image: Image
 var vision_image: Image
 var world_position: Vector2
-var vision_size: int = 5
+var vision_size: int = 7
 @onready var fog: Sprite2D = $Fog
 @onready var fog_texture := ImageTexture.new()
 @onready var vision: Sprite2D = %Vision

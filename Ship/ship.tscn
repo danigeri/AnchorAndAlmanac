@@ -1,20 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3e5wvna1fkp5"]
 
 [ext_resource type="Script" uid="uid://cyhid3hiv7efg" path="res://Ship/ship.gd" id="1_1p84g"]
-[ext_resource type="Texture2D" uid="uid://dmbi44w80tw42" path="res://Ship/shittyship.png" id="2_q4ev1"]
+[ext_resource type="Texture2D" uid="uid://ipfg4fdeomcl" path="res://Ship/ship_art.png" id="2_q4ev1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4ev1"]
-radius = 30.0
-height = 126.0
+radius = 58.0
+height = 124.0
 
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_1p84g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -2)
 texture = ExtResource("2_q4ev1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -2)
+position = Vector2(-1, -1)
+scale = Vector2(1.2, 2.44)
 shape = SubResource("CapsuleShape2D_q4ev1")
 
 [node name="Camera2D" type="Camera2D" parent="."]

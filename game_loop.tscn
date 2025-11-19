@@ -31,7 +31,7 @@ inertia = 10.0
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
 position = Vector2(-338, 351)
-rotation = 1.5707964
+scale = Vector2(1, 3.92)
 
 [node name="UI" parent="." instance=ExtResource("5_vfyqg")]
 

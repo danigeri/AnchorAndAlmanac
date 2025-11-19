@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://ccxx3tdw0hxub" path="res://FogOfWar/FogOfWar.gdshader" id="5_30hum"]
 
 [sub_resource type="Gradient" id="Gradient_30hum"]
-colors = PackedColorArray(0.22816366, 0.6047343, 0.8099484, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.7085684, 0.6253807, 0.555019, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xe8np"]
 

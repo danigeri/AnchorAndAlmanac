@@ -4,6 +4,8 @@ var _speed_mps: float = 0
 var _sail_state: int = 0
 @onready var debug_label: Label = $UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel
 @onready var questlog: Node2D = $Questlog
+@onready var minimap: Node2D = $Minimap
+@onready var minimap_icon: Sprite2D = $UserInterface/MinimapIcon
 
 
 func _ready() -> void:
@@ -15,7 +17,9 @@ func _input(event: InputEvent) -> void:
 		if event.keycode == KEY_Q:
 			questlog.visible = !questlog.visible
 			get_tree().paused = questlog.visible
-
+		if event.keycode == KEY_M:
+			minimap.visible = !minimap.visible
+			minimap_icon.visible = !minimap_icon.visible
 
 func _on_ship_sail_state_change(sail_state: Variant) -> void:
 	_sail_state = sail_state
