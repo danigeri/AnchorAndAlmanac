@@ -5,6 +5,7 @@ var transitioning: bool = false
 
 
 func _ready() -> void:
+	## set to always so camera movement is possible while paused
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	var viewport_size = get_viewport().get_visible_rect().size
 	camera.global_position = viewport_size / 2

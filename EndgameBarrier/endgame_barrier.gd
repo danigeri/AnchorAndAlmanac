@@ -6,6 +6,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	## set to always so barrier animation is possible while paused
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
@@ -18,6 +19,5 @@ func get_camera() -> Camera2D:
 
 
 func _on_game_loop_endgame_barrier_destroy() -> void:
-	print("destroy anim start")
 	await get_tree().create_timer(1).timeout
 	animation_player.play("destroy")

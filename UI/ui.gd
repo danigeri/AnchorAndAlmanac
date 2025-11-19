@@ -8,6 +8,10 @@ var _sail_state: int = 0
 @onready var minimap_icon: Sprite2D = $UserInterface/MinimapIcon
 
 
+func _ready() -> void:
+	## set to always so unpause is possible with InputEvent
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_Q:
