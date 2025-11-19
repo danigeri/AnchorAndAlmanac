@@ -21,10 +21,6 @@ scale = Vector2(3, 3)
 [node name="Wind" type="Node2D" parent="."]
 script = ExtResource("2_x7b5a")
 
-[node name="Timer" type="Timer" parent="Wind"]
-wait_time = 15.0
-autostart = true
-
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
 position = Vector2(628, 335)
 inertia = 10.0
