@@ -27,8 +27,11 @@ var sail_state: SailStates
 var wind_direction: Vector2
 var wind_strength: int
 
+@onready var camera_2d: Camera2D = $Camera2D
+
 
 func _ready() -> void:
+	camera_2d.make_current()
 	current_speed_mps = 0
 
 	sail_state = SailStates.SAIL_STATE_ANCHORED
@@ -76,6 +79,10 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction.x * current_speed_mps
 	velocity.y = direction.y * current_speed_mps
 	move_and_slide()
+
+
+func get_camera() -> Camera2D:
+	return camera_2d
 
 
 func turn(directional_multiplier: int, delta: float) -> void:

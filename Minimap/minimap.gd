@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var player: CharacterBody2D
-@onready var camera_2d: Camera2D = $CanvasLayer/SubViewportContainer/SubViewport/Camera2D
-@onready var sub_viewport: SubViewport = $CanvasLayer/SubViewportContainer/SubViewport
+@onready var camera_2d: Camera2D = $SubViewportContainer/SubViewport/Camera2D
+@onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport
 
 
 func _ready():
