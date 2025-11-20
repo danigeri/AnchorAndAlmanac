@@ -79,3 +79,4 @@ temp_boat = NodePath("../Ship")
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
+[connection signal="steering_state_change" from="Ship" to="UI" method="_on_ship_steering_state_change"]
