@@ -6,7 +6,8 @@ signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
 
 enum LandmarkType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH }
 
-var last_checkpoint_positon: Vector2 = Vector2(628,355) #todo set starting position when map is built
+#todo set starting position when map is built
+var last_checkpoint_positon: Vector2 = Vector2(628, 355)
 
 var collected_landmarks := {
 	LandmarkType.FIRST: false,
@@ -19,13 +20,14 @@ var collected_landmarks := {
 
 var current_hp: int = 3
 
+
 func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 	if not collected_landmarks[type]:
 		collected_landmarks[type] = true
 		last_checkpoint_positon = checkpoint_position
 		print("last checkpoint positon: ", last_checkpoint_positon)
 		emit_signal("checkpoint_collected", type)
-		
+
 		if are_all_checkpoints_collected():
 			all_checkpoints_collected.emit()
 
@@ -35,9 +37,9 @@ func are_all_checkpoints_collected() -> bool:
 		if not collected_landmarks[value]:
 			return false
 	return true
-	
 
-func remove_hp() -> void :
+
+func remove_hp() -> void:
 	current_hp -= 1
 	print(current_hp)
 	if current_hp == 0:

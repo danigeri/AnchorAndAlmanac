@@ -44,6 +44,7 @@ func trigger_barrier_remove() -> void:
 	await get_tree().create_timer(1).timeout
 	get_tree().paused = false
 
+
 func _on_go_to_last_checkpoint(last_checkpoint_position: Vector2):
 	await get_tree().create_timer(1.0).timeout
 	ship_camera.position_smoothing_enabled = true

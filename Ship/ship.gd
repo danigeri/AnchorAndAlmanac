@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	handle_steering(delta)
 
 
-func handle_steering(delta: float) -> void :
+func handle_steering(delta: float) -> void:
 	if Input.is_action_pressed("ui_right"):
 		turn(RIGHT, delta)
 
@@ -89,14 +89,13 @@ func handle_steering(delta: float) -> void :
 	velocity.y = direction.y * current_speed_mps
 	move_and_slide()
 
+
 func get_camera() -> Camera2D:
 	return camera_2d
 
 
 func turn(directional_multiplier: int, delta: float) -> void:
-	var facing_chage_rad: float = (
-		directional_multiplier * turn_rad * delta * TURN_SPEED_QUOTIENT
-	)
+	var facing_chage_rad: float = directional_multiplier * turn_rad * delta * TURN_SPEED_QUOTIENT
 
 	facing_rad += facing_chage_rad
 	rotate(facing_chage_rad)
@@ -142,13 +141,14 @@ func _on_wind_update_wind(dir, strength) -> void:
 	wind_direction = dir
 	wind_strength = strength
 
+
 func _on_hitbox_body_entered(body):
 	print(body)
-	if (body.is_in_group("damaging")): 
+	if body.is_in_group("damaging"):
 		Globals.remove_hp()
 		animation_player.play("hit")
-	
-	
+
+
 func _on_go_to_last_checkpoint(_last_cp_position: Vector2) -> void:
 	await animation_player.animation_finished
 	sink_ship()
@@ -162,4 +162,4 @@ func sink_ship() -> void:
 	print("sink")
 	animation_player.play("sink")
 	await animation_player.animation_finished
-	sprite_2d.scale = Vector2(1,1)
+	sprite_2d.scale = Vector2(1, 1)
