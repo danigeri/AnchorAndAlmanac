@@ -33,10 +33,15 @@ func _on_ship_speed_change(speed: Variant) -> void:
 	_speed_mps = speed
 	update_text()
 
+
 func _on_ship_steering_state_change(steering_state: Variant) -> void:
 	_steering_state = steering_state
 	update_text()
-	
+
+
 func update_text() -> void:
 	if debug_label:
-		debug_label.text = ("speed: %.1f m/s\nsail state: %d\nsteering state: %d" % [_speed_mps, _sail_state, _steering_state])
+		debug_label.text = (
+			"speed: %.1f m/s\nsail state: %d\nsteering state: %d"
+			% [_speed_mps, _sail_state, _steering_state]
+		)

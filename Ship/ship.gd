@@ -5,15 +5,7 @@ signal sail_state_change(sail_state)
 signal steering_state_change(steering_state)
 
 enum SailStates { SAIL_STATE_ANCHORED, SAIL_STATE_DOWN, SAIL_STATE_MID, SAIL_STATE_UP }
-enum SteeringStates {
-	MAX_LEFT,
-	MID_LEFT,
-	SMALL_LEFT,
-	FORWARD,
-	SMALL_RIGHT,
-	MID_RIGHT,
-	MAX_RIGHT
-}
+enum SteeringStates { MAX_LEFT, MID_LEFT, SMALL_LEFT, FORWARD, SMALL_RIGHT, MID_RIGHT, MAX_RIGHT }
 enum { LEFT = -1, RIGHT = 1 }
 
 const SAIL_SPEED_DICT = {
@@ -70,17 +62,18 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if (Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down")):
+	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
 		set_sail_state(event)
 	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		set_steering_state(event)
 
+
 # Input polling: something to do as long as the key is pressed
 func _physics_process(delta: float) -> void:
 	move(delta)
-	
 
-func set_sail_state(event: InputEvent) -> void :
+
+func set_sail_state(event: InputEvent) -> void:
 	if (event as InputEvent).is_action_pressed("ui_up") and sail_state < SailStates.SAIL_STATE_UP:
 		sail_state += 1
 		sail_state_change.emit(sail_state)
@@ -100,8 +93,11 @@ func set_sail_state(event: InputEvent) -> void :
 		sail_state_change.emit(sail_state)
 	set_max_speed(sail_state)
 
+
 func move(delta: float) -> void:
-	var facing_change_rad: float = STEERING_DICT[steering_state] * delta * (current_speed_mps /10)  * TURN_SPEED_QUOTIENT
+	var facing_change_rad: float = (
+		STEERING_DICT[steering_state] * delta * (current_speed_mps / 10) * TURN_SPEED_QUOTIENT
+	)
 	facing_rad += facing_change_rad
 	rotate(facing_change_rad)
 
@@ -122,7 +118,7 @@ func get_camera() -> Camera2D:
 
 
 func _set_speed(delta: float) -> void:
-	var dummy_wind_strenght: float = wind_strength  / 10
+	var dummy_wind_strenght: float = wind_strength / 10
 	var target_speed_mps: float = (
 		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power() * dummy_wind_strenght
 	)
@@ -184,12 +180,18 @@ func sink_ship() -> void:
 	await animation_player.animation_finished
 	sprite_2d.scale = Vector2(1, 1)
 
+
 func set_max_speed(sail_state: SailStates) -> void:
 	match sail_state:
-		0: max_speed_mps = 0
-		1: max_speed_mps = 10
-		2: max_speed_mps = 25
-		3: max_speed_mps = 50
+		0:
+			max_speed_mps = 0
+		1:
+			max_speed_mps = 10
+		2:
+			max_speed_mps = 25
+		3:
+			max_speed_mps = 50
+
 
 func set_steering_state(event):
 	if event.is_action_pressed("ui_right") and steering_state < SteeringStates.MAX_RIGHT:
