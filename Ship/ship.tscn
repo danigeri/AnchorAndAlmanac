@@ -1,11 +1,104 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3e5wvna1fkp5"]
+[gd_scene load_steps=9 format=3 uid="uid://b3e5wvna1fkp5"]
 
 [ext_resource type="Script" uid="uid://cyhid3hiv7efg" path="res://Ship/ship.gd" id="1_1p84g"]
 [ext_resource type="Texture2D" uid="uid://ipfg4fdeomcl" path="res://Ship/ship_art.png" id="2_q4ev1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4ev1"]
-radius = 58.0
-height = 124.0
+radius = 27.41936
+height = 89.34426
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edrfk"]
+radius = 36.0
+height = 240.47607
+
+[sub_resource type="Animation" id="Animation_q4ev1"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.39607844, 0.3372549, 0.85882354), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_edrfk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1w8ol"]
+resource_name = "sink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, 18.84955592153876]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d6neq"]
+_data = {
+&"RESET": SubResource("Animation_edrfk"),
+&"hit": SubResource("Animation_q4ev1"),
+&"sink": SubResource("Animation_1w8ol")
+}
 
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_1p84g")
@@ -15,8 +108,20 @@ position = Vector2(-3, -2)
 texture = ExtResource("2_q4ev1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -1)
-scale = Vector2(1.2, 2.44)
+position = Vector2(-1, 16)
+scale = Vector2(-1.3373358, 2.3335693)
 shape = SubResource("CapsuleShape2D_q4ev1")
 
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-1, 10)
+scale = Vector2(1, 0.84000045)
+shape = SubResource("CapsuleShape2D_edrfk")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d6neq")
+}

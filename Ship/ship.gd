@@ -28,9 +28,14 @@ var wind_direction: Vector2
 var wind_strength: int
 
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var hitbox: Area2D = $Hitbox
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 func _ready() -> void:
+	hitbox.body_entered.connect(_on_hitbox_body_entered)
+	Globals.go_to_last_checkpoint.connect(_on_go_to_last_checkpoint)
 	camera_2d.make_current()
 	current_speed_mps = 0
 
@@ -65,6 +70,10 @@ func _input(event: InputEvent) -> void:
 
 # Input polling: something to do as long as the key is pressed
 func _physics_process(delta: float) -> void:
+	handle_steering(delta)
+
+
+func handle_steering(delta: float) -> void :
 	if Input.is_action_pressed("ui_right"):
 		turn(RIGHT, delta)
 
@@ -80,14 +89,13 @@ func _physics_process(delta: float) -> void:
 	velocity.y = direction.y * current_speed_mps
 	move_and_slide()
 
-
 func get_camera() -> Camera2D:
 	return camera_2d
 
 
 func turn(directional_multiplier: int, delta: float) -> void:
 	var facing_chage_rad: float = (
-		directional_multiplier * turn_rad * delta * current_speed_mps * TURN_SPEED_QUOTIENT
+		directional_multiplier * turn_rad * delta * TURN_SPEED_QUOTIENT
 	)
 
 	facing_rad += facing_chage_rad
@@ -133,3 +141,25 @@ func _animate_speed(speed: float) -> void:
 func _on_wind_update_wind(dir, strength) -> void:
 	wind_direction = dir
 	wind_strength = strength
+
+func _on_hitbox_body_entered(body):
+	print(body)
+	if (body.is_in_group("damaging")): 
+		Globals.remove_hp()
+		animation_player.play("hit")
+	
+	
+func _on_go_to_last_checkpoint(_last_cp_position: Vector2) -> void:
+	await animation_player.animation_finished
+	sink_ship()
+	current_speed_mps = 0
+	sail_state = SailStates.SAIL_STATE_DOWN
+	sail_state_change.emit(0)
+	Globals.restore_hp()
+
+
+func sink_ship() -> void:
+	print("sink")
+	animation_player.play("sink")
+	await animation_player.animation_finished
+	sprite_2d.scale = Vector2(1,1)
