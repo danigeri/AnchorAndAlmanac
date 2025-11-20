@@ -2,8 +2,18 @@ extends CharacterBody2D
 
 signal speed_change(speed)
 signal sail_state_change(sail_state)
+signal steering_state_change(steering_state)
 
 enum SailStates { SAIL_STATE_ANCHORED, SAIL_STATE_DOWN, SAIL_STATE_MID, SAIL_STATE_UP }
+enum SteeringStates {
+	MAX_LEFT,
+	MID_LEFT,
+	SMALL_LEFT,
+	FORWARD,
+	SMALL_RIGHT,
+	MID_RIGHT,
+	MAX_RIGHT
+}
 enum { LEFT = -1, RIGHT = 1 }
 
 const SAIL_SPEED_DICT = {
@@ -11,6 +21,16 @@ const SAIL_SPEED_DICT = {
 	SailStates.SAIL_STATE_DOWN: 0.1,
 	SailStates.SAIL_STATE_MID: 0.5,
 	SailStates.SAIL_STATE_UP: 1,
+}
+
+const STEERING_DICT = {
+	SteeringStates.MAX_LEFT: deg_to_rad(-30),
+	SteeringStates.MID_LEFT: deg_to_rad(-20),
+	SteeringStates.SMALL_LEFT: deg_to_rad(-10),
+	SteeringStates.FORWARD: 0.0,
+	SteeringStates.SMALL_RIGHT: deg_to_rad(10),
+	SteeringStates.MID_RIGHT: deg_to_rad(20),
+	SteeringStates.MAX_RIGHT: deg_to_rad(30)
 }
 
 # The quotient of how the turn speed is dependent of the current speed.
@@ -26,6 +46,7 @@ var facing_rad: float
 var sail_state: SailStates
 var wind_direction: Vector2
 var wind_strength: int
+var steering_state: SteeringStates = SteeringStates.FORWARD
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var hitbox: Area2D = $Hitbox
@@ -49,6 +70,17 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if (Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down")):
+		set_sail_state(event)
+	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+		set_steering_state(event)
+
+# Input polling: something to do as long as the key is pressed
+func _physics_process(delta: float) -> void:
+	move(delta)
+	
+
+func set_sail_state(event: InputEvent) -> void :
 	if (event as InputEvent).is_action_pressed("ui_up") and sail_state < SailStates.SAIL_STATE_UP:
 		sail_state += 1
 		sail_state_change.emit(sail_state)
@@ -58,7 +90,7 @@ func _input(event: InputEvent) -> void:
 		and sail_state > SailStates.SAIL_STATE_DOWN
 	):
 		sail_state -= 1
-		sail_state_change.emit(sail_state)
+	sail_state_change.emit(sail_state)
 
 	if (
 		(event as InputEvent).is_action_pressed("ui_accept")
@@ -66,20 +98,15 @@ func _input(event: InputEvent) -> void:
 	):
 		sail_state -= 1
 		sail_state_change.emit(sail_state)
+	set_max_speed(sail_state)
 
+func move(delta: float) -> void:
+	var facing_change_rad: float = STEERING_DICT[steering_state] * delta * (current_speed_mps /10)  * TURN_SPEED_QUOTIENT
+	facing_rad += facing_change_rad
+	rotate(facing_change_rad)
 
-# Input polling: something to do as long as the key is pressed
-func _physics_process(delta: float) -> void:
-	handle_steering(delta)
-
-
-func handle_steering(delta: float) -> void:
-	if Input.is_action_pressed("ui_right"):
-		turn(RIGHT, delta)
-
-	if Input.is_action_pressed("ui_left"):
-		turn(LEFT, delta)
-
+	direction.x = cos(facing_rad)
+	direction.y = sin(facing_rad)
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 
@@ -94,21 +121,13 @@ func get_camera() -> Camera2D:
 	return camera_2d
 
 
-func turn(directional_multiplier: int, delta: float) -> void:
-	var facing_chage_rad: float = directional_multiplier * turn_rad * delta * TURN_SPEED_QUOTIENT
-
-	facing_rad += facing_chage_rad
-	rotate(facing_chage_rad)
-
-	direction.x = cos(facing_rad)
-	direction.y = sin(facing_rad)
-
-
 func _set_speed(delta: float) -> void:
-	var dummy_wind_strenght: float = wind_strength / 10.0
+	var dummy_wind_strenght: float = wind_strength  / 10
 	var target_speed_mps: float = (
 		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power() * dummy_wind_strenght
 	)
+	if target_speed_mps > max_speed_mps:
+		target_speed_mps = max_speed_mps
 
 	if current_speed_mps != target_speed_mps:
 		var prefix = 1 if current_speed_mps < target_speed_mps else -1
@@ -118,7 +137,8 @@ func _set_speed(delta: float) -> void:
 		# The delta multiplier can lead to very low very precise differences in
 		# equality checks causing the speed to update in every frame, hence the rounding.
 		current_speed_mps = snapped(current_speed_mps, 0.0000001)
-
+		if current_speed_mps > max_speed_mps:
+			current_speed_mps = move_toward(current_speed_mps, max_speed_mps, 0.05)
 		speed_change.emit(current_speed_mps)
 		#_animate_speed(current_speed_mps)
 
@@ -163,3 +183,17 @@ func sink_ship() -> void:
 	animation_player.play("sink")
 	await animation_player.animation_finished
 	sprite_2d.scale = Vector2(1, 1)
+
+func set_max_speed(sail_state: SailStates) -> void:
+	match sail_state:
+		0: max_speed_mps = 0
+		1: max_speed_mps = 10
+		2: max_speed_mps = 25
+		3: max_speed_mps = 50
+
+func set_steering_state(event):
+	if event.is_action_pressed("ui_right") and steering_state < SteeringStates.MAX_RIGHT:
+		steering_state += 1
+	if event.is_action_pressed("ui_left") and steering_state > SteeringStates.MAX_LEFT:
+		steering_state -= 1
+	steering_state_change.emit(steering_state)

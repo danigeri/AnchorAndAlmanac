@@ -17,12 +17,13 @@ offset_right = 1128.0
 offset_bottom = 664.0
 
 [node name="DebugPanel" type="Panel" parent="UserInterface"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 210.0
 offset_bottom = 50.0
+scale = Vector2(0.99883455, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="UserInterface/DebugPanel"]
 layout_mode = 0
@@ -35,7 +36,8 @@ layout_mode = 2
 [node name="DebugLabel" type="Label" parent="UserInterface/DebugPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "speed: 0m/s
-sail state: 0"
+sail state: 0
+steering state: 0"
 
 [node name="WindMeter" parent="UserInterface" instance=ExtResource("3_0mc3e")]
 layout_mode = 0
