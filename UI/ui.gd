@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@export var player: CharacterBody2D
 var _speed_mps: float = 0
 var _sail_state: int = 0
 var _steering_state: int = 0
@@ -12,6 +13,7 @@ var _steering_state: int = 0
 func _ready() -> void:
 	## set to always so unpause is possible with InputEvent
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	minimap.player = player
 
 
 func _input(event: InputEvent) -> void:

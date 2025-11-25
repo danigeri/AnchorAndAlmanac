@@ -25,10 +25,21 @@ const STEERING_DICT = {
 	SteeringStates.MAX_RIGHT: deg_to_rad(30)
 }
 
+const PADDLE_ROTATE_DICT = {
+	SteeringStates.MAX_LEFT: 260,
+	SteeringStates.MID_LEFT: 230,
+	SteeringStates.SMALL_LEFT: 200,
+	SteeringStates.FORWARD: 180,
+	SteeringStates.SMALL_RIGHT: 160,
+	SteeringStates.MID_RIGHT: 130,
+	SteeringStates.MAX_RIGHT: 100
+}
+
 # The quotient of how the turn speed is dependent of the current speed.
 const TURN_SPEED_QUOTIENT: float = 0.5
 
 @export var max_speed_mps: int = 50
+@export var min_speed_mps: int = 0
 @export var turn_rad: float = PI / 12
 @export var inertia: float = 0.1
 
@@ -39,11 +50,18 @@ var sail_state: SailStates
 var wind_direction: Vector2
 var wind_strength: int
 var steering_state: SteeringStates = SteeringStates.FORWARD
+var ship_sail_textures = {
+	0: preload("uid://bbieh6ykr1utn"),
+	1: preload("uid://2dmopix4411b"),
+	2: preload("uid://2y2bbaay71to"),
+	3: preload("uid://dro2oifwem04m")
+}
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var paddle: Sprite2D = $Sprite2D/Paddle
 
 
 func _ready() -> void:
@@ -92,6 +110,7 @@ func set_sail_state(event: InputEvent) -> void:
 		sail_state -= 1
 		sail_state_change.emit(sail_state)
 	set_max_speed(sail_state)
+	set_ship_texture(sail_state)
 
 
 func move(delta: float) -> void:
@@ -124,6 +143,9 @@ func _set_speed(delta: float) -> void:
 	)
 	if target_speed_mps > max_speed_mps:
 		target_speed_mps = max_speed_mps
+
+	if target_speed_mps < min_speed_mps:
+		target_speed_mps = min_speed_mps
 
 	if current_speed_mps != target_speed_mps:
 		var prefix = 1 if current_speed_mps < target_speed_mps else -1
@@ -185,12 +207,16 @@ func set_max_speed(sail_state: SailStates) -> void:
 	match sail_state:
 		0:
 			max_speed_mps = 0
+			min_speed_mps = 0
 		1:
 			max_speed_mps = 10
+			min_speed_mps = 5
 		2:
 			max_speed_mps = 25
+			min_speed_mps = 10
 		3:
 			max_speed_mps = 50
+			min_speed_mps = 20
 
 
 func set_steering_state(event):
@@ -199,3 +225,12 @@ func set_steering_state(event):
 	if event.is_action_pressed("ui_left") and steering_state > SteeringStates.MAX_LEFT:
 		steering_state -= 1
 	steering_state_change.emit(steering_state)
+	update_paddle_angle(steering_state)
+
+
+func set_ship_texture(state: int) -> void:
+	sprite_2d.texture = ship_sail_textures[state]
+
+
+func update_paddle_angle(state: SteeringStates) -> void:
+	paddle.set_rotation_degrees(PADDLE_ROTATE_DICT[state])
