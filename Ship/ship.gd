@@ -143,7 +143,7 @@ func _set_speed(delta: float) -> void:
 	)
 	if target_speed_mps > max_speed_mps:
 		target_speed_mps = max_speed_mps
-		
+
 	if target_speed_mps < min_speed_mps:
 		target_speed_mps = min_speed_mps
 

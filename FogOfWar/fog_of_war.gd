@@ -17,7 +17,7 @@ func _process(delta):
 	time_since_last_update += delta
 	if time_since_last_update >= update_interval:
 		update_fog()
-		update_interval = randf_range(0.2,0.5)
+		update_interval = randf_range(0.2, 0.5)
 		last_boat_pos = temp_boat.global_position
 		time_since_last_update = 0.0
 
@@ -38,6 +38,7 @@ func generate_fog():
 	vision_image.convert(Image.Format.FORMAT_RGBAH)
 	var vision_scale = Vector2(vision_image.get_size()) * vision_size
 	vision_image.resize(vision_scale.x, vision_scale.y)
+
 
 func update_fog() -> void:
 	var vision_rect = Rect2(Vector2.ZERO, vision_image.get_size())
