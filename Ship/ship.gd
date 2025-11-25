@@ -39,6 +39,7 @@ const PADDLE_ROTATE_DICT = {
 const TURN_SPEED_QUOTIENT: float = 0.5
 
 @export var max_speed_mps: int = 50
+@export var min_speed_mps: int = 0
 @export var turn_rad: float = PI / 12
 @export var inertia: float = 0.1
 
@@ -142,6 +143,9 @@ func _set_speed(delta: float) -> void:
 	)
 	if target_speed_mps > max_speed_mps:
 		target_speed_mps = max_speed_mps
+		
+	if target_speed_mps < min_speed_mps:
+		target_speed_mps = min_speed_mps
 
 	if current_speed_mps != target_speed_mps:
 		var prefix = 1 if current_speed_mps < target_speed_mps else -1
@@ -203,12 +207,16 @@ func set_max_speed(sail_state: SailStates) -> void:
 	match sail_state:
 		0:
 			max_speed_mps = 0
+			min_speed_mps = 0
 		1:
 			max_speed_mps = 10
+			min_speed_mps = 5
 		2:
 			max_speed_mps = 25
+			min_speed_mps = 10
 		3:
 			max_speed_mps = 50
+			min_speed_mps = 20
 
 
 func set_steering_state(event):
