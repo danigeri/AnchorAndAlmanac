@@ -32,7 +32,7 @@ const PADDLE_ROTATE_DICT = {
 	SteeringStates.FORWARD: 180,
 	SteeringStates.SMALL_RIGHT: 160,
 	SteeringStates.MID_RIGHT: 130,
-	SteeringStates.MAX_RIGHT:100
+	SteeringStates.MAX_RIGHT: 100
 }
 
 # The quotient of how the turn speed is dependent of the current speed.
@@ -49,6 +49,12 @@ var sail_state: SailStates
 var wind_direction: Vector2
 var wind_strength: int
 var steering_state: SteeringStates = SteeringStates.FORWARD
+var ship_sail_textures = {
+	0: preload("uid://bbieh6ykr1utn"),
+	1: preload("uid://2dmopix4411b"),
+	2: preload("uid://2y2bbaay71to"),
+	3: preload("uid://dro2oifwem04m")
+}
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var hitbox: Area2D = $Hitbox
@@ -56,12 +62,6 @@ var steering_state: SteeringStates = SteeringStates.FORWARD
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var paddle: Sprite2D = $Sprite2D/Paddle
 
-var ship_sail_textures = {
-	0: preload("uid://bbieh6ykr1utn"),
-	1: preload("uid://2dmopix4411b"),
-	2: preload("uid://2y2bbaay71to"),
-	3: preload("uid://dro2oifwem04m")
-}
 
 func _ready() -> void:
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -218,15 +218,11 @@ func set_steering_state(event):
 		steering_state -= 1
 	steering_state_change.emit(steering_state)
 	update_paddle_angle(steering_state)
-	
+
+
 func set_ship_texture(state: int) -> void:
 	sprite_2d.texture = ship_sail_textures[state]
 
+
 func update_paddle_angle(state: SteeringStates) -> void:
-	paddle.set_rotation_degrees(PADDLE_ROTATE_DICT[state]) 
-			
-		
-		
-		
-		
-		
+	paddle.set_rotation_degrees(PADDLE_ROTATE_DICT[state])

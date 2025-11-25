@@ -103,9 +103,6 @@ _data = {
 
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_1p84g")
-max_speed_mps = null
-turn_rad = null
-inertia = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_q4ev1")

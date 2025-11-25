@@ -2,13 +2,14 @@ extends Node2D
 
 ## todo update mp3 file names if needed
 var checkpoint_stories = {
-	0: preload("uid://bu80jpfof1bn0"), 
-	1: preload("uid://clein2ho2iawr"), 
+	0: preload("uid://bu80jpfof1bn0"),
+	1: preload("uid://clein2ho2iawr"),
 	2: preload("uid://dhlxq4yijlgtf"),
-	3: preload("uid://be5eblpb72gno"), 
-	4: preload("uid://b0g84o8m0uge6"), 
+	3: preload("uid://be5eblpb72gno"),
+	4: preload("uid://b0g84o8m0uge6"),
 	5: preload("uid://ddohwvbw7m0rs")
 }
+
 
 func _ready() -> void:
 	## set to always so ship log sound doesn't stop on pause
