@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=15 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://bogiyxh8easoc" path="res://FogOfWar/FogOfWar.tscn" id="2_4dmyq"]
+[ext_resource type="Texture2D" uid="uid://ghpw8h3xtjbv" path="res://temp_waves_terkep.jpg" id="2_dgo6t"]
 [ext_resource type="PackedScene" uid="uid://cets1rd56c807" path="res://WaterShader/Water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
@@ -17,7 +18,13 @@
 [node name="GameLoop" type="Node2D"]
 script = ExtResource("1_7f3si")
 
+[node name="TempTerkep" type="Sprite2D" parent="."]
+position = Vector2(-3809, 1955)
+scale = Vector2(5, 5)
+texture = ExtResource("2_dgo6t")
+
 [node name="Water" parent="." instance=ExtResource("2_lxk7w")]
+visible = false
 position = Vector2(537, 311)
 scale = Vector2(3, 3)
 
@@ -29,39 +36,40 @@ position = Vector2(628, 335)
 inertia = 10.0
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
-position = Vector2(-338, 351)
+position = Vector2(159, 359)
 scale = Vector2(1, 3.92)
 
-[node name="UI" parent="." instance=ExtResource("5_vfyqg")]
+[node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_vfyqg")]
+player = NodePath("../Ship")
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(956, 305)
+position = Vector2(624, 615)
 landmark_texture = ExtResource("10_v6ba6")
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(1039, 169)
+position = Vector2(-264, 3128)
 landmark_texture = ExtResource("11_pyewy")
 landmark_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(1102, 317)
+position = Vector2(-2702, 731)
 landmark_texture = ExtResource("10_v6ba6")
 landmark_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(1187, 188)
+position = Vector2(-3745, 4972)
 landmark_texture = ExtResource("11_pyewy")
 landmark_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(1257, 407)
+position = Vector2(-7547, 2849)
 landmark_texture = ExtResource("10_v6ba6")
 landmark_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(1364, 272)
+position = Vector2(-7458, -911)
 landmark_texture = ExtResource("11_pyewy")
 landmark_type = 5
 

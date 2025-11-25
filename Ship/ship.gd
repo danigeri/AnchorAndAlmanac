@@ -25,6 +25,16 @@ const STEERING_DICT = {
 	SteeringStates.MAX_RIGHT: deg_to_rad(30)
 }
 
+const PADDLE_ROTATE_DICT = {
+	SteeringStates.MAX_LEFT: 260,
+	SteeringStates.MID_LEFT: 230,
+	SteeringStates.SMALL_LEFT: 200,
+	SteeringStates.FORWARD: 180,
+	SteeringStates.SMALL_RIGHT: 160,
+	SteeringStates.MID_RIGHT: 130,
+	SteeringStates.MAX_RIGHT:100
+}
+
 # The quotient of how the turn speed is dependent of the current speed.
 const TURN_SPEED_QUOTIENT: float = 0.5
 
@@ -44,7 +54,14 @@ var steering_state: SteeringStates = SteeringStates.FORWARD
 @onready var hitbox: Area2D = $Hitbox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var paddle: Sprite2D = $Sprite2D/Paddle
 
+var ship_sail_textures = {
+	0: preload("uid://bbieh6ykr1utn"),
+	1: preload("uid://2dmopix4411b"),
+	2: preload("uid://2y2bbaay71to"),
+	3: preload("uid://dro2oifwem04m")
+}
 
 func _ready() -> void:
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -92,6 +109,7 @@ func set_sail_state(event: InputEvent) -> void:
 		sail_state -= 1
 		sail_state_change.emit(sail_state)
 	set_max_speed(sail_state)
+	set_ship_texture(sail_state)
 
 
 func move(delta: float) -> void:
@@ -199,3 +217,16 @@ func set_steering_state(event):
 	if event.is_action_pressed("ui_left") and steering_state > SteeringStates.MAX_LEFT:
 		steering_state -= 1
 	steering_state_change.emit(steering_state)
+	update_paddle_angle(steering_state)
+	
+func set_ship_texture(state: int) -> void:
+	sprite_2d.texture = ship_sail_textures[state]
+
+func update_paddle_angle(state: SteeringStates) -> void:
+	paddle.set_rotation_degrees(PADDLE_ROTATE_DICT[state]) 
+			
+		
+		
+		
+		
+		

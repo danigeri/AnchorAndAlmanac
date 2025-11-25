@@ -1,14 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3e5wvna1fkp5"]
+[gd_scene load_steps=10 format=3 uid="uid://b3e5wvna1fkp5"]
 
 [ext_resource type="Script" uid="uid://cyhid3hiv7efg" path="res://Ship/ship.gd" id="1_1p84g"]
-[ext_resource type="Texture2D" uid="uid://ipfg4fdeomcl" path="res://Ship/ship_art.png" id="2_q4ev1"]
+[ext_resource type="Texture2D" uid="uid://bbieh6ykr1utn" path="res://Ship/ship_sail_0.png" id="2_q4ev1"]
+[ext_resource type="Texture2D" uid="uid://bhycrauchho3c" path="res://Ship/lapat.png" id="3_edrfk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4ev1"]
 radius = 27.41936
-height = 89.34426
+height = 65.91135
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edrfk"]
-radius = 36.0
+radius = 32.61192
 height = 240.47607
 
 [sub_resource type="Animation" id="Animation_edrfk"]
@@ -102,24 +103,38 @@ _data = {
 
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_1p84g")
+max_speed_mps = null
+turn_rad = null
+inertia = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3, -2)
 texture = ExtResource("2_q4ev1")
 
+[node name="Paddle" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 257)
+rotation = 1.7453293
+texture = ExtResource("3_edrfk")
+centered = false
+offset = Vector2(-198.76425, -598.2791)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 16)
-scale = Vector2(-1.3373358, 2.3335693)
+visible = false
+position = Vector2(-9, 58)
+scale = Vector2(-3.297335, 6.4935703)
 shape = SubResource("CapsuleShape2D_q4ev1")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
+position = Vector2(-6.9999995, 80)
+scale = Vector2(2.2000017, -1.9071214)
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-1, 10)
-scale = Vector2(1, 0.84000045)
+scale = Vector2(1.340836, 0.9764013)
 shape = SubResource("CapsuleShape2D_edrfk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

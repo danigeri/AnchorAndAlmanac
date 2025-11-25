@@ -7,11 +7,12 @@ var _steering_state: int = 0
 @onready var questlog: Node2D = $Questlog
 @onready var minimap: Node2D = $Minimap
 @onready var minimap_icon: Sprite2D = $UserInterface/MinimapIcon
-
+@export var player: CharacterBody2D
 
 func _ready() -> void:
 	## set to always so unpause is possible with InputEvent
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	minimap.player = player
 
 
 func _input(event: InputEvent) -> void:
