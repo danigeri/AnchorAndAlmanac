@@ -65,9 +65,9 @@ var ship_sail_sounds = {
 }
 
 var ship_hit_sounds = {
-	0:preload("uid://cbhmfjjb8hueo"),
-	1:preload("uid://dw5chvmbl7qrh"),
-	2:preload("uid://kkwqnuq1fbac") #sink sound
+	0: preload("uid://cbhmfjjb8hueo"),
+	1: preload("uid://dw5chvmbl7qrh"),
+	2: preload("uid://kkwqnuq1fbac")  #sink sound
 }
 
 @onready var camera_2d: Camera2D = $Camera2D
@@ -129,13 +129,15 @@ func set_sail_state(event: InputEvent) -> void:
 	set_ship_texture(sail_state)
 	play_sail_sound(sail_state)
 
-func play_sail_sound(sail_state : int) -> void:
+
+func play_sail_sound(sail_state: int) -> void:
 	sail_sounds_player.stream = (ship_sail_sounds[sail_state])
-	if (sail_state == 3):
+	if sail_state == 3:
 		## az effekt az mp3 felénél kezdődik
 		sail_sounds_player.play(1)
-	else:	
+	else:
 		sail_sounds_player.play(0.0)
+
 
 func move(delta: float) -> void:
 	var facing_change_rad: float = (
@@ -261,13 +263,15 @@ func set_ship_texture(state: int) -> void:
 func update_paddle_angle(state: SteeringStates) -> void:
 	paddle.set_rotation_degrees(PADDLE_ROTATE_DICT[state])
 
+
 func handle_move_sound(velocity: Vector2) -> void:
 	if velocity.x > 0 or velocity.y > 0:
 		if !ship_move_sound_player.playing:
 			ship_move_sound_player.play(0.0)
 	else:
 		sail_sounds_player.playing = false
-		
+
+
 func handle_hit_sound() -> void:
 	print("play sound: ", Globals.current_hp)
 	ship_hit_sound_player.stream = ship_hit_sounds[Globals.current_hp]

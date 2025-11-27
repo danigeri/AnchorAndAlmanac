@@ -7,7 +7,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	if (checkpoint_texture):
+	if checkpoint_texture:
 		checkpoint.texture = checkpoint_texture
 
 
