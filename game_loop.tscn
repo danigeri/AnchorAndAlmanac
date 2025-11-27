@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=23 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://bogiyxh8easoc" path="res://FogOfWar/FogOfWar.tscn" id="2_4dmyq"]
@@ -11,9 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://cii0yvyu1gclv" path="res://Checkpoint/Checkpoint.tscn" id="9_vfyqg"]
 [ext_resource type="PackedScene" uid="uid://b3rw3vuine4lr" path="res://ShipLog/ShipLogSound.tscn" id="10_eufeh"]
 [ext_resource type="PackedScene" uid="uid://cbap81erct4wo" path="res://Obstacle/Obstacle.tscn" id="10_pyewy"]
-[ext_resource type="Texture2D" uid="uid://bj550qfk1ber3" path="res://Checkpoint/templadmark.png" id="10_v6ba6"]
 [ext_resource type="Texture2D" uid="uid://wfyxxbhieksu" path="res://Obstacle/temp-obstacle.png" id="11_17x25"]
-[ext_resource type="Texture2D" uid="uid://da5qsg08d482g" path="res://Checkpoint/templadmark_green.png" id="11_pyewy"]
+[ext_resource type="PackedScene" uid="uid://dlwphw117q6cb" path="res://Landmark/Landmark.tscn" id="13_afdo3"]
+[ext_resource type="AudioStream" uid="uid://tx4d7it6381u" path="res://Landmark/0_fisherman_1_puerto_gerappo_atmo.mp3" id="14_lwaqr"]
+[ext_resource type="Texture2D" uid="uid://cvplwrpv71a5f" path="res://Landmark/1_puerto_gerappo.png" id="15_fvovd"]
+[ext_resource type="Texture2D" uid="uid://b087je2xjl40h" path="res://Landmark/2_lighthouse.png" id="16_lwaqr"]
+[ext_resource type="Texture2D" uid="uid://dlh3vpyd5k72e" path="res://Landmark/3_tomb_at_neptune.png" id="17_mc7mr"]
+[ext_resource type="Texture2D" uid="uid://b237284copi0v" path="res://Landmark/4_cedar.png" id="18_q3nly"]
+[ext_resource type="Texture2D" uid="uid://bk7na2oskke5y" path="res://Landmark/6_camp.png" id="19_arced"]
+[ext_resource type="Texture2D" uid="uid://43ngsh2hpk8t" path="res://Landmark/7_wreck.png" id="20_xuo4s"]
+[ext_resource type="Texture2D" uid="uid://bttnt88nvu2xf" path="res://Landmark/5_leviathan.png" id="21_tdvic"]
+[ext_resource type="Texture2D" uid="uid://brsux162ny1l3" path="res://Landmark/8_father_carcass.png" id="22_2yl5a"]
 
 [node name="GameLoop" type="Node2D"]
 script = ExtResource("1_7f3si")
@@ -36,7 +44,7 @@ position = Vector2(628, 335)
 inertia = 10.0
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
-position = Vector2(159, 359)
+position = Vector2(-8824, 1261)
 scale = Vector2(1, 3.92)
 
 [node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_vfyqg")]
@@ -45,33 +53,27 @@ player = NodePath("../Ship")
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(624, 615)
-landmark_texture = ExtResource("10_v6ba6")
+position = Vector2(980, 605)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-264, 3128)
-landmark_texture = ExtResource("11_pyewy")
-landmark_type = 1
+position = Vector2(-234, 3123)
+checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
 position = Vector2(-2702, 731)
-landmark_texture = ExtResource("10_v6ba6")
-landmark_type = 2
+checkpoint_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
 position = Vector2(-3745, 4972)
-landmark_texture = ExtResource("11_pyewy")
-landmark_type = 3
+checkpoint_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
 position = Vector2(-7547, 2849)
-landmark_texture = ExtResource("10_v6ba6")
-landmark_type = 4
+checkpoint_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
 position = Vector2(-7458, -911)
-landmark_texture = ExtResource("11_pyewy")
-landmark_type = 5
+checkpoint_type = 5
 
 [node name="Obstacle" parent="." instance=ExtResource("10_pyewy")]
 position = Vector2(641, 796)
@@ -82,6 +84,41 @@ position = Vector2(770, 362)
 
 [node name="FogOfWar" parent="." node_paths=PackedStringArray("temp_boat") instance=ExtResource("2_4dmyq")]
 temp_boat = NodePath("../Ship")
+
+[node name="Landmarks" type="Node2D" parent="."]
+
+[node name="PuertoGeroppoLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(639, -74)
+landmark_audio = ExtResource("14_lwaqr")
+landmark_texture = ExtResource("15_fvovd")
+
+[node name="LighthouseLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(-91, 2472)
+landmark_texture = ExtResource("16_lwaqr")
+
+[node name="TombAtNeptuneLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(-3279, 1039)
+landmark_texture = ExtResource("17_mc7mr")
+
+[node name="CedarLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(-4300, 4155)
+landmark_texture = ExtResource("18_q3nly")
+
+[node name="CampLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(-7523, 3466)
+landmark_texture = ExtResource("19_arced")
+
+[node name="WreckLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(-7434, -1119)
+landmark_texture = ExtResource("20_xuo4s")
+
+[node name="LeviathanLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(-9780, 870)
+landmark_texture = ExtResource("21_tdvic")
+
+[node name="FatherLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(-9789, 2239)
+landmark_texture = ExtResource("22_2yl5a")
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]

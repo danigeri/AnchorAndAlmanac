@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlwphw117q6cb"]
+
+[ext_resource type="Script" uid="uid://c7pg8cf7xc4wa" path="res://Landmark/landmark.gd" id="1_1vhnf"]
+[ext_resource type="Texture2D" uid="uid://cvplwrpv71a5f" path="res://Landmark/1_puerto_gerappo.png" id="2_lsfip"]
+
+[node name="Landmark" type="Node2D"]
+script = ExtResource("1_1vhnf")
+
+[node name="LandmarkPicture" type="Sprite2D" parent="."]
+texture = ExtResource("2_lsfip")
+
+[node name="LandmarkSound" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1000.0
+attenuation = 0.25
+bus = &"LandmarkSounds"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj550qfk1ber3"
-path="res://.godot/imported/templadmark.png-f3d1aa7203a182da608f273aede3d047.ctex"
+uid="uid://b087je2xjl40h"
+path="res://.godot/imported/2_lighthouse.png-d494a5ed029ec0c002699c48677aaec6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Checkpoint/templadmark.png"
-dest_files=["res://.godot/imported/templadmark.png-f3d1aa7203a182da608f273aede3d047.ctex"]
+source_file="res://Landmark/2_lighthouse.png"
+dest_files=["res://.godot/imported/2_lighthouse.png-d494a5ed029ec0c002699c48677aaec6.ctex"]
 
 [params]
 
