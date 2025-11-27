@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj550qfk1ber3"
-path="res://.godot/imported/templadmark.png-f3d1aa7203a182da608f273aede3d047.ctex"
+uid="uid://dacv0s5iffjxh"
+path="res://.godot/imported/palackposta_checkpoint.png-7a4a3188739a8abea0499a5f3dc0bd08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Checkpoint/templadmark.png"
-dest_files=["res://.godot/imported/templadmark.png-f3d1aa7203a182da608f273aede3d047.ctex"]
+source_file="res://Checkpoint/palackposta_checkpoint.png"
+dest_files=["res://.godot/imported/palackposta_checkpoint.png-7a4a3188739a8abea0499a5f3dc0bd08.ctex"]
 
 [params]
 

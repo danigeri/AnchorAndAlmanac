@@ -50,6 +50,7 @@ var sail_state: SailStates
 var wind_direction: Vector2
 var wind_strength: int
 var steering_state: SteeringStates = SteeringStates.FORWARD
+
 var ship_sail_textures = {
 	0: preload("uid://bbieh6ykr1utn"),
 	1: preload("uid://2dmopix4411b"),
@@ -57,11 +58,26 @@ var ship_sail_textures = {
 	3: preload("uid://dro2oifwem04m")
 }
 
+var ship_sail_sounds = {
+	1: preload("uid://ce7gsd31giuvq"),
+	2: preload("uid://d0nlo66t4scg4"),
+	3: preload("uid://d4iceoqtmnb1a")
+}
+
+var ship_hit_sounds = {
+	0:preload("uid://cbhmfjjb8hueo"),
+	1:preload("uid://dw5chvmbl7qrh"),
+	2:preload("uid://kkwqnuq1fbac") #sink sound
+}
+
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var paddle: Sprite2D = $Sprite2D/Paddle
+@onready var sail_sounds_player: AudioStreamPlayer = $SailSoundsPlayer
+@onready var ship_move_sound_player: AudioStreamPlayer = $ShipMoveSoundPlayer
+@onready var ship_hit_sound_player: AudioStreamPlayer = $ShipHitSoundPlayer
 
 
 func _ready() -> void:
@@ -111,7 +127,15 @@ func set_sail_state(event: InputEvent) -> void:
 		sail_state_change.emit(sail_state)
 	set_max_speed(sail_state)
 	set_ship_texture(sail_state)
+	play_sail_sound(sail_state)
 
+func play_sail_sound(sail_state : int) -> void:
+	sail_sounds_player.stream = (ship_sail_sounds[sail_state])
+	if (sail_state == 3):
+		## az effekt az mp3 felénél kezdődik
+		sail_sounds_player.play(1)
+	else:	
+		sail_sounds_player.play(0.0)
 
 func move(delta: float) -> void:
 	var facing_change_rad: float = (
@@ -130,6 +154,7 @@ func move(delta: float) -> void:
 	velocity.x = direction.x * current_speed_mps
 	velocity.y = direction.y * current_speed_mps
 	move_and_slide()
+	handle_move_sound(velocity)
 
 
 func get_camera() -> Camera2D:
@@ -185,6 +210,7 @@ func _on_hitbox_body_entered(body):
 	if body.is_in_group("damaging"):
 		Globals.remove_hp()
 		animation_player.play("hit")
+		handle_hit_sound()
 
 
 func _on_go_to_last_checkpoint(_last_cp_position: Vector2) -> void:
@@ -234,3 +260,15 @@ func set_ship_texture(state: int) -> void:
 
 func update_paddle_angle(state: SteeringStates) -> void:
 	paddle.set_rotation_degrees(PADDLE_ROTATE_DICT[state])
+
+func handle_move_sound(velociy: Vector2) -> void:
+	if velocity.x > 0 or velocity.y > 0:
+		if !ship_move_sound_player.playing:
+			ship_move_sound_player.play(0.0)
+	else:
+		sail_sounds_player.playing = false
+		
+func handle_hit_sound() -> void:
+	print("play sound: ", Globals.current_hp)
+	ship_hit_sound_player.stream = ship_hit_sounds[Globals.current_hp]
+	ship_hit_sound_player.play(0.0)

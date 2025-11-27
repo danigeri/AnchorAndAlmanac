@@ -45,7 +45,7 @@ player = NodePath("../Ship")
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(624, 615)
+position = Vector2(980, 605)
 landmark_texture = ExtResource("10_v6ba6")
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]

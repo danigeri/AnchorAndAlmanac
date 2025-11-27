@@ -7,7 +7,8 @@ extends Node2D
 
 
 func _ready() -> void:
-	landmark.texture = landmark_texture
+	if (landmark_texture):
+		landmark.texture = landmark_texture
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
