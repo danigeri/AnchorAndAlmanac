@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1o32vm52n7bg" path="res://Checkpoint/checkpoint.gd" id="1_qj0kh"]
 [ext_resource type="Texture2D" uid="uid://dacv0s5iffjxh" path="res://Checkpoint/palackposta_checkpoint.png" id="2_n71ix"]
-[ext_resource type="AudioStream" uid="uid://c4baycdax43p" path="res://Checkpoint/zapsplat_sound_design_checkpoint.mp3" id="3_n71ix"]
+[ext_resource type="AudioStream" uid="uid://b74xfre0a1kgv" path="res://Checkpoint/checkpoint_pickup_writing_sfx.mp3" id="3_n71ix"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qj0kh"]
 radius = 4.8720927
@@ -12,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/Landmark:rotation")
+tracks/0/path = NodePath("Area2D/Checkpoint:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/Landmark:scale")
+tracks/1/path = NodePath("Area2D/Checkpoint:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +40,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/Landmark:rotation")
+tracks/0/path = NodePath("Area2D/Checkpoint:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,7 +52,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/Landmark:scale")
+tracks/1/path = NodePath("Area2D/Checkpoint:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -106,7 +106,7 @@ script = ExtResource("1_qj0kh")
 scale = Vector2(10.05728, 10.05728)
 shape = SubResource("CircleShape2D_qj0kh")
 
-[node name="Landmark" type="Sprite2D" parent="Area2D"]
+[node name="Checkpoint" type="Sprite2D" parent="Area2D"]
 position = Vector2(-7.1054274e-15, 7.1054274e-15)
 scale = Vector2(0.18648648, 0.18648648)
 texture = ExtResource("2_n71ix")

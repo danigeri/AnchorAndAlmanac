@@ -238,11 +238,11 @@ func set_max_speed(sail_state: SailStates) -> void:
 			max_speed_mps = 10
 			min_speed_mps = 5
 		2:
-			max_speed_mps = 25
-			min_speed_mps = 10
-		3:
 			max_speed_mps = 50
-			min_speed_mps = 20
+			min_speed_mps = 25
+		3:
+			max_speed_mps = 400
+			min_speed_mps = 200
 
 
 func set_steering_state(event):
@@ -261,7 +261,7 @@ func set_ship_texture(state: int) -> void:
 func update_paddle_angle(state: SteeringStates) -> void:
 	paddle.set_rotation_degrees(PADDLE_ROTATE_DICT[state])
 
-func handle_move_sound(velociy: Vector2) -> void:
+func handle_move_sound(velocity: Vector2) -> void:
 	if velocity.x > 0 or velocity.y > 0:
 		if !ship_move_sound_player.playing:
 			ship_move_sound_player.play(0.0)
