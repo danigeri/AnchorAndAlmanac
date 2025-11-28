@@ -108,15 +108,18 @@ func _physics_process(delta: float) -> void:
 
 
 func set_sail_state(event: InputEvent) -> void:
-	if (event as InputEvent).is_action_pressed("ui_up") and sail_state < SailStates.SAIL_STATE_UP:
+	if (
+		(event as InputEvent).is_action_pressed("ui_up") 
+		and sail_state < SailStates.SAIL_STATE_UP
+	):
 		sail_state += 1
-		sail_state_change.emit(sail_state)
 
 	if (
 		(event as InputEvent).is_action_pressed("ui_down")
 		and sail_state > SailStates.SAIL_STATE_DOWN
 	):
 		sail_state -= 1
+
 	sail_state_change.emit(sail_state)
 
 	set_max_speed(sail_state)
