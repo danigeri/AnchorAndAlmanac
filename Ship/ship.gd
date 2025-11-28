@@ -41,13 +41,13 @@ const TURN_SPEED_QUOTIENT: float = 0.5
 @export var max_speed_mps: int = 50
 @export var min_speed_mps: int = 0
 @export var turn_rad: float = PI / 12
-@export var inertia: float = 0.1
+@export var inertia: float = 50
 
 var current_speed_mps: float
 var direction: Vector2
 var facing_rad: float
 var sail_state: SailStates
-var wind_direction: Vector2
+var wind_direction: float
 var wind_strength: int
 var steering_state: SteeringStates = SteeringStates.FORWARD
 
@@ -161,10 +161,14 @@ func get_camera() -> Camera2D:
 
 
 func _set_speed(delta: float) -> void:
-	var dummy_wind_strenght: float = wind_strength / 10
 	var target_speed_mps: float = (
-		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power() * dummy_wind_strenght
+		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power()
 	)
+	
+	if round(target_speed_mps) != round(current_speed_mps):
+		print("Current: " + str(current_speed_mps))
+		print(target_speed_mps)
+	
 	if target_speed_mps > max_speed_mps:
 		target_speed_mps = max_speed_mps
 
@@ -186,11 +190,21 @@ func _set_speed(delta: float) -> void:
 
 
 func _wind_angle_to_power() -> float:
-	var angle: float = direction.dot(wind_direction)
-	var wind_power: float = (2 * angle + 1) / 3 if angle > -0.5 else 0.01
-	var dummy_wind_strenght: float = wind_strength / 10.0
+	var wind_bonus
+	
+	
+	var diff: float = direction.angle() - wind_direction
+	diff = atan2(sin(diff), cos(diff))
+	
+	if abs(diff) < PI/4:
+		wind_bonus = 1
+	elif abs(diff) < PI/2:
+		wind_bonus = 0.75
+	else:
+		wind_bonus = 0.5
 
-	return wind_power * dummy_wind_strenght
+	print("Wind bonus: " + str(wind_bonus))
+	return wind_bonus
 
 
 func _animate_speed(speed: float) -> void:

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://bogiyxh8easoc" path="res://FogOfWar/FogOfWar.tscn" id="2_4dmyq"]
 [ext_resource type="Texture2D" uid="uid://ghpw8h3xtjbv" path="res://temp_waves_terkep.jpg" id="2_dgo6t"]
-[ext_resource type="PackedScene" uid="uid://cets1rd56c807" path="res://WaterShader/Water.tscn" id="2_lxk7w"]
+[ext_resource type="PackedScene" uid="uid://cets1rd56c807" path="res://WaterShader/water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
 [ext_resource type="PackedScene" uid="uid://v4jrth8hl4h6" path="res://EndgameBarrier/EndgameBarrier.tscn" id="5_v6ba6"]
@@ -41,7 +41,6 @@ script = ExtResource("2_x7b5a")
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
 position = Vector2(628, 335)
-inertia = 10.0
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
 position = Vector2(-8824, 1261)
