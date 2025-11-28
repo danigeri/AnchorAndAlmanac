@@ -28,6 +28,10 @@
 rotation = -0.013865815
 script = ExtResource("1_7f3si")
 
+[node name="Water" parent="." instance=ExtResource("2_lxk7w")]
+position = Vector2(-4727.4194, 3747.813)
+scale = Vector2(3.0000002, 3.0000002)
+
 [node name="MapItem" parent="." instance=ExtResource("2_q3nly")]
 position = Vector2(-4519.55, 3758.6958)
 scale = Vector2(5, 5)
@@ -37,10 +41,6 @@ visible = false
 position = Vector2(-3809, 1955)
 scale = Vector2(5, 5)
 texture = ExtResource("2_dgo6t")
-
-[node name="Water" parent="." instance=ExtResource("2_lxk7w")]
-position = Vector2(1035.4897, 909.44495)
-scale = Vector2(3, 3)
 
 [node name="Wind" type="Node2D" parent="."]
 script = ExtResource("2_x7b5a")

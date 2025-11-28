@@ -10,8 +10,8 @@ uniform vec4 tone_color : source_color;
 uniform vec4 top_color: source_color;
 uniform float light_start: hint_range(0.0,1.0) = 0.275;
 uniform float light_end: hint_range(0.0,1.0) = 0.4;
-uniform vec2 time_slowdown = vec2(2,2);
-
+uniform vec2 time_slowdown = vec2(4,4);
+ 
 
 
 void fragment() {

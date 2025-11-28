@@ -98,6 +98,7 @@ _data = {
 }
 
 [node name="Checkpoint" type="Node2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_qj0kh")
 
 [node name="Area2D" type="Area2D" parent="."]
