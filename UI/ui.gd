@@ -44,6 +44,6 @@ func _on_ship_steering_state_change(steering_state: Variant) -> void:
 func update_text() -> void:
 	if debug_label:
 		debug_label.text = (
-			"speed: %.1f m/s\nsail state: %d\nsteering state: %d"
-			% [_speed_mps, _sail_state, _steering_state]
+			"speed: %.1f m/s\nsail state: %d\nsteering state: %d\n felho: %d /3750"
+			% [_speed_mps, _sail_state, _steering_state, Globals.felho_counter]
 		)
