@@ -36,11 +36,10 @@ const PADDLE_ROTATE_DICT = {
 }
 
 # The quotient of how the turn speed is dependent of the current speed.
-const TURN_SPEED_QUOTIENT: float = 0.5
+const TURN_SPEED_QUOTIENT: float = 0.01
 
 @export var max_speed_mps: int = 50
 @export var min_speed_mps: int = 0
-@export var turn_rad: float = PI / 12
 @export var inertia: float = 50
 
 var current_speed_mps: float
@@ -138,7 +137,7 @@ func play_sail_sound(sail_state: int) -> void:
 
 func move(delta: float) -> void:
 	var facing_change_rad: float = (
-		STEERING_DICT[steering_state] * delta * (current_speed_mps / 10) * TURN_SPEED_QUOTIENT
+		STEERING_DICT[steering_state] * delta * current_speed_mps * TURN_SPEED_QUOTIENT
 	)
 	facing_rad += facing_change_rad
 	rotate(facing_change_rad)
@@ -164,10 +163,6 @@ func _set_speed(delta: float) -> void:
 	var target_speed_mps: float = (
 		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power()
 	)
-	
-	if round(target_speed_mps) != round(current_speed_mps):
-		print("Current: " + str(current_speed_mps))
-		print(target_speed_mps)
 	
 	if target_speed_mps > max_speed_mps:
 		target_speed_mps = max_speed_mps
