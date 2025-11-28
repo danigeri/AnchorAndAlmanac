@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cets1rd56c807"]
+[gd_scene load_steps=7 format=3 uid="uid://cets1rd56c807"]
 
 [ext_resource type="Shader" uid="uid://bec5aotr5xs64" path="res://WaterShader/water.gdshader" id="1_7wcun"]
 [ext_resource type="Texture2D" uid="uid://dwbaac08njg38" path="res://WaterShader/temp-water.png" id="1_kpad1"]
+[ext_resource type="Texture2D" uid="uid://c2e838edris05" path="res://WaterShader/old-paper-background.jpg" id="1_nlnlg"]
 [ext_resource type="Texture2D" uid="uid://dpubcany77dgc" path="res://WaterShader/water_noise.tres" id="2_dcmoc"]
 [ext_resource type="Texture2D" uid="uid://17q0y8nq3fxo" path="res://WaterShader/water_noise2.tres" id="4_x4ob8"]
 
@@ -22,7 +23,7 @@ shader_parameter/time_slowdown = Vector2(1.5, 1)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1, 4)
-texture = ExtResource("1_kpad1")
+texture = ExtResource("1_nlnlg")
 
 [node name="Shader" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_dcmoc")

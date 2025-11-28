@@ -21,6 +21,11 @@ Globals="*res://globals.gd"
 CameraTransition="*res://CameraTransition/CameraTransition.tscn"
 Wind="*res://Wind/wind.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

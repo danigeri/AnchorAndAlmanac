@@ -6,6 +6,7 @@ extends Node2D
 @onready var questlog_item_4: Sprite2D = $QuestlogItem4
 @onready var questlog_item_5: Sprite2D = $QuestlogItem5
 @onready var questlog_item_6: Sprite2D = $QuestlogItem6
+@onready var questlog_item_7: Sprite2D = $QuestlogItem7
 
 
 func _ready() -> void:
@@ -26,3 +27,5 @@ func _on_show_questlog_item(checkpoint_number: int) -> void:
 			questlog_item_5.show()
 		5:
 			questlog_item_6.show()
+		6:
+			questlog_item_7.show()
