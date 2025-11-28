@@ -48,7 +48,6 @@ script = ExtResource("2_x7b5a")
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
 position = Vector2(628, 335)
-inertia = 10.0
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
 position = Vector2(-8824, 1261)

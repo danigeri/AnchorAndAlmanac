@@ -10,5 +10,5 @@ func _ready() -> void:
 
 func _on_wind_update_wind(dir: Variant, strength: Variant) -> void:
 	if pointer:
-		pointer.rotation = dir.angle()
+		pointer.rotation = -dir
 		strength_label.text = "%s" % strength
