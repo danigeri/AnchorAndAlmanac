@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=24 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://bogiyxh8easoc" path="res://FogOfWar/FogOfWar.tscn" id="2_4dmyq"]
 [ext_resource type="Texture2D" uid="uid://ghpw8h3xtjbv" path="res://temp_waves_terkep.jpg" id="2_dgo6t"]
 [ext_resource type="PackedScene" uid="uid://cets1rd56c807" path="res://WaterShader/Water.tscn" id="2_lxk7w"]
+[ext_resource type="PackedScene" uid="uid://5fljxt3pabyt" path="res://Map/MapItem.tscn" id="2_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
 [ext_resource type="PackedScene" uid="uid://v4jrth8hl4h6" path="res://EndgameBarrier/EndgameBarrier.tscn" id="5_v6ba6"]
@@ -24,16 +25,21 @@
 [ext_resource type="Texture2D" uid="uid://brsux162ny1l3" path="res://Landmark/8_father_carcass.png" id="22_2yl5a"]
 
 [node name="GameLoop" type="Node2D"]
+rotation = -0.013865815
 script = ExtResource("1_7f3si")
 
+[node name="MapItem" parent="." instance=ExtResource("2_q3nly")]
+position = Vector2(-4519.55, 3758.6958)
+scale = Vector2(5, 5)
+
 [node name="TempTerkep" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-3809, 1955)
 scale = Vector2(5, 5)
 texture = ExtResource("2_dgo6t")
 
 [node name="Water" parent="." instance=ExtResource("2_lxk7w")]
-visible = false
-position = Vector2(537, 311)
+position = Vector2(1035.4897, 909.44495)
 scale = Vector2(3, 3)
 
 [node name="Wind" type="Node2D" parent="."]
@@ -83,12 +89,13 @@ obstacle_texture = ExtResource("11_17x25")
 position = Vector2(770, 362)
 
 [node name="FogOfWar" parent="." node_paths=PackedStringArray("temp_boat") instance=ExtResource("2_4dmyq")]
+visible = false
 temp_boat = NodePath("../Ship")
 
 [node name="Landmarks" type="Node2D" parent="."]
 
 [node name="PuertoGeroppoLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(639, -74)
+position = Vector2(1897.2616, -5.694313)
 landmark_audio = ExtResource("14_lwaqr")
 landmark_texture = ExtResource("15_fvovd")
 

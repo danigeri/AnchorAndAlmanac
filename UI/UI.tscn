@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdhfe81q16ew7" path="res://UI/ui.gd" id="1_qui0h"]
 [ext_resource type="PackedScene" uid="uid://o8or5o3p05wo" path="res://WindMeter/wind_meter.tscn" id="3_0mc3e"]
-[ext_resource type="Texture2D" uid="uid://chv8ycjg2gk65" path="res://UI/temp-quest-book-icon.png" id="3_f1fl4"]
+[ext_resource type="Texture2D" uid="uid://byvlxlrm840cf" path="res://Questlog/hajonaplo.png" id="3_jqf55"]
 [ext_resource type="PackedScene" uid="uid://br2d7secgwnnl" path="res://Minimap/Minimap.tscn" id="4_2n5f6"]
 [ext_resource type="PackedScene" uid="uid://b1vpe7qknj640" path="res://Questlog/Questlog.tscn" id="4_e707p"]
 [ext_resource type="Texture2D" uid="uid://ruwwjvjhle3m" path="res://UI/minimap_icon.png" id="4_jqf55"]
@@ -47,17 +47,20 @@ offset_right = 1813.5
 offset_bottom = 68.0
 
 [node name="QuestLogIcon" type="Sprite2D" parent="UserInterface"]
-position = Vector2(1733.5, 68)
-texture = ExtResource("3_f1fl4")
+position = Vector2(1734, 37)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_jqf55")
 
 [node name="MinimapIcon" type="Sprite2D" parent="UserInterface"]
 position = Vector2(43, 1026)
 texture = ExtResource("4_jqf55")
 
 [node name="Questlog" parent="." instance=ExtResource("4_e707p")]
+visible = false
 z_index = 99
 position = Vector2(956, 518)
 scale = Vector2(0.76, 0.76)
 
 [node name="Minimap" parent="." instance=ExtResource("4_2n5f6")]
+visible = false
 position = Vector2(8, -7)

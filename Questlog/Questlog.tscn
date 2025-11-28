@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1vpe7qknj640"]
+[gd_scene load_steps=10 format=3 uid="uid://b1vpe7qknj640"]
 
 [ext_resource type="Script" uid="uid://du4mqeob0p2ak" path="res://Questlog/questlog.gd" id="1_t2jcq"]
 [ext_resource type="Texture2D" uid="uid://byvlxlrm840cf" path="res://Questlog/hajonaplo.png" id="2_3mure"]
 [ext_resource type="Texture2D" uid="uid://cr6hkw6cdnntl" path="res://Questlog/1.png" id="3_0ldm8"]
-[ext_resource type="Texture2D" uid="uid://drhjoreit125a" path="res://UI/temp-quest-book.png" id="4_3o5ac"]
 [ext_resource type="Texture2D" uid="uid://rctex64756ca" path="res://Questlog/2.png" id="4_mtfpb"]
 [ext_resource type="Texture2D" uid="uid://c04q2mk7oxidn" path="res://Questlog/3.png" id="5_ywn70"]
 [ext_resource type="Texture2D" uid="uid://c1cnjacsn0pxr" path="res://Questlog/4.png" id="6_8eq5w"]
@@ -44,8 +43,3 @@ texture = ExtResource("8_xnlvr")
 [node name="QuestlogItem7" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("9_6gh8g")
-
-[node name="BookIcon" type="Sprite2D" parent="."]
-position = Vector2(428, -276)
-scale = Vector2(0.4800049, 0.4800049)
-texture = ExtResource("4_3o5ac")
