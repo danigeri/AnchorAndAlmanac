@@ -41,23 +41,23 @@ steering state: 0"
 
 [node name="WindMeter" parent="UserInterface" instance=ExtResource("3_0mc3e")]
 layout_mode = 0
-offset_left = 1017.0
-offset_right = 1057.0
+offset_left = 1773.5
+offset_top = 28.0
+offset_right = 1813.5
+offset_bottom = 68.0
 
 [node name="QuestLogIcon" type="Sprite2D" parent="UserInterface"]
-position = Vector2(977, 40)
+position = Vector2(1733.5, 68)
 texture = ExtResource("3_f1fl4")
 
 [node name="MinimapIcon" type="Sprite2D" parent="UserInterface"]
-position = Vector2(43, 608)
+position = Vector2(43, 1026)
 texture = ExtResource("4_jqf55")
 
 [node name="Questlog" parent="." instance=ExtResource("4_e707p")]
-visible = false
 z_index = 99
-position = Vector2(564, 248)
+position = Vector2(956, 518)
 scale = Vector2(0.76, 0.76)
 
 [node name="Minimap" parent="." instance=ExtResource("4_2n5f6")]
-visible = false
 position = Vector2(8, -7)

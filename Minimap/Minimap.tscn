@@ -9,9 +9,10 @@ script = ExtResource("1_tcfph")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 392.0
-offset_right = 256.0
-offset_bottom = 648.0
+offset_left = 16.0
+offset_top = 808.0
+offset_right = 272.0
+offset_bottom = 1064.0
 grow_vertical = 0
 stretch = true
 

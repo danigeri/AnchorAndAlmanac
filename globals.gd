@@ -4,7 +4,7 @@ signal checkpoint_collected(type: int)
 signal all_checkpoints_collected
 signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
 
-enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH }
+enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH }
 
 #todo set starting position when map is built
 var last_checkpoint_positon: Vector2 = Vector2(628, 355)
@@ -15,7 +15,8 @@ var collected_checkpoints := {
 	CheckpointType.THIRD: false,
 	CheckpointType.FOURTH: false,
 	CheckpointType.FIFTH: false,
-	CheckpointType.SIXTH: false
+	CheckpointType.SIXTH: false,
+	CheckpointType.SEVENTH: false
 }
 
 var current_hp: int = 3
