@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c63xu0efhrmwy"]
+
+[ext_resource type="PackedScene" uid="uid://mkxbyjfvqhw5" path="res://FelhoOfWar/FelhoOfWarXSa.tscn" id="1_yboyc"]
+[ext_resource type="PackedScene" uid="uid://b4qv2s3nv0w5l" path="res://FelhoOfWar/FelhoOfWarXSb.tscn" id="2_rxsjp"]
+[ext_resource type="PackedScene" uid="uid://0e2i27e50gsv" path="res://FelhoOfWar/FelhoOfWarXSc.tscn" id="3_8arln"]
+
+[node name="FelhoOfWarS" type="Node2D"]
+
+[node name="FelhoOfWarXSa" parent="." instance=ExtResource("1_yboyc")]
+position = Vector2(12, 0)
+
+[node name="FelhoOfWarXSa2" parent="." instance=ExtResource("1_yboyc")]
+position = Vector2(1103, -74)
+
+[node name="FelhoOfWarXSb" parent="." instance=ExtResource("2_rxsjp")]
+position = Vector2(395, -60)
+
+[node name="FelhoOfWarXSb2" parent="." instance=ExtResource("2_rxsjp")]
+position = Vector2(1472, 24)
+
+[node name="FelhoOfWarXSc" parent="." instance=ExtResource("3_8arln")]
+position = Vector2(748, 32)
+
+[node name="FelhoOfWarXSc2" parent="." instance=ExtResource("3_8arln")]
+position = Vector2(1856, 40)

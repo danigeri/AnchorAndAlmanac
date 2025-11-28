@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4qv2s3nv0w5l"]
+
+[ext_resource type="PackedScene" uid="uid://dfeq6ghoa60hf" path="res://FelhoOfWar/FelhoOfWar.tscn" id="1_1qspn"]
+[ext_resource type="Texture2D" uid="uid://w8e4dmtg6ojl" path="res://FelhoOfWar/nagyfelhő.png" id="2_i34ng"]
+[ext_resource type="Texture2D" uid="uid://dnuce2rpf5ps" path="res://FelhoOfWar/kisfelhő_4.png" id="3_u1bep"]
+[ext_resource type="Texture2D" uid="uid://jr3t1pja7kon" path="res://FelhoOfWar/kisfelhő_2.png" id="4_ogrtd"]
+[ext_resource type="Texture2D" uid="uid://bp757xgr4fyhy" path="res://FelhoOfWar/kisfelhő_3.png" id="5_tpdqh"]
+[ext_resource type="Texture2D" uid="uid://dymi0o51fvs5i" path="res://FelhoOfWar/kisfelhő_1.png" id="6_qckte"]
+
+[node name="FelhoOfWarXSb" type="Node2D"]
+
+[node name="FelhoOfWar" parent="." instance=ExtResource("1_1qspn")]
+felho_texture = ExtResource("2_i34ng")
+
+[node name="FelhoOfWar2" parent="." instance=ExtResource("1_1qspn")]
+position = Vector2(11, 143)
+felho_texture = ExtResource("3_u1bep")
+
+[node name="FelhoOfWar3" parent="." instance=ExtResource("1_1qspn")]
+position = Vector2(-32, 287)
+felho_texture = ExtResource("4_ogrtd")
+
+[node name="FelhoOfWar4" parent="." instance=ExtResource("1_1qspn")]
+position = Vector2(34, 427)
+felho_texture = ExtResource("5_tpdqh")
+
+[node name="FelhoOfWar5" parent="." instance=ExtResource("1_1qspn")]
+position = Vector2(-25, 553)
+felho_texture = ExtResource("6_qckte")

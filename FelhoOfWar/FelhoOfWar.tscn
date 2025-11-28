@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfeq6ghoa60hf"]
+
+[ext_resource type="Texture2D" uid="uid://dymi0o51fvs5i" path="res://FelhoOfWar/kisfelhő_1.png" id="1_l2uh5"]
+[ext_resource type="Script" uid="uid://bysmsfs5pw7cl" path="res://FelhoOfWar/felho_of_war.gd" id="1_og4n3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_og4n3"]
+radius = 226.56262
+height = 453.12524
+
+[sub_resource type="Animation" id="Animation_buv27"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_og4n3"]
+resource_name = "remove"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10004495, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(0.1, 0.1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"remove_felho"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_aeoa7"]
+resource_name = "wobble"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aeoa7"]
+_data = {
+&"RESET": SubResource("Animation_buv27"),
+&"remove": SubResource("Animation_og4n3"),
+&"wobble": SubResource("Animation_aeoa7")
+}
+
+[node name="FelhoOfWar" type="Node2D"]
+script = ExtResource("1_og4n3")
+
+[node name="Felho" type="Sprite2D" parent="."]
+texture = ExtResource("1_l2uh5")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.9600008, 2.6399999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+scale = Vector2(1.9199989, 0.6799979)
+shape = SubResource("CapsuleShape2D_og4n3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Felho")
+libraries = {
+&"": SubResource("AnimationLibrary_aeoa7")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

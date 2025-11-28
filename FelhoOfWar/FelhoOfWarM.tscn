@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0k11051bjmm6"]
+
+[ext_resource type="PackedScene" uid="uid://c63xu0efhrmwy" path="res://FelhoOfWar/FelhoOfWarS.tscn" id="1_q22wm"]
+
+[node name="FelhoOfWarM" type="Node2D"]
+
+[node name="FelhoOfWarS" parent="." instance=ExtResource("1_q22wm")]
+position = Vector2(-94, 28)
+
+[node name="FelhoOfWarS2" parent="." instance=ExtResource("1_q22wm")]
+position = Vector2(-32, 746)
+
+[node name="FelhoOfWarS3" parent="." instance=ExtResource("1_q22wm")]
+position = Vector2(25, 1453)
+
+[node name="FelhoOfWarS4" parent="." instance=ExtResource("1_q22wm")]
+position = Vector2(26, 2162)
+
+[node name="FelhoOfWarS5" parent="." instance=ExtResource("1_q22wm")]
+position = Vector2(45, 2847)

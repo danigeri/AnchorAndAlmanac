@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cets1rd56c807"]
+[gd_scene load_steps=7 format=3 uid="uid://b6nvjopamqhc"]
 
 [ext_resource type="Shader" uid="uid://bec5aotr5xs64" path="res://WaterShader/water.gdshader" id="1_7wcun"]
 [ext_resource type="Texture2D" uid="uid://dwbaac08njg38" path="res://WaterShader/temp-water.png" id="1_kpad1"]

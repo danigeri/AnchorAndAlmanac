@@ -1,9 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
-[ext_resource type="PackedScene" uid="uid://bogiyxh8easoc" path="res://FogOfWar/FogOfWar.tscn" id="2_4dmyq"]
 [ext_resource type="Texture2D" uid="uid://ghpw8h3xtjbv" path="res://temp_waves_terkep.jpg" id="2_dgo6t"]
-[ext_resource type="PackedScene" uid="uid://cets1rd56c807" path="res://WaterShader/Water.tscn" id="2_lxk7w"]
+[ext_resource type="PackedScene" path="res://WaterShader/Water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://5fljxt3pabyt" path="res://Map/MapItem.tscn" id="2_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://43ngsh2hpk8t" path="res://Landmark/7_wreck.png" id="20_xuo4s"]
 [ext_resource type="Texture2D" uid="uid://bttnt88nvu2xf" path="res://Landmark/5_leviathan.png" id="21_tdvic"]
 [ext_resource type="Texture2D" uid="uid://brsux162ny1l3" path="res://Landmark/8_father_carcass.png" id="22_2yl5a"]
+[ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
 
 [node name="GameLoop" type="Node2D"]
 rotation = -0.013865815
@@ -35,6 +35,7 @@ scale = Vector2(3.0000002, 3.0000002)
 [node name="MapItem" parent="." instance=ExtResource("2_q3nly")]
 position = Vector2(-4519.55, 3758.6958)
 scale = Vector2(5, 5)
+metadata/_edit_group_ = true
 
 [node name="TempTerkep" type="Sprite2D" parent="."]
 visible = false
@@ -88,10 +89,6 @@ obstacle_texture = ExtResource("11_17x25")
 [node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
 position = Vector2(770, 362)
 
-[node name="FogOfWar" parent="." node_paths=PackedStringArray("temp_boat") instance=ExtResource("2_4dmyq")]
-visible = false
-temp_boat = NodePath("../Ship")
-
 [node name="Landmarks" type="Node2D" parent="."]
 
 [node name="PuertoGeroppoLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
@@ -126,6 +123,11 @@ landmark_texture = ExtResource("21_tdvic")
 [node name="FatherLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
 position = Vector2(-9789, 2239)
 landmark_texture = ExtResource("22_2yl5a")
+
+[node name="FelhoOfWarContainer" type="Node2D" parent="."]
+
+[node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
+position = Vector2(-13653.859, -970.40894)
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
