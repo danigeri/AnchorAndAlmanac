@@ -115,7 +115,7 @@ func set_sail_state(event: InputEvent) -> void:
 
 	if (
 		(event as InputEvent).is_action_pressed("ui_down")
-		and sail_state > SailStates.SAIL_STATE_DOWN
+		and sail_state > SailStates.SAIL_STATE_ANCHORED
 	):
 		sail_state -= 1
 
@@ -127,6 +127,7 @@ func set_sail_state(event: InputEvent) -> void:
 
 
 func play_sail_sound(sail_state: int) -> void:
+	if sail_state == 0: return # no sound for anchoring yet
 	sail_sounds_player.stream = (ship_sail_sounds[sail_state])
 	if sail_state == 3:
 		## az effekt az mp3 felénél kezdődik
@@ -198,7 +199,6 @@ func _wind_angle_to_power() -> float:
 	else:
 		wind_bonus = 0.5
 
-	print("Wind bonus: " + str(wind_bonus))
 	return wind_bonus
 
 
