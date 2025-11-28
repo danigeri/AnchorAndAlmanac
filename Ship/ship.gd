@@ -119,12 +119,6 @@ func set_sail_state(event: InputEvent) -> void:
 		sail_state -= 1
 	sail_state_change.emit(sail_state)
 
-	if (
-		(event as InputEvent).is_action_pressed("ui_accept")
-		and sail_state == SailStates.SAIL_STATE_DOWN
-	):
-		sail_state -= 1
-		sail_state_change.emit(sail_state)
 	set_max_speed(sail_state)
 	set_ship_texture(sail_state)
 	play_sail_sound(sail_state)
