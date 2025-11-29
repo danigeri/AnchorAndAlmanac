@@ -135,8 +135,15 @@ func play_sail_sound(sail_state: int) -> void:
 
 
 func move(delta: float) -> void:
+	var turning_inertia
+	
+	if SAIL_SPEED_DICT[sail_state] != 0.0:
+		turning_inertia = 1/SAIL_SPEED_DICT[sail_state]
+	else:
+		turning_inertia = 0.1
+		
 	var facing_change_rad: float = (
-		STEERING_DICT[steering_state] * delta * current_speed_mps * TURN_SPEED_QUOTIENT
+		STEERING_DICT[steering_state] * delta * turning_inertia
 	)
 	facing_rad += facing_change_rad
 	rotate(facing_change_rad)
