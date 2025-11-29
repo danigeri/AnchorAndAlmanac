@@ -10,11 +10,11 @@ func _ready() -> void:
 		felho.texture = felho_texture
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		animation_player.play("remove")
-
-
 func remove_felho() -> void:
 	Globals.felho_counter = Globals.felho_counter + 1
-	queue_free()
+	animation_player.play("remove")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "remove":
+		queue_free()

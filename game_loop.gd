@@ -6,7 +6,7 @@ var ship_camera: Camera2D
 var endgame_barrier_camera: Camera2D
 @onready var ship: CharacterBody2D = $Ship
 @onready var endgame_barrier: Node2D = $EndgameBarrier
-@onready var fog_of_war: Node2D = $FogOfWar
+@onready var felho_of_war_container: Node2D = $FelhoOfWarContainer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +21,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
@@ -35,12 +34,12 @@ func _on_all_checkpoints_collected():
 func trigger_barrier_remove() -> void:
 	await get_tree().create_timer(0.6).timeout
 	get_tree().paused = true
-	fog_of_war.hide()
+	felho_of_war_container.hide()
 	CameraTransition.transition_camera(ship_camera, endgame_barrier_camera)
 	endgame_barrier_destroy.emit()
 	await get_tree().create_timer(3).timeout
 	CameraTransition.transition_camera(endgame_barrier_camera, ship_camera)
-	fog_of_war.show()
+	felho_of_war_container.show() # maybe remove felhoOfWar so challenge part is without felhok
 	await get_tree().create_timer(1).timeout
 	get_tree().paused = false
 
