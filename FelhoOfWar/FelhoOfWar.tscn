@@ -76,9 +76,9 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"transitions": PackedFloat32Array(0.75, 0.75, 0.75, 0.75, 0.75),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(5, -10), Vector2(10, 0), Vector2(5, 10), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aeoa7"]
@@ -100,6 +100,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 scale = Vector2(1.9199989, 0.6799979)
 shape = SubResource("CapsuleShape2D_og4n3")
 
