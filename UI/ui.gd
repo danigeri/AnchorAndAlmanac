@@ -4,6 +4,7 @@ extends CanvasLayer
 var _speed_mps: float = 0
 var _sail_state: int = 0
 var _steering_state: int = 0
+
 @onready var debug_label: Label = $UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel
 @onready var questlog: Node2D = $Questlog
 @onready var minimap: Node2D = $Minimap
@@ -11,6 +12,7 @@ var _steering_state: int = 0
 @onready var barrell: Sprite2D = $Barrell
 @onready var barrell_2: Sprite2D = $Barrell2
 @onready var barrell_3: Sprite2D = $Barrell3
+@onready var subtitle: MarginContainer = $Subtitle
 
 
 func _ready() -> void:
@@ -18,6 +20,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	minimap.player = player
 	Globals.hp_changed.connect(on_hp_changed)
+	Globals.checkpoint_collected.connect(on_play_subtitle)
 
 
 func _input(event: InputEvent) -> void:
@@ -51,6 +54,11 @@ func update_text() -> void:
 			"speed: %.1f m/s\nsail state: %d\nsteering state: %d\n felho: %d /3750"
 			% [_speed_mps, _sail_state, _steering_state, Globals.felho_counter]
 		)
+
+
+func on_play_subtitle(checkpoint_text_number: int) -> void:
+	print("play subtitle", checkpoint_text_number)
+	subtitle.type_text(checkpoint_text_number)
 
 
 func on_hp_changed() -> void:

@@ -62,23 +62,23 @@ player = NodePath("../Ship")
 position = Vector2(980, 605)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-234, 3123)
+position = Vector2(-316.71692, 3871.9802)
 checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-2702, 731)
+position = Vector2(-3412.5286, 2033.8795)
 checkpoint_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-3745, 4972)
+position = Vector2(-5026.1675, 6900.9746)
 checkpoint_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-7547, 2849)
+position = Vector2(-7450.633, 4177.0957)
 checkpoint_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-7458, -911)
+position = Vector2(-8591.178, -335.15204)
 checkpoint_type = 5
 
 [node name="Obstacle" parent="." instance=ExtResource("10_pyewy")]
@@ -96,34 +96,35 @@ landmark_audio = ExtResource("14_lwaqr")
 landmark_texture = ExtResource("15_fvovd")
 
 [node name="LighthouseLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-91, 2472)
+position = Vector2(-705.2155, 4121.6177)
 landmark_texture = ExtResource("16_lwaqr")
 
 [node name="TombAtNeptuneLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-3279, 1039)
+position = Vector2(-3025.9426, 2571.2915)
 landmark_texture = ExtResource("17_mc7mr")
 
 [node name="CedarLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-4300, 4155)
+position = Vector2(-4837.172, 7551.657)
 landmark_texture = ExtResource("18_q3nly")
 
 [node name="CampLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-7523, 3466)
+position = Vector2(-7339.0015, 3699.598)
 landmark_texture = ExtResource("19_arced")
 
 [node name="WreckLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-7434, -1119)
+position = Vector2(-8094.338, -320.26172)
 landmark_texture = ExtResource("20_xuo4s")
 
 [node name="LeviathanLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-9780, 870)
+position = Vector2(-10054.973, 1947.7714)
 landmark_texture = ExtResource("21_tdvic")
 
 [node name="FatherLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-9789, 2239)
+position = Vector2(-10813.485, 1258.188)
 landmark_texture = ExtResource("22_2yl5a")
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
 position = Vector2(703.77484, -8345.045)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
