@@ -26,6 +26,10 @@ Wind="*res://Wind/wind.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[layer_names]
+
+2d_physics/layer_2="FogOfWar"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

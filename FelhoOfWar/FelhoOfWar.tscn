@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bysmsfs5pw7cl" path="res://FelhoOfWar/felho_of_war.gd" id="1_og4n3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_og4n3"]
-radius = 226.56262
-height = 453.12524
+radius = 68.02722
+height = 136.05444
 
 [sub_resource type="Animation" id="Animation_buv27"]
 length = 0.001
@@ -88,17 +88,18 @@ _data = {
 &"wobble": SubResource("Animation_aeoa7")
 }
 
-[node name="FelhoOfWar" type="Node2D"]
+[node name="FelhoOfWar" type="Node2D" groups=["felho"]]
 script = ExtResource("1_og4n3")
 
 [node name="Felho" type="Sprite2D" parent="."]
 texture = ExtResource("1_l2uh5")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["felho"]]
 scale = Vector2(1.9600008, 2.6399999)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 scale = Vector2(1.9199989, 0.6799979)
 shape = SubResource("CapsuleShape2D_og4n3")
 
@@ -109,3 +110,4 @@ libraries = {
 }
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

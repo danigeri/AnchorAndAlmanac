@@ -283,6 +283,11 @@ func handle_move_sound(velocity: Vector2) -> void:
 
 
 func handle_hit_sound() -> void:
-	print("play sound: ", Globals.current_hp)
 	ship_hit_sound_player.stream = ship_hit_sounds[Globals.current_hp]
 	ship_hit_sound_player.play(0.0)
+
+
+func _on_felo_of_war_vision_area_entered(felho_area: Area2D) -> void:
+	if felho_area.is_in_group("felho"):
+		var felho_scene = felho_area.get_parent()
+		felho_scene.remove_felho()

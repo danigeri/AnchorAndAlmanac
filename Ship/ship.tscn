@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3e5wvna1fkp5"]
+[gd_scene load_steps=12 format=3 uid="uid://b3e5wvna1fkp5"]
 
 [ext_resource type="Script" uid="uid://cyhid3hiv7efg" path="res://Ship/ship.gd" id="1_1p84g"]
 [ext_resource type="Texture2D" uid="uid://bbieh6ykr1utn" path="res://Ship/ship_sail_0.png" id="2_q4ev1"]
@@ -102,6 +102,10 @@ _data = {
 &"sink": SubResource("Animation_1w8ol")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1w8ol"]
+radius = 440.9722
+height = 881.9444
+
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_1p84g")
 
@@ -148,3 +152,14 @@ bus = &"SFX"
 
 [node name="ShipHitSoundPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
+
+[node name="FeloOfWarVision" type="Area2D" parent="."]
+scale = Vector2(1.3599982, 1.44)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FeloOfWarVision"]
+scale = Vector2(0.7599994, 1)
+shape = SubResource("CapsuleShape2D_1w8ol")
+
+[connection signal="area_entered" from="FeloOfWarVision" to="." method="_on_felo_of_war_vision_area_entered"]

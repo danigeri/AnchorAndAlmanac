@@ -124,9 +124,10 @@ position = Vector2(-9789, 2239)
 landmark_texture = ExtResource("22_2yl5a")
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+position = Vector2(703.77484, -8345.045)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
-position = Vector2(-13653.859, -970.40894)
+position = Vector2(-20012.555, 6897.1816)
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
