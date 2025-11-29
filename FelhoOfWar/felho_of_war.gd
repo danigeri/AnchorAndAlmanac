@@ -8,8 +8,8 @@ extends Node2D
 func _ready() -> void:
 	if felho_texture:
 		felho.texture = felho_texture
-	await get_tree().create_timer(randf_range(0.6,1.2)).timeout
-	animation_player.play("wobble")
+	#await get_tree().create_timer(randf_range(0.6,1.2)).timeout
+	#animation_player.play("wobble")
 func remove_felho() -> void:
 	Globals.felho_counter = Globals.felho_counter + 1
 	animation_player.play("remove")
