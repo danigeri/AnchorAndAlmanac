@@ -25,7 +25,6 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "blalblala"
 vertical_alignment = 1
 autowrap_mode = 3
 
