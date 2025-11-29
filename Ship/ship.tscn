@@ -125,7 +125,7 @@ visible = false
 position = Vector2(-7, 454)
 sprite_frames = ExtResource("4_d6neq")
 animation = &"ripple"
-frame_progress = 0.7078488
+frame_progress = 0.9762427
 speed_scale = 0.35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

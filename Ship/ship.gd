@@ -189,10 +189,10 @@ func _set_speed(delta: float) -> void:
 			current_speed_mps = move_toward(current_speed_mps, max_speed_mps, 0.05)
 		speed_change.emit(current_speed_mps)
 		#_animate_speed(current_speed_mps)
-		handle_ripple_effect(current_speed_mps)
+		handle_ripple_effect()
 
 
-func handle_ripple_effect(speed: int) -> void:
+func handle_ripple_effect() -> void:
 	if current_speed_mps > 0:
 		ripple_effect.show()
 		if current_speed_mps < 300:
