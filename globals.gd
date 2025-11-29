@@ -3,7 +3,7 @@ extends Node
 signal checkpoint_collected(type: int)
 signal all_checkpoints_collected
 signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
-signal hp_changed()
+signal hp_changed
 
 enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH }
 

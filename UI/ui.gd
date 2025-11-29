@@ -52,15 +52,15 @@ func update_text() -> void:
 			% [_speed_mps, _sail_state, _steering_state, Globals.felho_counter]
 		)
 
-func on_hp_changed()-> void:
+
+func on_hp_changed() -> void:
 	if Globals.current_hp < 3:
 		barrell_3.hide()
 	if Globals.current_hp < 2:
 		barrell_2.hide()
-	if Globals.current_hp <1:
+	if Globals.current_hp < 1:
 		barrell.hide()
 	if Globals.current_hp == 3:
 		barrell.show()
 		barrell_2.show()
 		barrell_3.show()
-		
