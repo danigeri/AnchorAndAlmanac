@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3l65vd7vkrod"]
+
+[ext_resource type="Script" uid="uid://dg7ymlerpie0h" path="res://Subtitle/subtitle.gd" id="1_m3twq"]
+
+[node name="Subtitle" type="MarginContainer"]
+offset_left = 460.0
+offset_top = 961.0
+offset_right = 1460.0
+offset_bottom = 1043.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_m3twq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.005
+one_shot = true
+
+[node name="DurationTimer" type="Timer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "blalblala"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]

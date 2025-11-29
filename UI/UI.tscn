@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://675p0otu3tys"]
+[gd_scene load_steps=8 format=3 uid="uid://675p0otu3tys"]
 
 [ext_resource type="Script" uid="uid://bdhfe81q16ew7" path="res://UI/ui.gd" id="1_qui0h"]
 [ext_resource type="PackedScene" uid="uid://o8or5o3p05wo" path="res://WindMeter/wind_meter.tscn" id="3_0mc3e"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1vpe7qknj640" path="res://Questlog/Questlog.tscn" id="4_e707p"]
 [ext_resource type="Texture2D" uid="uid://ruwwjvjhle3m" path="res://UI/minimap_icon.png" id="4_jqf55"]
 [ext_resource type="Texture2D" uid="uid://d4mqdbjl27v1t" path="res://UI/temp-barrell.png" id="6_jqf55"]
+[ext_resource type="PackedScene" uid="uid://b3l65vd7vkrod" path="res://Subtitle/Subtitle.tscn" id="7_byuxr"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_qui0h")
@@ -72,3 +73,9 @@ texture = ExtResource("6_jqf55")
 [node name="Barrell3" type="Sprite2D" parent="."]
 position = Vector2(192, 1036)
 texture = ExtResource("6_jqf55")
+
+[node name="Subtitle" parent="." instance=ExtResource("7_byuxr")]
+offset_left = 509.0
+offset_top = 988.0
+offset_right = 1509.0
+offset_bottom = 1070.0
