@@ -36,18 +36,17 @@ const PADDLE_ROTATE_DICT = {
 }
 
 # The quotient of how the turn speed is dependent of the current speed.
-const TURN_SPEED_QUOTIENT: float = 0.5
+const TURN_SPEED_QUOTIENT: float = 0.01
 
 @export var max_speed_mps: int = 50
 @export var min_speed_mps: int = 0
-@export var turn_rad: float = PI / 12
-@export var inertia: float = 0.1
+@export var inertia: float = 50
 
 var current_speed_mps: float
 var direction: Vector2
 var facing_rad: float
 var sail_state: SailStates
-var wind_direction: Vector2
+var wind_direction: float
 var wind_strength: int
 var steering_state: SteeringStates = SteeringStates.FORWARD
 
@@ -110,27 +109,23 @@ func _physics_process(delta: float) -> void:
 func set_sail_state(event: InputEvent) -> void:
 	if (event as InputEvent).is_action_pressed("ui_up") and sail_state < SailStates.SAIL_STATE_UP:
 		sail_state += 1
-		sail_state_change.emit(sail_state)
 
 	if (
 		(event as InputEvent).is_action_pressed("ui_down")
-		and sail_state > SailStates.SAIL_STATE_DOWN
+		and sail_state > SailStates.SAIL_STATE_ANCHORED
 	):
 		sail_state -= 1
+
 	sail_state_change.emit(sail_state)
 
-	if (
-		(event as InputEvent).is_action_pressed("ui_accept")
-		and sail_state == SailStates.SAIL_STATE_DOWN
-	):
-		sail_state -= 1
-		sail_state_change.emit(sail_state)
 	set_max_speed(sail_state)
 	set_ship_texture(sail_state)
 	play_sail_sound(sail_state)
 
 
 func play_sail_sound(sail_state: int) -> void:
+	if sail_state == 0:
+		return  # no sound for anchoring yet
 	sail_sounds_player.stream = (ship_sail_sounds[sail_state])
 	if sail_state == 3:
 		## az effekt az mp3 felénél kezdődik
@@ -140,9 +135,16 @@ func play_sail_sound(sail_state: int) -> void:
 
 
 func move(delta: float) -> void:
-	var facing_change_rad: float = (
-		STEERING_DICT[steering_state] * delta * (current_speed_mps / 10) * TURN_SPEED_QUOTIENT
-	)
+	var turning_inertia
+
+	if sail_state == SailStates.SAIL_STATE_DOWN:
+		turning_inertia = 10 / 3  # this feels better than the matching value
+	elif sail_state == SailStates.SAIL_STATE_ANCHORED:
+		turning_inertia = 0.1  # this is just to avoid division by zero
+	else:
+		turning_inertia = 1 / SAIL_SPEED_DICT[sail_state]
+
+	var facing_change_rad: float = STEERING_DICT[steering_state] * delta * turning_inertia
 	facing_rad += facing_change_rad
 	rotate(facing_change_rad)
 
@@ -164,10 +166,10 @@ func get_camera() -> Camera2D:
 
 
 func _set_speed(delta: float) -> void:
-	var dummy_wind_strenght: float = wind_strength / 10
 	var target_speed_mps: float = (
-		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power() * dummy_wind_strenght
+		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power()
 	)
+
 	if target_speed_mps > max_speed_mps:
 		target_speed_mps = max_speed_mps
 
@@ -189,11 +191,19 @@ func _set_speed(delta: float) -> void:
 
 
 func _wind_angle_to_power() -> float:
-	var angle: float = direction.dot(wind_direction)
-	var wind_power: float = (2 * angle + 1) / 3 if angle > -0.5 else 0.01
-	var dummy_wind_strenght: float = wind_strength / 10.0
+	var wind_bonus
 
-	return wind_power * dummy_wind_strenght
+	var diff: float = direction.angle() - wind_direction
+	diff = atan2(sin(diff), cos(diff))
+
+	if abs(diff) < PI / 4:
+		wind_bonus = 1
+	elif abs(diff) < PI / 2:
+		wind_bonus = 0.75
+	else:
+		wind_bonus = 0.5
+
+	return wind_bonus
 
 
 func _animate_speed(speed: float) -> void:
@@ -237,11 +247,11 @@ func set_max_speed(sail_state: SailStates) -> void:
 			max_speed_mps = 0
 			min_speed_mps = 0
 		1:
-			max_speed_mps = 10
-			min_speed_mps = 5
-		2:
 			max_speed_mps = 50
 			min_speed_mps = 25
+		2:
+			max_speed_mps = 100
+			min_speed_mps = 50
 		3:
 			max_speed_mps = 400
 			min_speed_mps = 200
