@@ -8,12 +8,16 @@ var _steering_state: int = 0
 @onready var questlog: Node2D = $Questlog
 @onready var minimap: Node2D = $Minimap
 @onready var minimap_icon: Sprite2D = $UserInterface/MinimapIcon
+@onready var barrell: Sprite2D = $Barrell
+@onready var barrell_2: Sprite2D = $Barrell2
+@onready var barrell_3: Sprite2D = $Barrell3
 
 
 func _ready() -> void:
 	## set to always so unpause is possible with InputEvent
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	minimap.player = player
+	Globals.hp_changed.connect(on_hp_changed)
 
 
 func _input(event: InputEvent) -> void:
@@ -47,3 +51,16 @@ func update_text() -> void:
 			"speed: %.1f m/s\nsail state: %d\nsteering state: %d\n felho: %d /3750"
 			% [_speed_mps, _sail_state, _steering_state, Globals.felho_counter]
 		)
+
+func on_hp_changed()-> void:
+	if Globals.current_hp < 3:
+		barrell_3.hide()
+	if Globals.current_hp < 2:
+		barrell_2.hide()
+	if Globals.current_hp <1:
+		barrell.hide()
+	if Globals.current_hp == 3:
+		barrell.show()
+		barrell_2.show()
+		barrell_3.show()
+		

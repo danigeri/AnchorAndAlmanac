@@ -12,7 +12,7 @@ script = ExtResource("1_5iw37")
 [node name="ObstacleImage" type="Sprite2D" parent="."]
 texture = ExtResource("2_xv761")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["damaging"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["damaging", "obstacle"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_l2avp")

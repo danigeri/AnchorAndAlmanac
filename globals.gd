@@ -3,6 +3,7 @@ extends Node
 signal checkpoint_collected(type: int)
 signal all_checkpoints_collected
 signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
+signal hp_changed()
 
 enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH }
 
@@ -43,10 +44,11 @@ func are_all_checkpoints_collected() -> bool:
 
 func remove_hp() -> void:
 	current_hp -= 1
-	print(current_hp)
 	if current_hp == 0:
 		go_to_last_checkpoint.emit(last_checkpoint_positon)
+	hp_changed.emit()
 
 
 func restore_hp() -> void:
 	current_hp = 3
+	hp_changed.emit()

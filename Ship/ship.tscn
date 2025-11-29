@@ -92,7 +92,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(2, 1),
 "update": 0,
-"values": [0.0, 18.84955592153876]
+"values": [0.0, 12.566370614359172]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d6neq"]
@@ -153,13 +153,13 @@ bus = &"SFX"
 [node name="ShipHitSoundPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
-[node name="FeloOfWarVision" type="Area2D" parent="."]
+[node name="FelhoOfWarVision" type="Area2D" parent="."]
 scale = Vector2(1.3599982, 1.44)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FeloOfWarVision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FelhoOfWarVision"]
 scale = Vector2(0.7599994, 1)
 shape = SubResource("CapsuleShape2D_1w8ol")
 
-[connection signal="area_entered" from="FeloOfWarVision" to="." method="_on_felo_of_war_vision_area_entered"]
+[connection signal="area_entered" from="FelhoOfWarVision" to="." method="_on_felho_of_war_vision_area_entered"]
