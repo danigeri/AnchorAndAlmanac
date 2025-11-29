@@ -281,4 +281,3 @@ func _on_felo_of_war_vision_area_entered(felho_area: Area2D) -> void:
 	if felho_area.is_in_group("felho"):
 		var felho_scene = felho_area.get_parent()
 		felho_scene.remove_felho()
-		

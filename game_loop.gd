@@ -21,6 +21,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
@@ -39,7 +40,7 @@ func trigger_barrier_remove() -> void:
 	endgame_barrier_destroy.emit()
 	await get_tree().create_timer(3).timeout
 	CameraTransition.transition_camera(endgame_barrier_camera, ship_camera)
-	felho_of_war_container.show() # maybe remove felhoOfWar so challenge part is without felhok
+	felho_of_war_container.show()  # maybe remove felhoOfWar so challenge part is without felhok
 	await get_tree().create_timer(1).timeout
 	get_tree().paused = false
 
