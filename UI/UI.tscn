@@ -41,10 +41,10 @@ felho: 0"
 
 [node name="WindMeter" parent="UserInterface" instance=ExtResource("3_0mc3e")]
 layout_mode = 0
-offset_left = 1773.5
-offset_top = 28.0
-offset_right = 1813.5
-offset_bottom = 68.0
+offset_left = 1012.0
+offset_top = 4.0
+offset_right = 1052.0
+offset_bottom = 44.0
 
 [node name="MinimapIcon" type="Sprite2D" parent="UserInterface"]
 position = Vector2(43, 1026)
