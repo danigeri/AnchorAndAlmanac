@@ -124,7 +124,6 @@ position = Vector2(-10813.485, 1258.188)
 landmark_texture = ExtResource("22_2yl5a")
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-visible = false
 position = Vector2(703.77484, -8345.045)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
