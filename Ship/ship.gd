@@ -77,6 +77,7 @@ var ship_hit_sounds = {
 @onready var sail_sounds_player: AudioStreamPlayer = $SailSoundsPlayer
 @onready var ship_move_sound_player: AudioStreamPlayer = $ShipMoveSoundPlayer
 @onready var ship_hit_sound_player: AudioStreamPlayer = $ShipHitSoundPlayer
+@onready var ripple_effect: AnimatedSprite2D = $Sprite2D/RippleEffect
 
 
 func _ready() -> void:
@@ -188,6 +189,26 @@ func _set_speed(delta: float) -> void:
 			current_speed_mps = move_toward(current_speed_mps, max_speed_mps, 0.05)
 		speed_change.emit(current_speed_mps)
 		#_animate_speed(current_speed_mps)
+		handle_ripple_effect()
+
+
+func handle_ripple_effect() -> void:
+	if current_speed_mps > 0:
+		ripple_effect.show()
+		if current_speed_mps < 300:
+			ripple_effect.speed_scale = 1
+		if current_speed_mps < 200:
+			ripple_effect.speed_scale = 0.75
+		if current_speed_mps < 150:
+			ripple_effect.speed_scale = 0.5
+		if current_speed_mps < 50:
+			ripple_effect.speed_scale = 0.35
+		else:
+			ripple_effect.speed_scale = 1.5
+		ripple_effect.play("ripple")
+		print(ripple_effect.speed_scale)
+	else:
+		ripple_effect.hide()
 
 
 func _wind_angle_to_power() -> float:
@@ -236,7 +257,6 @@ func _on_go_to_last_checkpoint(_last_cp_position: Vector2) -> void:
 
 
 func sink_ship() -> void:
-	print("sink")
 	animation_player.play("sink")
 	await animation_player.animation_finished
 	sprite_2d.scale = Vector2(1, 1)

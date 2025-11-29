@@ -5,11 +5,12 @@ signal all_checkpoints_collected
 signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
 signal hp_changed
 
-enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH }
+enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHT }
 
 #todo set starting position when map is built
 var last_checkpoint_positon: Vector2 = Vector2(628, 355)
 
+# add 8th but camera pans on 7th
 var collected_checkpoints := {
 	CheckpointType.FIRST: false,
 	CheckpointType.SECOND: false,

@@ -47,7 +47,7 @@ texture = ExtResource("2_dgo6t")
 script = ExtResource("2_x7b5a")
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(628, 335)
+position = Vector2(95.86719, 659.3927)
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
 position = Vector2(-8824, 1261)
@@ -62,7 +62,7 @@ player = NodePath("../Ship")
 position = Vector2(980, 605)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-316.71692, 3871.9802)
+position = Vector2(-485.56158, 6383.882)
 checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
@@ -74,12 +74,20 @@ position = Vector2(-5026.1675, 6900.9746)
 checkpoint_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-7450.633, 4177.0957)
+position = Vector2(-8554.479, 4446.8164)
 checkpoint_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-8591.178, -335.15204)
+position = Vector2(-11093.705, 3940.5608)
 checkpoint_type = 5
+
+[node name="Checkpoint7" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
+position = Vector2(-7854.6436, 64.09851)
+checkpoint_type = 6
+
+[node name="Checkpoint8 - ez lesz az utso" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
+position = Vector2(-7854.6436, 64.09851)
+checkpoint_type = 6
 
 [node name="Obstacle" parent="." instance=ExtResource("10_pyewy")]
 position = Vector2(641, 796)
@@ -88,7 +96,15 @@ obstacle_texture = ExtResource("11_17x25")
 [node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
 position = Vector2(770, 362)
 
+[node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
+position = Vector2(703.77484, -8345.045)
+
+[node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
+position = Vector2(-16758.355, 6905.303)
+
 [node name="Landmarks" type="Node2D" parent="."]
+scale = Vector2(1.0000004, 1.0000004)
 
 [node name="PuertoGeroppoLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
 position = Vector2(1897.2616, -5.694313)
@@ -96,7 +112,7 @@ landmark_audio = ExtResource("14_lwaqr")
 landmark_texture = ExtResource("15_fvovd")
 
 [node name="LighthouseLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-705.2155, 4121.6177)
+position = Vector2(-725.8721, 6981.6045)
 landmark_texture = ExtResource("16_lwaqr")
 
 [node name="TombAtNeptuneLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
@@ -107,27 +123,22 @@ landmark_texture = ExtResource("17_mc7mr")
 position = Vector2(-4837.172, 7551.657)
 landmark_texture = ExtResource("18_q3nly")
 
+[node name="LeviathanLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
+position = Vector2(-8431.155, 3919.4756)
+scale = Vector2(1.0000002, 1.0000002)
+landmark_texture = ExtResource("21_tdvic")
+
 [node name="CampLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-7339.0015, 3699.598)
+position = Vector2(-11719.787, 3725.859)
 landmark_texture = ExtResource("19_arced")
 
 [node name="WreckLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
 position = Vector2(-8094.338, -320.26172)
 landmark_texture = ExtResource("20_xuo4s")
 
-[node name="LeviathanLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-10054.973, 1947.7714)
-landmark_texture = ExtResource("21_tdvic")
-
 [node name="FatherLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-10813.485, 1258.188)
+position = Vector2(-12814.648, 246.34375)
 landmark_texture = ExtResource("22_2yl5a")
-
-[node name="FelhoOfWarContainer" type="Node2D" parent="."]
-position = Vector2(703.77484, -8345.045)
-
-[node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
-position = Vector2(-20012.555, 6897.1816)
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
