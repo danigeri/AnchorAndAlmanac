@@ -191,8 +191,9 @@ func _set_speed(delta: float) -> void:
 		#_animate_speed(current_speed_mps)
 		handle_ripple_effect(current_speed_mps)
 
+
 func handle_ripple_effect(speed: int) -> void:
-	if (current_speed_mps > 0):
+	if current_speed_mps > 0:
 		ripple_effect.show()
 		if current_speed_mps < 300:
 			ripple_effect.speed_scale = 1
@@ -208,6 +209,7 @@ func handle_ripple_effect(speed: int) -> void:
 		print(ripple_effect.speed_scale)
 	else:
 		ripple_effect.hide()
+
 
 func _wind_angle_to_power() -> float:
 	var wind_bonus
