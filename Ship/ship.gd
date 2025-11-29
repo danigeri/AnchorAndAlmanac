@@ -107,10 +107,7 @@ func _physics_process(delta: float) -> void:
 
 
 func set_sail_state(event: InputEvent) -> void:
-	if (
-		(event as InputEvent).is_action_pressed("ui_up") 
-		and sail_state < SailStates.SAIL_STATE_UP
-	):
+	if (event as InputEvent).is_action_pressed("ui_up") and sail_state < SailStates.SAIL_STATE_UP:
 		sail_state += 1
 
 	if (
@@ -127,7 +124,8 @@ func set_sail_state(event: InputEvent) -> void:
 
 
 func play_sail_sound(sail_state: int) -> void:
-	if sail_state == 0: return # no sound for anchoring yet
+	if sail_state == 0:
+		return  # no sound for anchoring yet
 	sail_sounds_player.stream = (ship_sail_sounds[sail_state])
 	if sail_state == 3:
 		## az effekt az mp3 felénél kezdődik
@@ -164,7 +162,7 @@ func _set_speed(delta: float) -> void:
 	var target_speed_mps: float = (
 		max_speed_mps * SAIL_SPEED_DICT[sail_state] * _wind_angle_to_power()
 	)
-	
+
 	if target_speed_mps > max_speed_mps:
 		target_speed_mps = max_speed_mps
 
@@ -187,14 +185,13 @@ func _set_speed(delta: float) -> void:
 
 func _wind_angle_to_power() -> float:
 	var wind_bonus
-	
-	
+
 	var diff: float = direction.angle() - wind_direction
 	diff = atan2(sin(diff), cos(diff))
-	
-	if abs(diff) < PI/4:
+
+	if abs(diff) < PI / 4:
 		wind_bonus = 1
-	elif abs(diff) < PI/2:
+	elif abs(diff) < PI / 2:
 		wind_bonus = 0.75
 	else:
 		wind_bonus = 0.5
