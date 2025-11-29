@@ -21,7 +21,7 @@ func _ready() -> void:
 	minimap.player = player
 	Globals.hp_changed.connect(on_hp_changed)
 	Globals.checkpoint_collected.connect(on_play_subtitle)
-	
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -55,9 +55,11 @@ func update_text() -> void:
 			% [_speed_mps, _sail_state, _steering_state, Globals.felho_counter]
 		)
 
+
 func on_play_subtitle(checkpoint_text_number: int) -> void:
 	print("play subtitle", checkpoint_text_number)
 	subtitle.type_text(checkpoint_text_number)
+
 
 func on_hp_changed() -> void:
 	if Globals.current_hp < 3:
