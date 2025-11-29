@@ -218,11 +218,12 @@ func _on_wind_update_wind(dir, strength) -> void:
 
 
 func _on_hitbox_body_entered(body):
-	print(body)
 	if body.is_in_group("damaging"):
 		Globals.remove_hp()
 		animation_player.play("hit")
 		handle_hit_sound()
+		if body.is_in_group("obstacle"):
+			body.get_parent().queue_free()
 
 
 func _on_go_to_last_checkpoint(_last_cp_position: Vector2) -> void:
@@ -287,7 +288,7 @@ func handle_hit_sound() -> void:
 	ship_hit_sound_player.play(0.0)
 
 
-func _on_felo_of_war_vision_area_entered(felho_area: Area2D) -> void:
+func _on_felho_of_war_vision_area_entered(felho_area: Area2D) -> void:
 	if felho_area.is_in_group("felho"):
 		var felho_scene = felho_area.get_parent()
 		felho_scene.remove_felho()
