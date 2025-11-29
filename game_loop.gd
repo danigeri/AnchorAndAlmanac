@@ -18,10 +18,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# print("fps: ", Engine.get_frames_per_second())
 func _process(_delta: float) -> void:
-	print("fps: ", Engine.get_frames_per_second())
 	pass
-	
+
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
