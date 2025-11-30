@@ -3,7 +3,7 @@ extends CanvasLayer
 @export var player: CharacterBody2D
 var _speed_mps: float = 0
 var _sail_state: int = 0
-var _steering_state: int = 0
+var _steering_degrees: int = 0
 
 @onready var debug_label: Label = $UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel
 @onready var questlog: Node2D = $Questlog
@@ -44,16 +44,16 @@ func _on_ship_speed_change(speed: Variant) -> void:
 	update_text()
 
 
-func _on_ship_steering_state_change(steering_state: Variant) -> void:
-	_steering_state = steering_state
+func _on_ship_steering_degrees_change(steering_degrees: Variant) -> void:
+	_steering_degrees = steering_degrees
 	update_text()
 
 
 func update_text() -> void:
 	if debug_label:
 		debug_label.text = (
-			"speed: %.1f m/s\nsail state: %d\nsteering state: %d\n felho: %d /3750"
-			% [_speed_mps, _sail_state, _steering_state, Globals.felho_counter]
+			"speed: %.1f m/s\nsail state: %d\nsteering degrees: %d\n felho: %d /3750"
+			% [_speed_mps, _sail_state, _steering_degrees, Globals.felho_counter]
 		)
 
 
@@ -81,3 +81,8 @@ func _process(_delta: float) -> void:
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	Globals.emit_wobble_toggle(toggled_on)
+
+
+func _on_complete_all_pressed() -> void:
+	Globals.all_checkpoints_collected.emit()
+	pass # Replace with function body.

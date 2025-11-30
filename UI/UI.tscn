@@ -49,6 +49,10 @@ layout_mode = 2
 button_pressed = true
 text = "wobble"
 
+[node name="CompleteAll" type="Button" parent="UserInterface/DebugPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "coomplettte"
+
 [node name="WindMeter" parent="UserInterface" instance=ExtResource("3_0mc3e")]
 layout_mode = 0
 offset_left = 1778.0
@@ -89,3 +93,4 @@ offset_right = 1509.0
 offset_bottom = 1070.0
 
 [connection signal="toggled" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CompleteAll" to="." method="_on_complete_all_pressed"]
