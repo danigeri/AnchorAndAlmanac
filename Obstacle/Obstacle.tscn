@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbap81erct4wo"]
+[gd_scene load_steps=3 format=3 uid="uid://cbap81erct4wo"]
 
 [ext_resource type="Script" uid="uid://bjun367gnxjfo" path="res://Obstacle/obstacle.gd" id="1_5iw37"]
 [ext_resource type="Texture2D" uid="uid://wfyxxbhieksu" path="res://Obstacle/temp-obstacle.png" id="2_xv761"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2avp"]
-size = Vector2(72, 68)
 
 [node name="Obstacle" type="Node2D"]
 script = ExtResource("1_5iw37")
@@ -13,6 +10,6 @@ script = ExtResource("1_5iw37")
 texture = ExtResource("2_xv761")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["damaging", "obstacle"]]
+position = Vector2(-35, -32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_l2avp")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
