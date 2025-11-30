@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://43ngsh2hpk8t" path="res://Landmark/7_wreck.png" id="20_xuo4s"]
 [ext_resource type="Texture2D" uid="uid://bttnt88nvu2xf" path="res://Landmark/5_leviathan.png" id="21_tdvic"]
 [ext_resource type="Texture2D" uid="uid://brsux162ny1l3" path="res://Landmark/8_father_carcass.png" id="22_2yl5a"]
+[ext_resource type="PackedScene" uid="uid://bimueenop2tcj" path="res://StartingPopup/starting_popup.tscn" id="23_arced"]
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
 
 [node name="GameLoop" type="Node2D"]
@@ -139,6 +140,8 @@ landmark_texture = ExtResource("20_xuo4s")
 [node name="FatherLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
 position = Vector2(-12814.648, 246.34375)
 landmark_texture = ExtResource("22_2yl5a")
+
+[node name="StartingPopup" parent="." instance=ExtResource("23_arced")]
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
