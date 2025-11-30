@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=37 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="Texture2D" uid="uid://ghpw8h3xtjbv" path="res://temp_waves_terkep.jpg" id="2_dgo6t"]
@@ -45,6 +45,14 @@ shader_parameter/intensity = 0.8570000407075
 shader_parameter/radius = 0.44800002128
 shader_parameter/softness = 1.0
 shader_parameter/vignette_color = Color(0.18275529, 0.12767074, 0.08174201, 1)
+shader_parameter/storm_mode = 1.0
+shader_parameter/storm_darkness = 0.51200002432
+shader_parameter/storm_color = Color(0.15, 0.18, 0.22, 1)
+shader_parameter/lightning_frequency = 0.3810000180975
+shader_parameter/lightning_intensity = 0.430000020425
+shader_parameter/lightning_speed = 15.530000737675
+shader_parameter/storm_shake_amount = 0.0
+shader_parameter/storm_shake_speed = 0.5
 
 [sub_resource type="QuadMesh" id="QuadMesh_tdvic"]
 size = Vector2(1920, 1080)
@@ -229,6 +237,5 @@ player = NodePath("../Ship")
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
-[connection signal="steering_state_change" from="Ship" to="UI" method="_on_ship_steering_state_change"]
-[editable path="EndGameContent"]
 
+[editable path="EndGameContent"]
