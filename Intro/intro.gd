@@ -6,7 +6,7 @@ extends Control
 
 func _ready() -> void:
 	var is_debug: bool = OS.is_debug_build()
-	if false:
+	if is_debug:
 		call_deferred("go_to_main_menu")
 	else:
 		video_player.play()
