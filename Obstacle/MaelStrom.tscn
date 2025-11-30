@@ -1,0 +1,124 @@
+[gd_scene load_steps=18 format=3 uid="uid://b7t7exr4alvro"]
+
+[ext_resource type="PackedScene" uid="uid://cbap81erct4wo" path="res://Obstacle/Obstacle.tscn" id="1_s8863"]
+[ext_resource type="Texture2D" uid="uid://cvs6yo7km558v" path="res://Obstacle/maelstrom.png" id="2_hkpde"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nhfs"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(0, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygrqw"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(339, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f83j"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(678, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7321s"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(1017, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5phbx"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(1356, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0r64"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(1695, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n77q"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(2034, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e314i"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(2373, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7f5q"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(2712, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpc0x"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(3051, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga2vs"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(3390, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrbwm"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(3729, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tesy0"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(4068, 0, 339, 304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr8lk"]
+atlas = ExtResource("2_hkpde")
+region = Rect2(4407, 0, 339, 304)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plk4p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nhfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygrqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f83j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7321s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5phbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0r64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n77q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e314i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7f5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpc0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga2vs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrbwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tesy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr8lk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Obstacle" instance=ExtResource("1_s8863")]
+
+[node name="ObstacleImage" parent="." index="0"]
+visible = false
+
+[node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+position = Vector2(-62, -63)
+polygon = PackedVector2Array(-23, -13, -60, 103, -32, 177, 31, 225, 173, 226, 221, 146, 235, 57, 206, 2, 153, -63, 70, -57)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_plk4p")
+autoplay = "default"
+frame_progress = 0.64064413

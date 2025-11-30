@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxd4kwyxdexfw"]
+
+[ext_resource type="PackedScene" uid="uid://cbap81erct4wo" path="res://Obstacle/Obstacle.tscn" id="1_vsikl"]
+[ext_resource type="Texture2D" uid="uid://c75j3pb6k4omf" path="res://Obstacle/allat_2.png" id="2_7tftg"]
+
+[node name="Obstacle" instance=ExtResource("1_vsikl")]
+
+[node name="ObstacleImage" parent="." index="0"]
+texture = ExtResource("2_7tftg")
+
+[node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-14, -16, -53, 1, -98, -22, -159, -7, -96, 27, -176, 86, -66, 135, 20, 101, 36, 149, 123, 91, 35, 80, 234, 10, 268, -48, 97, -39, 96, -78, 61, -71, 68, -23)

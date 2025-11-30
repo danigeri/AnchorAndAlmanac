@@ -81,3 +81,8 @@ func _process(_delta: float) -> void:
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	Globals.emit_wobble_toggle(toggled_on)
+
+
+func _on_complete_all_pressed() -> void:
+	Globals.all_checkpoints_collected.emit()
+	pass # Replace with function body.

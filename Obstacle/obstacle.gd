@@ -1,9 +1,10 @@
+# ObstacleBase.gd
 extends Node2D
 
-@export var obstacle_texture: Texture2D
-@onready var obstacle_image: Sprite2D = $ObstacleImage
+@export var texture: Texture2D:
+	set(value):
+		$Sprite2D.texture = value
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	obstacle_image.texture = obstacle_texture
+@export var collision_shape: Shape2D:
+	set(value):
+		$CollisionShape2D.shape = value

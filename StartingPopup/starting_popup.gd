@@ -5,10 +5,10 @@ var starting_dialog = preload("res://StartingPopup/0_Fisherman_22sec.mp3")
 @onready var texture: TextureRect = $TextureRect
 
 
-func _ready() -> void:
+func start() -> void:
+	visible = true
 	get_tree().paused = true
 	texture.modulate.a = 0
-
 	fade_in()
 
 
