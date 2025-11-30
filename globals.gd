@@ -6,7 +6,7 @@ signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
 signal hp_changed
 signal wobble_toggle(on: bool)
 
-enum CheckpointType {FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHT}
+enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHT }
 
 #todo set starting position when map is built
 var last_checkpoint_positon: Vector2 = Vector2(628, 355)
@@ -19,15 +19,17 @@ var collected_checkpoints := {
 	CheckpointType.FOURTH: false,
 	CheckpointType.FIFTH: false,
 	CheckpointType.SIXTH: false,
-	CheckpointType.SEVENTH: false
+	CheckpointType.SEVENTH: false,
+	CheckpointType.EIGHT: true,
 }
 
 var current_hp: int = 3
 var felho_counter: int = 0
 
+
 func present_opening_subtitle() -> void:
-	checkpoint_collected.emit(8) # The subtitle index for the starting monlogue
-	
+	checkpoint_collected.emit(8)  # The subtitle index for the starting monlogue
+
 
 func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 	if not collected_checkpoints[type]:
@@ -36,8 +38,9 @@ func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 		print("last checkpoint positon: ", last_checkpoint_positon)
 		emit_signal("checkpoint_collected", type)
 
-		if are_all_checkpoints_collected():
-			all_checkpoints_collected.emit()
+		if type != 8:
+			if are_all_checkpoints_collected():
+				all_checkpoints_collected.emit()
 
 
 func are_all_checkpoints_collected() -> bool:
@@ -57,6 +60,7 @@ func remove_hp() -> void:
 func restore_hp() -> void:
 	current_hp = 3
 	hp_changed.emit()
-	
+
+
 func emit_wobble_toggle(on: bool) -> void:
 	emit_signal("wobble_toggle", on)

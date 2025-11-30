@@ -85,4 +85,4 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 
 func _on_complete_all_pressed() -> void:
 	Globals.all_checkpoints_collected.emit()
-	pass # Replace with function body.
+	pass  # Replace with function body.

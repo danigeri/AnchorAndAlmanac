@@ -1,7 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=28 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
-[ext_resource type="Texture2D" uid="uid://ghpw8h3xtjbv" path="res://temp_waves_terkep.jpg" id="2_dgo6t"]
 [ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://5fljxt3pabyt" path="res://Map/MapItem.tscn" id="2_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
@@ -11,29 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://cii0yvyu1gclv" path="res://Checkpoint/Checkpoint.tscn" id="9_vfyqg"]
 [ext_resource type="PackedScene" uid="uid://b3rw3vuine4lr" path="res://ShipLog/ShipLogSound.tscn" id="10_eufeh"]
 [ext_resource type="PackedScene" uid="uid://dlwphw117q6cb" path="res://Landmark/Landmark.tscn" id="13_afdo3"]
+[ext_resource type="Texture2D" uid="uid://8pegwo6xcng1" path="res://Landmark/1_puerto_gerappo_parchment.png" id="13_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://tx4d7it6381u" path="res://Landmark/0_fisherman_1_puerto_gerappo_atmo.mp3" id="14_lwaqr"]
-[ext_resource type="Texture2D" uid="uid://cvplwrpv71a5f" path="res://Landmark/1_puerto_gerappo.png" id="15_fvovd"]
-[ext_resource type="Texture2D" uid="uid://b087je2xjl40h" path="res://Landmark/2_lighthouse.png" id="16_lwaqr"]
-[ext_resource type="Texture2D" uid="uid://dlh3vpyd5k72e" path="res://Landmark/3_tomb_at_neptune.png" id="17_mc7mr"]
-[ext_resource type="Texture2D" uid="uid://b237284copi0v" path="res://Landmark/4_cedar.png" id="18_q3nly"]
-[ext_resource type="Texture2D" uid="uid://bk7na2oskke5y" path="res://Landmark/6_camp.png" id="19_arced"]
-[ext_resource type="Texture2D" uid="uid://43ngsh2hpk8t" path="res://Landmark/7_wreck.png" id="20_xuo4s"]
-[ext_resource type="PackedScene" uid="uid://cnoxbahwoqnck" path="res://EndGame/end_game_content.tscn" id="21_2yl5a"]
-[ext_resource type="Texture2D" uid="uid://bttnt88nvu2xf" path="res://Landmark/5_leviathan.png" id="21_tdvic"]
-[ext_resource type="Texture2D" uid="uid://brsux162ny1l3" path="res://Landmark/8_father_carcass.png" id="22_2yl5a"]
-[ext_resource type="PackedScene" uid="uid://b20odmllfas1" path="res://Obstacle/Allat2.tscn" id="22_h3ev2"]
-[ext_resource type="PackedScene" uid="uid://cdci2g208go12" path="res://Obstacle/Allat3.tscn" id="23_5372v"]
+[ext_resource type="Texture2D" uid="uid://c52o6cp8svi2m" path="res://Landmark/2_lighthouse_parchment.png" id="14_tdvic"]
+[ext_resource type="Texture2D" uid="uid://b8dpnjcpifpnb" path="res://Landmark/3_tomb_at_neptune (1).png" id="15_2yl5a"]
+[ext_resource type="Texture2D" uid="uid://bvn5dl0thyxv" path="res://Landmark/4_cedar_parchment.png" id="16_ee6d0"]
+[ext_resource type="Texture2D" uid="uid://diivr74p65fg7" path="res://Landmark/5_leviathan (1).png" id="17_q81a1"]
+[ext_resource type="Texture2D" uid="uid://byjkjo3gxav5j" path="res://Landmark/6_camp (1).png" id="18_m7vjf"]
+[ext_resource type="Texture2D" uid="uid://5ryqur20fewh" path="res://Landmark/7_wreck (1).png" id="19_snff3"]
+[ext_resource type="Texture2D" uid="uid://crigt3cd7rc6e" path="res://Landmark/8_father_carcass (1).png" id="20_bwr8o"]
 [ext_resource type="PackedScene" uid="uid://bimueenop2tcj" path="res://StartingPopup/starting_popup.tscn" id="23_arced"]
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
 [ext_resource type="PackedScene" uid="uid://c758c30pneo3m" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
-[ext_resource type="PackedScene" uid="uid://bcrbpvl35gfeu" path="res://Obstacle/Allat4.tscn" id="24_37se7"]
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
-[ext_resource type="PackedScene" uid="uid://bm6a7va7qsc76" path="res://Obstacle/Allat5.tscn" id="25_0eqd8"]
 [ext_resource type="PackedScene" uid="uid://dpxmeu5r860n2" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
-[ext_resource type="PackedScene" uid="uid://l1fxl7ibc42" path="res://Obstacle/Allat6.tscn" id="26_83dqn"]
-[ext_resource type="PackedScene" uid="uid://bi8peloho5rvd" path="res://Obstacle/Iceberg1.tscn" id="27_othpu"]
-[ext_resource type="PackedScene" uid="uid://blr4vpjycycrc" path="res://Obstacle/Iceberg2.tscn" id="28_xbbwk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -62,6 +53,7 @@ rotation = -0.013865815
 script = ExtResource("1_7f3si")
 
 [node name="Water" parent="." instance=ExtResource("2_lxk7w")]
+visible = false
 position = Vector2(-4727.4194, 3747.813)
 scale = Vector2(3.0000002, 3.0000002)
 
@@ -69,12 +61,6 @@ scale = Vector2(3.0000002, 3.0000002)
 position = Vector2(-4519.55, 3758.6958)
 scale = Vector2(5, 5)
 metadata/_edit_group_ = true
-
-[node name="TempTerkep" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-3809, 1955)
-scale = Vector2(5, 5)
-texture = ExtResource("2_dgo6t")
 
 [node name="Wind" type="Node2D" parent="."]
 script = ExtResource("2_x7b5a")
@@ -88,38 +74,39 @@ position = Vector2(-7746.758, 4183.9907)
 rotation = 1.2594624
 scale = Vector2(1, 3.92)
 
+
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(980, 605)
+position = Vector2(6355.123, -36.887695)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-485.56158, 6383.882)
+position = Vector2(3113.8796, 3131.476)
 checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-3412.5286, 2033.8795)
+position = Vector2(480.01123, 6998.3286)
 checkpoint_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-5026.1675, 6900.9746)
+position = Vector2(-134.48315, 178.15247)
 checkpoint_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-8554.479, 4446.8164)
+position = Vector2(-3612.816, 3856.2778)
 checkpoint_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-11093.705, 3940.5608)
+position = Vector2(-5119.876, 7744.756)
 checkpoint_type = 5
 
 [node name="Checkpoint7" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-7854.6436, 64.09851)
+position = Vector2(-8483.943, 5129.8604)
 checkpoint_type = 6
 
-[node name="Checkpoint8 - ez lesz az utso" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-7854.6436, 64.09851)
-checkpoint_type = 6
+[node name="Checkpoint8" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
+position = Vector2(-14213.244, 1001.0244)
+checkpoint_type = 7
 
 [node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
 position = Vector2(770, 362)
@@ -128,48 +115,48 @@ position = Vector2(770, 362)
 scale = Vector2(1.0000002, 1.0000002)
 
 [node name="Obstacle" parent="Obstacles" instance=ExtResource("25_xuo4s")]
-position = Vector2(693.2576, 851.69403)
+position = Vector2(5457.71, 58.678894)
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Obstacle2" parent="Obstacles" instance=ExtResource("23_tdvic")]
-position = Vector2(-752.9377, 783.6355)
+position = Vector2(5585.0586, 683.5046)
 
 [node name="Landmarks" type="Node2D" parent="."]
 scale = Vector2(1.0000005, 1.0000005)
 
 [node name="PuertoGeroppoLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(1897.2616, -5.694313)
+position = Vector2(6201.8857, -598.06573)
 landmark_audio = ExtResource("14_lwaqr")
-landmark_texture = ExtResource("15_fvovd")
+landmark_texture = ExtResource("13_xuo4s")
 
 [node name="LighthouseLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-725.8721, 6981.6045)
-landmark_texture = ExtResource("16_lwaqr")
+position = Vector2(3408.5864, 2505.501)
+landmark_texture = ExtResource("14_tdvic")
 
 [node name="TombAtNeptuneLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-3025.9426, 2571.2915)
-landmark_texture = ExtResource("17_mc7mr")
+position = Vector2(300.3366, 6468.783)
+landmark_texture = ExtResource("15_2yl5a")
 
 [node name="CedarLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-4837.172, 7551.657)
-landmark_texture = ExtResource("18_q3nly")
+position = Vector2(-318.25247, 376.62335)
+landmark_texture = ExtResource("16_ee6d0")
 
 [node name="LeviathanLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-8431.155, 3919.4756)
+position = Vector2(-3649.0024, 3364.727)
 scale = Vector2(1.0000002, 1.0000002)
-landmark_texture = ExtResource("21_tdvic")
+landmark_texture = ExtResource("17_q81a1")
 
 [node name="CampLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-11719.787, 3725.859)
-landmark_texture = ExtResource("19_arced")
+position = Vector2(-5085.929, 7244.175)
+landmark_texture = ExtResource("18_m7vjf")
 
 [node name="WreckLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-8094.338, -320.26172)
-landmark_texture = ExtResource("20_xuo4s")
+position = Vector2(-8628.547, 4667.808)
+landmark_texture = ExtResource("19_snff3")
 
 [node name="FatherLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-12814.648, 246.34375)
-landmark_texture = ExtResource("22_2yl5a")
+position = Vector2(-14865.273, 998.98303)
+landmark_texture = ExtResource("20_bwr8o")
 
 [node name="EndGameContent" parent="." instance=ExtResource("21_2yl5a")]
 
@@ -206,7 +193,7 @@ position = Vector2(-9010.992, -62.9468)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-position = Vector2(703.77484, -8345.045)
+position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
 position = Vector2(-16758.355, 6905.303)
@@ -216,10 +203,10 @@ visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1037.5023
-offset_top = 1485.5281
-offset_right = 1037.5023
-offset_bottom = 1485.5281
+offset_left = 7415.8623
+offset_top = 998.91974
+offset_right = 7415.8623
+offset_bottom = 998.91974
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -237,5 +224,4 @@ player = NodePath("../Ship")
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
-
 [editable path="EndGameContent"]
