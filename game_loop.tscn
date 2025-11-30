@@ -46,13 +46,13 @@ shader_parameter/radius = 0.44800002128
 shader_parameter/softness = 1.0
 shader_parameter/vignette_color = Color(0.18275529, 0.12767074, 0.08174201, 1)
 shader_parameter/storm_mode = 1.0
-shader_parameter/storm_darkness = 0.51200002432
-shader_parameter/storm_color = Color(0.15, 0.18, 0.22, 1)
+shader_parameter/storm_darkness = 0.5690000270275
+shader_parameter/storm_color = Color(0.16746667, 0.20163712, 0.24265054, 1)
 shader_parameter/lightning_frequency = 0.3810000180975
-shader_parameter/lightning_intensity = 0.430000020425
-shader_parameter/lightning_speed = 15.530000737675
+shader_parameter/lightning_intensity = 0.1670000079325
+shader_parameter/lightning_speed = 4.3290002056275
 shader_parameter/storm_shake_amount = 0.0
-shader_parameter/storm_shake_speed = 0.5
+shader_parameter/storm_shake_speed = 9.7570004634575
 
 [sub_resource type="QuadMesh" id="QuadMesh_tdvic"]
 size = Vector2(1920, 1080)
