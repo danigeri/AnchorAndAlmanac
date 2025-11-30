@@ -1,11 +1,12 @@
 extends Control
 
-@onready var audio_player = $AspectRatioContainer/VideoStreamPlayer/AudioStreamPlayer2D
-@onready var video_player = $AspectRatioContainer/VideoStreamPlayer
+@onready var audio_player = $MarginContainer/AspectRatioContainer/VideoStreamPlayer/AudioStreamPlayer2D
+@onready var video_player = $MarginContainer/AspectRatioContainer/VideoStreamPlayer
 
 
 func _ready() -> void:
-	if OS.is_debug_build():
+	var is_debug: bool = OS.is_debug_build()
+	if is_debug:
 		call_deferred("go_to_main_menu")
 	else:
 		video_player.play()
@@ -17,6 +18,7 @@ func _ready() -> void:
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	go_to_main_menu()
+	pass
 
 
 func go_to_main_menu() -> void:

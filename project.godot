@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gerappa-games-template"
-run/main_scene="uid://dhd8r8ji7gn64"
+run/main_scene="uid://cp03gm3dbew5m"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,7 @@ Wind="*res://Wind/wind.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [layer_names]
 

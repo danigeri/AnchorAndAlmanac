@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=27 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="Texture2D" uid="uid://ghpw8h3xtjbv" path="res://temp_waves_terkep.jpg" id="2_dgo6t"]
-[ext_resource type="PackedScene" path="res://WaterShader/Water.tscn" id="2_lxk7w"]
+[ext_resource type="PackedScene" uid="uid://cets1rd56c807" path="res://WaterShader/water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://5fljxt3pabyt" path="res://Map/MapItem.tscn" id="2_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
@@ -24,6 +24,17 @@
 [ext_resource type="Texture2D" uid="uid://brsux162ny1l3" path="res://Landmark/8_father_carcass.png" id="22_2yl5a"]
 [ext_resource type="PackedScene" uid="uid://bimueenop2tcj" path="res://StartingPopup/starting_popup.tscn" id="23_arced"]
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
+[ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
+shader = ExtResource("24_arced")
+shader_parameter/intensity = 0.8310000394725
+shader_parameter/radius = 0.5850000277875
+shader_parameter/softness = 0.90100004209898
+shader_parameter/vignette_color = Color(0.24807987, 0.17814538, 0.11986523, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tdvic"]
+size = Vector2(1920, 1080)
 
 [node name="GameLoop" type="Node2D"]
 rotation = -0.013865815
@@ -53,9 +64,6 @@ position = Vector2(95.86719, 659.3927)
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
 position = Vector2(-8824, 1261)
 scale = Vector2(1, 3.92)
-
-[node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_vfyqg")]
-player = NodePath("../Ship")
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -98,7 +106,6 @@ obstacle_texture = ExtResource("11_17x25")
 position = Vector2(770, 362)
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-visible = false
 position = Vector2(703.77484, -8345.045)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
@@ -142,6 +149,15 @@ position = Vector2(-12814.648, 246.34375)
 landmark_texture = ExtResource("22_2yl5a")
 
 [node name="StartingPopup" parent="." instance=ExtResource("23_arced")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VignetteFilter" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_xuo4s")
+position = Vector2(960, 540)
+mesh = SubResource("QuadMesh_tdvic")
+
+[node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_vfyqg")]
+player = NodePath("../Ship")
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
