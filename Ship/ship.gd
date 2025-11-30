@@ -65,6 +65,7 @@ var sway_timer := 0.0
 @export var bob_amplitude := 5.0  # pixels
 @export var bob_speed := 1.2
 
+
 func _ready() -> void:
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 	Globals.go_to_last_checkpoint.connect(_on_go_to_last_checkpoint)
@@ -79,6 +80,7 @@ func _ready() -> void:
 
 	set_rotation_degrees(90)
 
+
 func _process(delta: float) -> void:
 	sway_timer += delta
 	# rocking
@@ -87,8 +89,9 @@ func _process(delta: float) -> void:
 	var bob_offset = sin(sway_timer * bob_speed) * bob_amplitude
 	sprite_2d.rotation = sway_rotation
 	sprite_2d.position.y = -123 + bob_offset
-	
+
 	set_steering_state(delta)
+
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
@@ -274,7 +277,7 @@ func set_steering_state(delta):
 		steering_deg += 120.0 * delta
 	if Input.is_action_pressed("ui_left") and steering_deg > -30.0:
 		steering_deg -= 120.0 * delta
-		
+
 	if not (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left")):
 		if steering_deg > 0:
 			steering_deg -= 35 * delta

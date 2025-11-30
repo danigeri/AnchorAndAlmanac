@@ -1,8 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=28 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
-[ext_resource type="Texture2D" uid="uid://ghpw8h3xtjbv" path="res://temp_waves_terkep.jpg" id="2_dgo6t"]
-[ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
+[ext_resource type="PackedScene" path="res://WaterShader/water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://5fljxt3pabyt" path="res://Map/MapItem.tscn" id="2_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
@@ -22,10 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://brsux162ny1l3" path="res://Landmark/8_father_carcass.png" id="22_2yl5a"]
 [ext_resource type="PackedScene" uid="uid://bimueenop2tcj" path="res://StartingPopup/starting_popup.tscn" id="23_arced"]
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
-[ext_resource type="PackedScene" uid="uid://b7t7exr4alvro" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
+[ext_resource type="PackedScene" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
-[ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -46,6 +45,7 @@ rotation = -0.013865815
 script = ExtResource("1_7f3si")
 
 [node name="Water" parent="." instance=ExtResource("2_lxk7w")]
+visible = false
 position = Vector2(-4727.4194, 3747.813)
 scale = Vector2(3.0000002, 3.0000002)
 
@@ -54,17 +54,12 @@ position = Vector2(-4519.55, 3758.6958)
 scale = Vector2(5, 5)
 metadata/_edit_group_ = true
 
-[node name="TempTerkep" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-3809, 1955)
-scale = Vector2(5, 5)
-texture = ExtResource("2_dgo6t")
-
 [node name="Wind" type="Node2D" parent="."]
 script = ExtResource("2_x7b5a")
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(95.86719, 659.3927)
+position = Vector2(7051.1177, 256.791)
+scale = Vector2(0.5, 0.5)
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
 position = Vector2(-8824, 1261)
@@ -73,34 +68,34 @@ scale = Vector2(1, 3.92)
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(980, 605)
+position = Vector2(6251.2573, -47.328552)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-485.56158, 6383.882)
+position = Vector2(3174.9404, 2334.246)
 checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-3412.5286, 2033.8795)
+position = Vector2(690.4768, 6966.2437)
 checkpoint_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-5026.1675, 6900.9746)
+position = Vector2(401.77246, 235.59326)
 checkpoint_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-8554.479, 4446.8164)
+position = Vector2(-3417.2354, 3960.0002)
 checkpoint_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-11093.705, 3940.5608)
+position = Vector2(-4987.279, 7702.5903)
 checkpoint_type = 5
 
 [node name="Checkpoint7" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-7854.6436, 64.09851)
+position = Vector2(-8444.571, 5175.4106)
 checkpoint_type = 6
 
-[node name="Checkpoint8 - ez lesz az utso" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-7854.6436, 64.09851)
+[node name="Checkpoint8" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
+position = Vector2(-14333.144, 776.3403)
 checkpoint_type = 6
 
 [node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
@@ -110,51 +105,52 @@ position = Vector2(770, 362)
 scale = Vector2(1.0000002, 1.0000002)
 
 [node name="Obstacle" parent="Obstacles" instance=ExtResource("25_xuo4s")]
-position = Vector2(693.2576, 851.69403)
+position = Vector2(5457.71, 58.678894)
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Obstacle2" parent="Obstacles" instance=ExtResource("23_tdvic")]
-position = Vector2(-752.9377, 783.6355)
+position = Vector2(5585.0586, 683.5046)
 
 [node name="Landmarks" type="Node2D" parent="."]
 scale = Vector2(1.0000005, 1.0000005)
 
 [node name="PuertoGeroppoLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(1897.2616, -5.694313)
+position = Vector2(6230.435, -781.68756)
 landmark_audio = ExtResource("14_lwaqr")
 landmark_texture = ExtResource("15_fvovd")
 
 [node name="LighthouseLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-725.8721, 6981.6045)
+position = Vector2(3715.0488, 2762.7754)
 landmark_texture = ExtResource("16_lwaqr")
 
 [node name="TombAtNeptuneLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-3025.9426, 2571.2915)
+position = Vector2(151.36328, 6393.711)
 landmark_texture = ExtResource("17_mc7mr")
 
 [node name="CedarLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-4837.172, 7551.657)
+position = Vector2(-277.2256, 1168.2681)
 landmark_texture = ExtResource("18_q3nly")
 
 [node name="LeviathanLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-8431.155, 3919.4756)
+position = Vector2(-3833.1528, 3302.1685)
 scale = Vector2(1.0000002, 1.0000002)
 landmark_texture = ExtResource("21_tdvic")
 
 [node name="CampLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-11719.787, 3725.859)
+position = Vector2(-5059.825, 7092.523)
 landmark_texture = ExtResource("19_arced")
 
 [node name="WreckLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-8094.338, -320.26172)
+position = Vector2(-8797.062, 4559.462)
 landmark_texture = ExtResource("20_xuo4s")
 
 [node name="FatherLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
-position = Vector2(-12814.648, 246.34375)
+position = Vector2(-15298.673, 1240.9971)
 landmark_texture = ExtResource("22_2yl5a")
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-position = Vector2(703.77484, -8345.045)
+visible = false
+position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
 position = Vector2(-16758.355, 6905.303)
@@ -164,10 +160,10 @@ visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1037.5023
-offset_top = 1485.5281
-offset_right = 1037.5023
-offset_bottom = 1485.5281
+offset_left = 8060.872
+offset_top = 1074.8704
+offset_right = 8060.872
+offset_bottom = 1074.8704
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -185,4 +181,3 @@ player = NodePath("../Ship")
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
-[connection signal="steering_state_change" from="Ship" to="UI" method="_on_ship_steering_state_change"]
