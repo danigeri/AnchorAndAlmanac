@@ -13,3 +13,9 @@ func _ready() -> void:
 		landmark_sound.play(0.0)
 	if landmark_texture:
 		landmark_picture.texture = landmark_texture
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("felho"):
+		var felho_scene = area.get_parent()
+		felho_scene.remove_felho()
