@@ -6,7 +6,7 @@ signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
 signal hp_changed
 signal wobble_toggle(on: bool)
 
-enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHT }
+enum CheckpointType {FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHT}
 
 #todo set starting position when map is built
 var last_checkpoint_positon: Vector2 = Vector2(628, 355)

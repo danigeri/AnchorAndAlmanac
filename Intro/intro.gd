@@ -1,6 +1,7 @@
 extends Control
 
-@onready var audio_player = $MarginContainer/AspectRatioContainer/VideoStreamPlayer/AudioStreamPlayer2D
+@onready
+var audio_player = $MarginContainer/AspectRatioContainer/VideoStreamPlayer/AudioStreamPlayer2D
 @onready var video_player = $MarginContainer/AspectRatioContainer/VideoStreamPlayer
 
 

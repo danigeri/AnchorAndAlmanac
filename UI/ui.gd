@@ -73,7 +73,8 @@ func on_hp_changed() -> void:
 		barrell.show()
 		barrell_2.show()
 		barrell_3.show()
-		
+
+
 func _process(_delta: float) -> void:
 	fps_label.text = str(Engine.get_frames_per_second())
 
