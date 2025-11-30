@@ -13,6 +13,7 @@ var _steering_state: int = 0
 @onready var barrell_2: Sprite2D = $Barrell2
 @onready var barrell_3: Sprite2D = $Barrell3
 @onready var subtitle: MarginContainer = $Subtitle
+@onready var fps_label: Label = $UserInterface/DebugPanel/MarginContainer/VBoxContainer/fps_Label
 
 
 func _ready() -> void:
@@ -72,3 +73,10 @@ func on_hp_changed() -> void:
 		barrell.show()
 		barrell_2.show()
 		barrell_3.show()
+		
+func _process(_delta: float) -> void:
+	fps_label.text = str(Engine.get_frames_per_second())
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	Globals.emit_wobble_toggle(toggled_on)

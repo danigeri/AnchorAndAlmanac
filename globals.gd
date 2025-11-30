@@ -4,6 +4,7 @@ signal checkpoint_collected(type: int)
 signal all_checkpoints_collected
 signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
 signal hp_changed
+signal wobble_toggle(on: bool)
 
 enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHT }
 
@@ -53,3 +54,6 @@ func remove_hp() -> void:
 func restore_hp() -> void:
 	current_hp = 3
 	hp_changed.emit()
+	
+func emit_wobble_toggle(on: bool) -> void:
+	emit_signal("wobble_toggle", on)

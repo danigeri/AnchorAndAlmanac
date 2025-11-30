@@ -23,7 +23,7 @@ layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 210.0
-offset_bottom = 50.0
+offset_bottom = 239.0
 scale = Vector2(0.99883455, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="UserInterface/DebugPanel"]
@@ -40,6 +40,14 @@ text = "speed: 0m/s
 sail state: 0
 steering state: 0
 felho: 0"
+
+[node name="fps_Label" type="Label" parent="UserInterface/DebugPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="UserInterface/DebugPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "wobble"
 
 [node name="WindMeter" parent="UserInterface" instance=ExtResource("3_0mc3e")]
 layout_mode = 0
@@ -79,3 +87,5 @@ offset_left = 509.0
 offset_top = 988.0
 offset_right = 1509.0
 offset_bottom = 1070.0
+
+[connection signal="toggled" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

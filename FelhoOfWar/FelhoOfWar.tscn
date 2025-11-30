@@ -152,5 +152,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_aeoa7")
 }
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-169, -63, 352, 134)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
