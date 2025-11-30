@@ -26,6 +26,7 @@ func play_audio():
 	audio_stream_player.stream = starting_dialog
 	audio_stream_player.bus = "ShipLogSounds"
 	audio_stream_player.play()
+	Globals.present_opening_subtitle()
 	var length = audio_stream_player.stream.get_length()
 	await get_tree().create_timer(length).timeout
 	audio_stream_player.queue_free()

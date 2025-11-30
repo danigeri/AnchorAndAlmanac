@@ -89,6 +89,19 @@ var subtitles: Array[SubtitleItem] = [
 				+ "whose fate was sealed by his curiosity, rest in peace now."
 			)
 		)
+	),
+	(
+		SubtitleItem
+		. new(
+			22,
+			(
+				"Oi, laddie! Were at the bay fishing on me boat when I found this. "
+				+ "Washed up on the rocks, Neptune knows how it got home.. "
+				+ "'Tis the first page of your father's journal, I'm bloody sure.. "
+				+ "His ship's log, I tells ya! You 'swell follow his voyage through the Arctic, eh? "
+				+ "Hm. It belongs to you now, laddie. May ye can find him widdit, or may ye find what he could not."
+			)
+		)
 	)
 ]
 

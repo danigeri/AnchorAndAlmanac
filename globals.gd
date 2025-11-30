@@ -24,6 +24,9 @@ var collected_checkpoints := {
 var current_hp: int = 3
 var felho_counter: int = 0
 
+func present_opening_subtitle() -> void:
+	checkpoint_collected.emit(8) # The subtitle index for the starting monlogue
+	
 
 func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 	if not collected_checkpoints[type]:
