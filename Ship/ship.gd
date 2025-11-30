@@ -79,6 +79,8 @@ func _ready() -> void:
 	facing_rad = direction.angle()
 
 	set_rotation_degrees(90)
+	
+	Globals.last_checkpoint_positon = global_position
 
 
 func _process(delta: float) -> void:
