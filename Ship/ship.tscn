@@ -111,6 +111,7 @@ height = 881.9444
 script = ExtResource("1_1p84g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -123)
 texture = ExtResource("2_q4ev1")
 
 [node name="Paddle" type="Sprite2D" parent="Sprite2D"]
@@ -130,13 +131,13 @@ speed_scale = 0.35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-9, 58)
+position = Vector2(-5, -53)
 scale = Vector2(-3.297335, 6.4935703)
 shape = SubResource("CapsuleShape2D_q4ev1")
 
 [node name="Hitbox" type="Area2D" parent="."]
 visible = false
-position = Vector2(-6.9999995, 80)
+position = Vector2(-3.0000005, -48)
 scale = Vector2(2.2000017, -1.9071214)
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
@@ -163,11 +164,13 @@ bus = &"SFX"
 bus = &"SFX"
 
 [node name="FelhoOfWarVision" type="Area2D" parent="."]
+position = Vector2(0, -160)
 scale = Vector2(1.3599982, 1.44)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FelhoOfWarVision"]
+position = Vector2(2.2058854, 50)
 scale = Vector2(0.7599994, 1)
 shape = SubResource("CapsuleShape2D_1w8ol")
 

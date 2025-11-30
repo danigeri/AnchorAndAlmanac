@@ -40,7 +40,7 @@ const TURN_SPEED_QUOTIENT: float = 0.01
 
 @export var max_speed_mps: int = 50
 @export var min_speed_mps: int = 0
-@export var inertia: float = 50
+@export var inertia: float = 100
 
 var current_speed_mps: float
 var direction: Vector2
@@ -176,7 +176,7 @@ func _set_speed(delta: float) -> void:
 		target_speed_mps = min_speed_mps
 
 	if current_speed_mps != target_speed_mps:
-		var prefix = 1 if current_speed_mps < target_speed_mps else -1
+		var prefix = 1 if current_speed_mps < target_speed_mps else -2
 
 		current_speed_mps += prefix * inertia * delta
 
