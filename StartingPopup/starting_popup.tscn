@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bimueenop2tcj"]
 
 [ext_resource type="Script" uid="uid://cja1jdtnq370k" path="res://StartingPopup/starting_popup.gd" id="1_46d0j"]
-[ext_resource type="Texture2D" uid="uid://dxy4qgdfrdvjh" path="res://StartingPopup/sailor.png" id="1_llvvg"]
+[ext_resource type="Texture2D" uid="uid://bfo3vgg7astld" path="res://StartingPopup/0_fisherman.png" id="2_46d0j"]
 
 [node name="StartingPopup" type="Control"]
 process_mode = 3
@@ -28,5 +28,5 @@ offset_right = 244.5
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-texture = ExtResource("1_llvvg")
+texture = ExtResource("2_46d0j")
 stretch_mode = 3

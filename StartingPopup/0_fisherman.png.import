@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxy4qgdfrdvjh"
-path="res://.godot/imported/sailor.png-3f0d6c9bd3ab2f3c0e05cc8516ee6c60.ctex"
+uid="uid://bfo3vgg7astld"
+path="res://.godot/imported/0_fisherman.png-33b5798a4045230606ba7f67c749d2f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StartingPopup/sailor.png"
-dest_files=["res://.godot/imported/sailor.png-3f0d6c9bd3ab2f3c0e05cc8516ee6c60.ctex"]
+source_file="res://StartingPopup/0_fisherman.png"
+dest_files=["res://.godot/imported/0_fisherman.png-33b5798a4045230606ba7f67c749d2f4.ctex"]
 
 [params]
 
