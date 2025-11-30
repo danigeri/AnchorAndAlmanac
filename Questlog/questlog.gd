@@ -28,4 +28,5 @@ func _on_show_questlog_item(checkpoint_number: int) -> void:
 		5:
 			questlog_item_6.show()
 		6:
+			print("show questlog 7")
 			questlog_item_7.show()

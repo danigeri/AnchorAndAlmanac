@@ -7,7 +7,9 @@ var checkpoint_stories = {
 	2: preload("uid://dhlxq4yijlgtf"),
 	3: preload("uid://be5eblpb72gno"),
 	4: preload("uid://b0g84o8m0uge6"),
-	5: preload("uid://ddohwvbw7m0rs")
+	5: preload("uid://ddohwvbw7m0rs"),
+	6: preload("uid://dwdc6pyk1e4pr"),
+	7: preload("uid://dch7jucqu0q2m")
 }
 
 
