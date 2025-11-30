@@ -8,6 +8,9 @@ var endgame_barrier_camera: Camera2D
 @onready var endgame_barrier: Node2D = $EndgameBarrier
 @onready var felho_of_war_container: Node2D = $FelhoOfWarContainer
 
+@onready var starting_popup: Control = $StartingPopup
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +18,7 @@ func _ready() -> void:
 	Globals.go_to_last_checkpoint.connect(_on_go_to_last_checkpoint)
 	ship_camera = ship.get_camera()
 	endgame_barrier_camera = endgame_barrier.get_camera()
-
+	starting_popup.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # print("fps: ", Engine.get_frames_per_second())
