@@ -2,10 +2,9 @@ extends CharacterBody2D
 
 signal speed_change(speed)
 signal sail_state_change(sail_state)
-signal steering_state_change(steering_state)
+signal steering_degrees_change(steering_degrees)
 
 enum SailStates { SAIL_STATE_ANCHORED, SAIL_STATE_DOWN, SAIL_STATE_MID, SAIL_STATE_UP }
-enum SteeringStates { MAX_LEFT, MID_LEFT, SMALL_LEFT, FORWARD, SMALL_RIGHT, MID_RIGHT, MAX_RIGHT }
 enum { LEFT = -1, RIGHT = 1 }
 
 const SAIL_SPEED_DICT = {
@@ -13,26 +12,6 @@ const SAIL_SPEED_DICT = {
 	SailStates.SAIL_STATE_DOWN: 0.1,
 	SailStates.SAIL_STATE_MID: 0.5,
 	SailStates.SAIL_STATE_UP: 1,
-}
-
-const STEERING_DICT = {
-	SteeringStates.MAX_LEFT: deg_to_rad(-30),
-	SteeringStates.MID_LEFT: deg_to_rad(-20),
-	SteeringStates.SMALL_LEFT: deg_to_rad(-10),
-	SteeringStates.FORWARD: 0.0,
-	SteeringStates.SMALL_RIGHT: deg_to_rad(10),
-	SteeringStates.MID_RIGHT: deg_to_rad(20),
-	SteeringStates.MAX_RIGHT: deg_to_rad(30)
-}
-
-const PADDLE_ROTATE_DICT = {
-	SteeringStates.MAX_LEFT: 260,
-	SteeringStates.MID_LEFT: 230,
-	SteeringStates.SMALL_LEFT: 200,
-	SteeringStates.FORWARD: 180,
-	SteeringStates.SMALL_RIGHT: 160,
-	SteeringStates.MID_RIGHT: 130,
-	SteeringStates.MAX_RIGHT: 100
 }
 
 # The quotient of how the turn speed is dependent of the current speed.
@@ -48,7 +27,8 @@ var facing_rad: float
 var sail_state: SailStates
 var wind_direction: float
 var wind_strength: int
-var steering_state: SteeringStates = SteeringStates.FORWARD
+#var steering_state: SteeringStates = SteeringStates.FORWARD
+var steering_deg: float = 0
 
 var ship_sail_textures = {
 	0: preload("uid://bbieh6ykr1utn"),
@@ -107,12 +87,12 @@ func _process(delta: float) -> void:
 	var bob_offset = sin(sway_timer * bob_speed) * bob_amplitude
 	sprite_2d.rotation = sway_rotation
 	sprite_2d.position.y = -123 + bob_offset
+	
+	set_steering_state(delta)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
 		set_sail_state(event)
-	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
-		set_steering_state(event)
 
 
 # Input polling: something to do as long as the key is pressed
@@ -156,7 +136,7 @@ func move(delta: float) -> void:
 	else:
 		turning_inertia = 0.1
 
-	var facing_change_rad: float = STEERING_DICT[steering_state] * delta * turning_inertia
+	var facing_change_rad: float = deg_to_rad(steering_deg) * delta * turning_inertia
 	facing_rad += facing_change_rad
 	rotate(facing_change_rad)
 
@@ -289,21 +269,27 @@ func set_max_speed(sail_state: SailStates) -> void:
 			min_speed_mps = 200
 
 
-func set_steering_state(event):
-	if event.is_action_pressed("ui_right") and steering_state < SteeringStates.MAX_RIGHT:
-		steering_state += 1
-	if event.is_action_pressed("ui_left") and steering_state > SteeringStates.MAX_LEFT:
-		steering_state -= 1
-	steering_state_change.emit(steering_state)
-	update_paddle_angle(steering_state)
+func set_steering_state(delta):
+	if Input.is_action_pressed("ui_right") and steering_deg < 30.0:
+		steering_deg += 120.0 * delta
+	if Input.is_action_pressed("ui_left") and steering_deg > -30.0:
+		steering_deg -= 120.0 * delta
+		
+	if not (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left")):
+		if steering_deg > 0:
+			steering_deg -= 35 * delta
+		elif steering_deg < 0:
+			steering_deg += 35 * delta
+	steering_degrees_change.emit(steering_deg)
+	update_paddle_angle(steering_deg)
 
 
 func set_ship_texture(state: int) -> void:
 	sprite_2d.texture = ship_sail_textures[state]
 
 
-func update_paddle_angle(state: SteeringStates) -> void:
-	paddle.set_rotation_degrees(PADDLE_ROTATE_DICT[state])
+func update_paddle_angle(deg: int) -> void:
+	paddle.set_rotation_degrees(-deg)
 
 
 func handle_move_sound(velocity: Vector2) -> void:
