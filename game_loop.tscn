@@ -29,6 +29,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
+shader_parameter/ShakeStrength = 0.0
+shader_parameter/FactorA = Vector2(100, 100)
+shader_parameter/FactorB = Vector2(1, 1)
+shader_parameter/magnitude = Vector2(0.015, 0.015)
 shader_parameter/intensity = 0.8310000394725
 shader_parameter/radius = 0.5850000277875
 shader_parameter/softness = 0.90100004209898
@@ -102,15 +106,18 @@ checkpoint_type = 6
 [node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
 position = Vector2(770, 362)
 
-[node name="FelhoOfWarContainer" type="Node2D" parent="."]
-visible = false
-position = Vector2(703.77484, -8345.045)
+[node name="Obstacles" type="Node2D" parent="."]
+scale = Vector2(1.0000002, 1.0000002)
 
-[node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
-position = Vector2(-16758.355, 6905.303)
+[node name="Obstacle" parent="Obstacles" instance=ExtResource("25_xuo4s")]
+position = Vector2(693.2576, 851.69403)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource("23_tdvic")]
+position = Vector2(-752.9377, 783.6355)
 
 [node name="Landmarks" type="Node2D" parent="."]
-scale = Vector2(1.0000004, 1.0000004)
+scale = Vector2(1.0000005, 1.0000005)
 
 [node name="PuertoGeroppoLandmark" parent="Landmarks" instance=ExtResource("13_afdo3")]
 position = Vector2(1897.2616, -5.694313)
@@ -146,6 +153,12 @@ landmark_texture = ExtResource("20_xuo4s")
 position = Vector2(-12814.648, 246.34375)
 landmark_texture = ExtResource("22_2yl5a")
 
+[node name="FelhoOfWarContainer" type="Node2D" parent="."]
+position = Vector2(703.77484, -8345.045)
+
+[node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
+position = Vector2(-16758.355, 6905.303)
+
 [node name="StartingPopup" parent="." instance=ExtResource("23_arced")]
 visible = false
 anchors_preset = 7
@@ -156,16 +169,6 @@ offset_top = 1485.5281
 offset_right = 1037.5023
 offset_bottom = 1485.5281
 metadata/_edit_use_anchors_ = true
-
-[node name="Obstacles" type="Node2D" parent="."]
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Obstacle" parent="Obstacles" instance=ExtResource("25_xuo4s")]
-position = Vector2(693.2576, 851.69403)
-scale = Vector2(0.9999998, 0.9999998)
-
-[node name="Obstacle2" parent="Obstacles" instance=ExtResource("23_tdvic")]
-position = Vector2(-752.9377, 783.6355)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

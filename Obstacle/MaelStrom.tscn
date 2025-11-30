@@ -121,4 +121,4 @@ polygon = PackedVector2Array(-23, -13, -60, 103, -32, 177, 31, 225, 173, 226, 22
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_plk4p")
 autoplay = "default"
-frame_progress = 0.53027374
+frame_progress = 0.64064413
