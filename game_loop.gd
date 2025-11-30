@@ -82,6 +82,8 @@ func set_storm_intensity(darkness: float = 0.5, lightning_freq: float = 2.0, lig
 
 func _on_all_checkpoints_collected():
 	trigger_barrier_remove()
+	enter_storm() #TODO ezt majd rendes helyre tenni
+	
 
 func trigger_barrier_remove() -> void:
 	# 0. Initial wait and pause

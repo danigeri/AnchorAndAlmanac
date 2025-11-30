@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlwphw117q6cb"]
 
 [ext_resource type="Script" uid="uid://c7pg8cf7xc4wa" path="res://Landmark/landmark.gd" id="1_1vhnf"]
-[ext_resource type="Texture2D" uid="uid://b087je2xjl40h" path="res://Landmark/2_lighthouse.png" id="2_lsfip"]
+[ext_resource type="Texture2D" uid="uid://c52o6cp8svi2m" path="res://Landmark/2_lighthouse_parchment.png" id="2_lsfip"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lsfip"]
 radius = 291.13913
