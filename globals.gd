@@ -19,7 +19,8 @@ var collected_checkpoints := {
 	CheckpointType.FOURTH: false,
 	CheckpointType.FIFTH: false,
 	CheckpointType.SIXTH: false,
-	CheckpointType.SEVENTH: false
+	CheckpointType.SEVENTH: false,
+	CheckpointType.EIGHT: true,
 }
 
 var current_hp: int = 3
@@ -37,8 +38,9 @@ func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 		print("last checkpoint positon: ", last_checkpoint_positon)
 		emit_signal("checkpoint_collected", type)
 
-		if are_all_checkpoints_collected():
-			all_checkpoints_collected.emit()
+		if type != 8:
+			if are_all_checkpoints_collected():
+				all_checkpoints_collected.emit()
 
 
 func are_all_checkpoints_collected() -> bool:

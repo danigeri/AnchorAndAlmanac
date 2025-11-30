@@ -19,7 +19,7 @@ func _ready() -> void:
 	Globals.go_to_last_checkpoint.connect(_on_go_to_last_checkpoint)
 	ship_camera = ship.get_camera()
 	endgame_barrier_camera = endgame_barrier.get_camera()
-	# starting_popup.start()
+	starting_popup.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

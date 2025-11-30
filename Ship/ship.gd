@@ -270,7 +270,7 @@ func set_max_speed(sail_state: SailStates) -> void:
 			max_speed_mps = 100
 			min_speed_mps = 75
 		3:
-			max_speed_mps = 400
+			max_speed_mps = 300
 			min_speed_mps = 200
 
 
