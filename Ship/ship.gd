@@ -79,6 +79,11 @@ var ship_hit_sounds = {
 @onready var ship_hit_sound_player: AudioStreamPlayer = $ShipHitSoundPlayer
 @onready var ripple_effect: AnimatedSprite2D = $Sprite2D/RippleEffect
 
+var sway_timer := 0.0
+@export var sway_amplitude := deg_to_rad(2)  # Max rotation in radians
+@export var sway_speed := -0.5  # How fast it rocks
+@export var bob_amplitude := 5.0  # pixels
+@export var bob_speed := 1.2
 
 func _ready() -> void:
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -94,6 +99,14 @@ func _ready() -> void:
 
 	set_rotation_degrees(90)
 
+func _process(delta: float) -> void:
+	sway_timer += delta
+	# rocking
+	var sway_rotation = sin(sway_timer * sway_speed) * sway_amplitude
+	# bobbing
+	var bob_offset = sin(sway_timer * bob_speed) * bob_amplitude
+	sprite_2d.rotation = sway_rotation
+	sprite_2d.position.y = -123 + bob_offset
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
