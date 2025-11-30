@@ -139,7 +139,7 @@ func move(delta: float) -> void:
 	var turning_inertia
 
 	if current_speed_mps > 50:
-		turning_inertia = max_speed_mps/current_speed_mps 
+		turning_inertia = max_speed_mps / current_speed_mps
 	else:
 		turning_inertia = 0.1
 
