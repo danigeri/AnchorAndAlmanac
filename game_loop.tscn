@@ -66,14 +66,13 @@ metadata/_edit_group_ = true
 script = ExtResource("2_x7b5a")
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(95.86719, 659.3927)
+position = Vector2(5675.494, 3.693184)
 scale = Vector2(0.5, 0.5)
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
-position = Vector2(-7746.758, 4183.9907)
-rotation = 1.2594624
-scale = Vector2(1, 3.92)
-
+position = Vector2(-7878.328, 4152.163)
+rotation = 1.2586069
+scale = Vector2(1, 8.982871)
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -158,40 +157,6 @@ landmark_texture = ExtResource("19_snff3")
 position = Vector2(-14865.273, 998.98303)
 landmark_texture = ExtResource("20_bwr8o")
 
-[node name="EndGameContent" parent="." instance=ExtResource("21_2yl5a")]
-
-[node name="Obstacle" parent="EndGameContent/EndGameObstacles" index="0" instance=ExtResource("25_xuo4s")]
-position = Vector2(-9077.342, 2630.3914)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Obstacle2" parent="EndGameContent/EndGameObstacles" index="1" instance=ExtResource("22_h3ev2")]
-position = Vector2(-8525.62, 1283.9124)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Obstacle3" parent="EndGameContent/EndGameObstacles" index="2" instance=ExtResource("23_5372v")]
-position = Vector2(-7221.399, 627.9329)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Obstacle4" parent="EndGameContent/EndGameObstacles" index="3" instance=ExtResource("24_37se7")]
-position = Vector2(-8541.861, 291.59192)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Obstacle5" parent="EndGameContent/EndGameObstacles" index="4" instance=ExtResource("25_0eqd8")]
-position = Vector2(-7820.282, 2706.8284)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Obstacle6" parent="EndGameContent/EndGameObstacles" index="5" instance=ExtResource("26_83dqn")]
-position = Vector2(-5813.299, -595.66077)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Obstacle7" parent="EndGameContent/EndGameObstacles" index="6" instance=ExtResource("27_othpu")]
-position = Vector2(-9607.87, 284.81067)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Obstacle8" parent="EndGameContent/EndGameObstacles" index="7" instance=ExtResource("28_xbbwk")]
-position = Vector2(-9010.992, -62.9468)
-scale = Vector2(0.99999994, 0.99999994)
-
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
 position = Vector2(2902.2026, -8288.557)
 
@@ -224,4 +189,3 @@ player = NodePath("../Ship")
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
-[editable path="EndGameContent"]
