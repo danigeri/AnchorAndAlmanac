@@ -149,6 +149,15 @@ position = Vector2(-12814.648, 246.34375)
 landmark_texture = ExtResource("22_2yl5a")
 
 [node name="StartingPopup" parent="." instance=ExtResource("23_arced")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1037.5023
+offset_top = 1485.5281
+offset_right = 1037.5023
+offset_bottom = 1485.5281
+metadata/_edit_use_anchors_ = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VignetteFilter" type="MeshInstance2D" parent="CanvasLayer"]

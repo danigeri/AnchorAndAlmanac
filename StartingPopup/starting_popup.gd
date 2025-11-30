@@ -1,11 +1,12 @@
-extends Node2D
+extends Control
 
 var starting_dialog = preload("res://StartingPopup/0_Fisherman_22sec.mp3")
 
-@onready var texture: TextureRect = $CanvasLayer/ImagePopup/TextureRect
+@onready var texture: TextureRect = $TextureRect
 
 
 func _ready() -> void:
+	get_tree().paused = true
 	texture.modulate.a = 0
 
 	fade_in()
@@ -14,7 +15,7 @@ func _ready() -> void:
 func fade_in():
 	show()
 	var tween = create_tween()
-	tween.tween_property(texture, "modulate:a", 1.0, 2.0).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(texture, "modulate:a", 1.0, 3.0).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
 	play_audio()
 
@@ -33,6 +34,7 @@ func play_audio():
 
 func fade_out():
 	var tween = create_tween()
-	tween.tween_property(texture, "modulate:a", 0.0, 1.5)
+	tween.tween_property(texture, "modulate:a", 0.0, 3.0)
 	await tween.finished
+	get_tree().paused = false
 	queue_free()
