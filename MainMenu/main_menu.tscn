@@ -29,3 +29,5 @@ offset_right = 1803.0
 offset_bottom = 677.0
 texture_normal = ExtResource("3_po2gx")
 texture_hover = ExtResource("4_kbpwf")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
