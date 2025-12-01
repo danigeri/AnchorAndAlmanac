@@ -14,14 +14,25 @@ var _steering_degrees: int = 0
 @onready var fps_label: Label = $UserInterface/DebugPanel/MarginContainer/VBoxContainer/fps_Label
 @onready var fade_rect: ColorRect = $FadeRect
 
+@onready var wind_container: Node2D = $Node
+@onready var animated_sprite_2d: AnimatedSprite2D = $Node/AnimatedSprite2D
+@onready var animated_sprite_2d_2: AnimatedSprite2D = $Node/AnimatedSprite2D2
+@onready var animated_sprite_2d_3: AnimatedSprite2D = $Node/AnimatedSprite2D3
+
+@export var wind_fade_duration := 0.5     # time for fade in/out
+@export var wind_display_duration := 2.0  # visible time before fade-out
+var wind_tween: Tween = null
 
 
 func _ready() -> void:
-
+	Wind.update_wind.connect(_on_wind_update_wind)
 	Globals.hp_changed.connect(on_hp_changed)
 	Globals.checkpoint_collected.connect(on_play_subtitle)
 	fade_rect.color.a = 0.0  # Start fully transparent
-
+	for child in wind_container.get_children():
+		if child is AnimatedSprite2D:
+			child.play()
+	wind_container.visible = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -111,3 +122,43 @@ func _on_button_pressed() -> void:
 func _on_starting_popup_intro_finished() -> void:
 	## set to always so unpause is possible with InputEvent
 	process_mode = Node.PROCESS_MODE_ALWAYS
+
+func _on_wind_update_wind(dir: Variant, strength: Variant) -> void:
+	wind_container.rotation = -dir
+	show_wind_indicator()
+
+func show_wind_indicator() -> void:
+	# If a previous fade tween is running, kill it
+	if wind_tween:
+		wind_tween.kill()
+		
+	# Ensure the container starts visible & at 0 alpha
+	wind_container.visible = true
+	wind_container.modulate.a = 0.0
+	
+	# Reset children alpha so fade actually works
+	for child in wind_container.get_children():
+		if child is CanvasItem:
+			child.modulate.a = 1.0
+	
+	wind_tween = create_tween()
+	wind_tween.set_trans(Tween.TRANS_SINE)
+	wind_tween.set_ease(Tween.EASE_IN_OUT)
+	
+	# Fade IN
+	wind_tween.tween_property(
+		wind_container, "modulate:a", 1.0, wind_fade_duration
+	)
+	
+	# Stay visible
+	wind_tween.tween_interval(wind_display_duration)
+	
+	# Fade OUT
+	wind_tween.tween_property(
+		wind_container, "modulate:a", 0.0, wind_fade_duration
+	)
+	
+	# Hide when done
+	wind_tween.connect("finished", func():
+		wind_container.visible = false
+	)
