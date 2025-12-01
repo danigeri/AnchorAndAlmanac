@@ -14,6 +14,8 @@ var _steering_degrees: int = 0
 @onready var barrell_3: Sprite2D = $Barrell3
 @onready var subtitle: MarginContainer = $Subtitle
 @onready var fps_label: Label = $UserInterface/DebugPanel/MarginContainer/VBoxContainer/fps_Label
+@onready var fade_rect: ColorRect = $FadeRect
+
 
 
 func _ready() -> void:
@@ -22,16 +24,18 @@ func _ready() -> void:
 	minimap.player = player
 	Globals.hp_changed.connect(on_hp_changed)
 	Globals.checkpoint_collected.connect(on_play_subtitle)
+	fade_rect.color.a = 0.0  # Start fully transparent
 
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_Q:
-			questlog.visible = !questlog.visible
-			get_tree().paused = questlog.visible
+			show_quest_log()
 		if event.keycode == KEY_M:
 			minimap.visible = !minimap.visible
 			minimap_icon.visible = !minimap_icon.visible
+		if event.is_action_pressed("ui_cancel"): # disable esc key
+			pass
 
 
 func _on_ship_sail_state_change(sail_state: Variant) -> void:
@@ -86,3 +90,26 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 func _on_complete_all_pressed() -> void:
 	Globals.all_checkpoints_collected.emit()
 	pass  # Replace with function body.
+	
+func fade_out_to_black(duration: float = 2.0) -> void:
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(fade_rect, "color:a", 1.0, duration).set_trans(Tween.TRANS_LINEAR)
+	# Optional: do something after fade completes
+	tween.connect("finished", Callable(self, "_on_fade_complete"))
+
+func fade_out() -> void:
+	fade_out_to_black(2.0)
+	
+func _on_fade_complete() -> void:
+	# Reload the scene or go to end screen
+	get_tree().reload_current_scene()
+
+
+func show_quest_log() -> void:
+	questlog.visible = !questlog.visible
+	get_tree().paused = questlog.visible
+
+func _on_button_pressed() -> void:
+	questlog.visible = !questlog.visible
+	get_tree().paused = questlog.visible
