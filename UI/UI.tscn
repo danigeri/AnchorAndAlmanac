@@ -50,6 +50,7 @@ offset_right = 1055.0
 offset_bottom = -89.0
 
 [node name="UserInterface" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1128.0
@@ -141,10 +142,10 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yflil")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rjxvo")
 
 [node name="Subtitle" parent="." instance=ExtResource("7_byuxr")]
-offset_left = 601.0
-offset_top = 850.0
-offset_right = 1601.0
-offset_bottom = 1086.0
+offset_left = 607.0
+offset_top = 860.0
+offset_right = 1607.0
+offset_bottom = 1096.0
 size_flags_horizontal = 0
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 32

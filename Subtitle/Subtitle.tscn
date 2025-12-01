@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3l65vd7vkrod"]
+[gd_scene load_steps=8 format=3 uid="uid://b3l65vd7vkrod"]
 
 [ext_resource type="Script" uid="uid://ma3r7dak8kl1" path="res://Subtitle/subtitle.gd" id="1_m3twq"]
 [ext_resource type="FontFile" uid="uid://bytsugfxcmeoc" path="res://Subtitle/CaslonAntique.ttf" id="2_j6rrx"]
 [ext_resource type="Texture2D" uid="uid://b0s3tfnc7cx85" path="res://UI/iranyiitaas.png" id="3_j6rrx"]
+[ext_resource type="Texture2D" uid="uid://bbieh6ykr1utn" path="res://Ship/ship_sail_0.png" id="4_36pbw"]
+[ext_resource type="Texture2D" uid="uid://2dmopix4411b" path="res://Ship/ship_sail_1.png" id="5_4ywi5"]
+[ext_resource type="Texture2D" uid="uid://2y2bbaay71to" path="res://Ship/ship_sail_2.png" id="6_duwm3"]
+[ext_resource type="Texture2D" uid="uid://dro2oifwem04m" path="res://Ship/ship_sail_3.png" id="7_2cs7u"]
 
 [node name="Subtitle" type="MarginContainer"]
 offset_left = 460.0
 offset_top = 961.0
 offset_right = 1416.0
 offset_bottom = 1125.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 script = ExtResource("1_m3twq")
 
 [node name="Timer" type="Timer" parent="."]
@@ -29,11 +37,32 @@ theme_override_font_sizes/font_size = 22
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Arrows" type="Sprite2D" parent="."]
-visible = false
+[node name="Tutorial" type="Node2D" parent="."]
 position = Vector2(485, 91)
 scale = Vector2(0.5, 0.5)
+
+[node name="Arrows" type="Sprite2D" parent="Tutorial"]
 texture = ExtResource("3_j6rrx")
+
+[node name="Boat" type="Sprite2D" parent="Tutorial"]
+position = Vector2(-758, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_36pbw")
+
+[node name="Boat2" type="Sprite2D" parent="Tutorial"]
+position = Vector2(-424, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_4ywi5")
+
+[node name="Boat3" type="Sprite2D" parent="Tutorial"]
+position = Vector2(430, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_duwm3")
+
+[node name="Boat4" type="Sprite2D" parent="Tutorial"]
+position = Vector2(802, 4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2cs7u")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
