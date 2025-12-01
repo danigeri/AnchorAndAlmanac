@@ -17,8 +17,7 @@ var _steering_degrees: int = 0
 
 
 func _ready() -> void:
-	## set to always so unpause is possible with InputEvent
-	process_mode = Node.PROCESS_MODE_ALWAYS
+
 	Globals.hp_changed.connect(on_hp_changed)
 	Globals.checkpoint_collected.connect(on_play_subtitle)
 	fade_rect.color.a = 0.0  # Start fully transparent
@@ -107,3 +106,8 @@ func show_quest_log() -> void:
 func _on_button_pressed() -> void:
 	questlog.visible = !questlog.visible
 	get_tree().paused = questlog.visible
+
+
+func _on_starting_popup_intro_finished() -> void:
+	## set to always so unpause is possible with InputEvent
+	process_mode = Node.PROCESS_MODE_ALWAYS
