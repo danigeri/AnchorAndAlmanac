@@ -1,11 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://675p0otu3tys"]
+[gd_scene load_steps=21 format=3 uid="uid://675p0otu3tys"]
 
 [ext_resource type="Script" uid="uid://bdhfe81q16ew7" path="res://UI/ui.gd" id="1_qui0h"]
 [ext_resource type="Texture2D" uid="uid://bkfr1vv1202um" path="res://UI/UI_cheat_sheet.png" id="2_vx7wu"]
 [ext_resource type="PackedScene" uid="uid://o8or5o3p05wo" path="res://WindMeter/wind_meter.tscn" id="3_0mc3e"]
-[ext_resource type="PackedScene" uid="uid://br2d7secgwnnl" path="res://Minimap/Minimap.tscn" id="4_2n5f6"]
 [ext_resource type="PackedScene" uid="uid://b1vpe7qknj640" path="res://Questlog/Questlog.tscn" id="4_e707p"]
-[ext_resource type="Texture2D" uid="uid://ruwwjvjhle3m" path="res://UI/minimap_icon.png" id="4_jqf55"]
 [ext_resource type="Texture2D" uid="uid://cgqw0inui61wa" path="res://UI/UI_base.png" id="6_r2vy3"]
 [ext_resource type="PackedScene" uid="uid://b3l65vd7vkrod" path="res://Subtitle/Subtitle.tscn" id="7_byuxr"]
 [ext_resource type="Texture2D" uid="uid://c5vcl6getmko7" path="res://UI/UI_hordo.png" id="8_qhxh2"]
@@ -93,19 +91,11 @@ text = "wobble"
 layout_mode = 2
 text = "coomplettte"
 
-[node name="MinimapIcon" type="Sprite2D" parent="UserInterface"]
-position = Vector2(1873, 1033)
-texture = ExtResource("4_jqf55")
-
 [node name="Questlog" parent="." instance=ExtResource("4_e707p")]
 visible = false
 z_index = 99
 position = Vector2(960, 540)
 scale = Vector2(0.9, 0.9)
-
-[node name="Minimap" parent="." instance=ExtResource("4_2n5f6")]
-visible = false
-position = Vector2(4, -804)
 
 [node name="Base" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
