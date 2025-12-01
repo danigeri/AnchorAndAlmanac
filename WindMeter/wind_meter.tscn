@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7qcdj0w4ux4n" path="res://WindMeter/wind_meter.gd" id="1_cr3qh"]
 [ext_resource type="Texture2D" uid="uid://dhpwngei0wx84" path="res://Wind/windmeter_base.png" id="2_uodxg"]
-[ext_resource type="Texture2D" uid="uid://4571qhluuj4k" path="res://Wind/windmeter_pointer.png" id="3_ucha1"]
+[ext_resource type="Texture2D" uid="uid://rxtg20p8inws" path="res://UI/UI_nyil_2.png" id="3_cr3qh"]
 
 [node name="WindMeter" type="Control"]
 layout_mode = 3
@@ -13,6 +13,7 @@ offset_bottom = 40.0
 script = ExtResource("1_cr3qh")
 
 [node name="Base" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -22,10 +23,12 @@ texture = ExtResource("2_uodxg")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+rotation = -0.003191807
 pivot_offset = Vector2(75, 75)
-texture = ExtResource("3_ucha1")
+texture = ExtResource("3_cr3qh")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 46.0
 offset_top = 76.0
@@ -33,6 +36,7 @@ offset_right = 103.0
 offset_bottom = 108.0
 
 [node name="StrengthLabel" type="Label" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0

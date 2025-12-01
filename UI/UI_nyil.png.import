@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3o5tm4aruk3s"
-path="res://.godot/imported/ripple_effect.png-1c155b60bae15137352ff64f619cfca2.ctex"
+uid="uid://do6eiqus0ffug"
+path="res://.godot/imported/UI_nyil.png-0033cbefdc23cd7bf316476e2e51cd0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ship/ripple_effect.png"
-dest_files=["res://.godot/imported/ripple_effect.png-1c155b60bae15137352ff64f619cfca2.ctex"]
+source_file="res://UI/UI_nyil.png"
+dest_files=["res://.godot/imported/UI_nyil.png-0033cbefdc23cd7bf316476e2e51cd0d.ctex"]
 
 [params]
 

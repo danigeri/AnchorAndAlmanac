@@ -1,16 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3l65vd7vkrod"]
+[gd_scene load_steps=3 format=3 uid="uid://b3l65vd7vkrod"]
 
-[ext_resource type="Script" uid="uid://dg7ymlerpie0h" path="res://Subtitle/subtitle.gd" id="1_m3twq"]
+[ext_resource type="Script" uid="uid://ma3r7dak8kl1" path="res://Subtitle/subtitle.gd" id="1_m3twq"]
+[ext_resource type="FontFile" uid="uid://srvilt0l1vn7" path="res://Subtitle/Victorian Decade Demo Version.otf" id="2_xthi0"]
 
 [node name="Subtitle" type="MarginContainer"]
 offset_left = 460.0
 offset_top = 961.0
-offset_right = 1460.0
-offset_bottom = 1043.0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+offset_right = 1416.0
+offset_bottom = 1125.0
 script = ExtResource("1_m3twq")
 
 [node name="Timer" type="Timer" parent="."]
@@ -25,6 +22,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+theme_override_fonts/font = ExtResource("2_xthi0")
+theme_override_font_sizes/font_size = 22
+text = "Oi, laddie! Were at the bay fishing on me boat when I found this. Washed up on the rocks, Neptune knows how it got home..  'Tis the first page of your father's journal, I'm bloody sure. His ship's log, I tells ya!  You 'swell follow his voyage through the Arctic, eh? Hm. It belongs to you now, laddie. May ye can find him widdit, or may ye find what he could not. "
 vertical_alignment = 1
 autowrap_mode = 3
 

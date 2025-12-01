@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddiiwljy74r2h"
-path="res://.godot/imported/ripple_effect_delay.png-58318b63dfeb22a4d65fb918df177929.ctex"
+uid="uid://bkfr1vv1202um"
+path="res://.godot/imported/UI_cheat_sheet.png-4aff5645ba2c660e634be66f4939727a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ship/ripple_effect_delay.png"
-dest_files=["res://.godot/imported/ripple_effect_delay.png-58318b63dfeb22a4d65fb918df177929.ctex"]
+source_file="res://UI/UI_cheat_sheet.png"
+dest_files=["res://.godot/imported/UI_cheat_sheet.png-4aff5645ba2c660e634be66f4939727a.ctex"]
 
 [params]
 
