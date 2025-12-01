@@ -83,7 +83,7 @@ rotation = -0.25209507
 scale = Vector2(2, 2)
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(-7674.276, 4943.0693)
+position = Vector2(5509.6216, -6.607666)
 scale = Vector2(0.50000006, 0.50000006)
 
 [node name="Checkpoints" type="Node2D" parent="."]
