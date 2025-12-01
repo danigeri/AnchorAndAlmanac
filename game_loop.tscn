@@ -550,7 +550,7 @@ position = Vector2(-4727.4194, 3747.813)
 scale = Vector2(3.0000002, 3.0000002)
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(-6957.338, 5890.1006)
+position = Vector2(5612.754, 128.8353)
 scale = Vector2(0.5000001, 0.5000001)
 
 [node name="MapItem" parent="." instance=ExtResource("2_q3nly")]
@@ -731,6 +731,7 @@ bus = &"SFX"
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
