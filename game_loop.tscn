@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=31 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" path="res://WaterShader/water.tscn" id="2_lxk7w"]
@@ -27,6 +27,7 @@
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
 [ext_resource type="PackedScene" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
+[ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -82,31 +83,31 @@ scale = Vector2(1, 8.982871)
 position = Vector2(6355.123, -36.887695)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(6341.6387, 646.99146)
+position = Vector2(3113.8796, 3131.476)
 checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(6180.584, 1226.8145)
+position = Vector2(480.01123, 6998.3286)
 checkpoint_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(5544.2637, 1534.0208)
+position = Vector2(-134.48315, 178.15247)
 checkpoint_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(4976.599, 1650.1614)
+position = Vector2(-3612.816, 3856.2778)
 checkpoint_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(4209.415, 1946.5527)
+position = Vector2(-5119.876, 7744.756)
 checkpoint_type = 5
 
 [node name="Checkpoint7" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(3620.3066, 1950.3843)
+position = Vector2(-8483.943, 5129.8604)
 checkpoint_type = 6
 
 [node name="Checkpoint8" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(2532.457, 2076.313)
+position = Vector2(-14213.244, 1001.0244)
 checkpoint_type = 7
 
 [node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
@@ -174,14 +175,13 @@ position = Vector2(2902.2026, -8288.557)
 position = Vector2(-16758.355, 6905.303)
 
 [node name="StartingPopup" parent="." instance=ExtResource("23_arced")]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 7415.8623
-offset_top = 998.91974
-offset_right = 7415.8623
-offset_bottom = 998.91974
+offset_left = 6687.1343
+offset_top = 685.78546
+offset_right = 6687.1343
+offset_bottom = 685.78546
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -194,6 +194,11 @@ texture = ExtResource("24_xuo4s")
 
 [node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_vfyqg")]
 player = NodePath("../Ship")
+
+[node name="BaseMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_ee6d0")
+volume_db = -8.0
+bus = &"SFX"
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]

@@ -11,6 +11,7 @@ var endgame_barrier_camera: Camera2D
 @onready var starting_popup: Control = $StartingPopup
 @onready
 var world_shader_material: ShaderMaterial = $CanvasLayer/VignetteFilter.material as ShaderMaterial
+@onready var base_music_player: AudioStreamPlayer = $BaseMusicPlayer
 
 # Storm control variables
 var is_storm_active: bool = false
@@ -22,12 +23,12 @@ func _ready() -> void:
 	Globals.go_to_last_checkpoint.connect(_on_go_to_last_checkpoint)
 	ship_camera = ship.get_camera()
 	endgame_barrier_camera = endgame_barrier.get_camera()
-	
+	base_music_player.play()
 	# Initialize storm mode to 0
 	if world_shader_material:
 		world_shader_material.set_shader_parameter("storm_mode", 0.0)
 	
-	#starting_popup.start()
+	starting_popup.start()
 	
 	#enter_storm()
 
