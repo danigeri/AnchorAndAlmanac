@@ -56,6 +56,12 @@ func remove_hp() -> void:
 		go_to_last_checkpoint.emit(last_checkpoint_positon)
 	hp_changed.emit()
 
+func instakill() -> void:
+	current_hp = 0
+	go_to_last_checkpoint.emit(last_checkpoint_positon)
+	hp_changed.emit()
+
+
 
 func restore_hp() -> void:
 	current_hp = 3
