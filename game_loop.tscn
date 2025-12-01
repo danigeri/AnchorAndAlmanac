@@ -560,7 +560,7 @@ script = ExtResource("2_x7b5a")
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
 position = Vector2(-7807.0703, 4206.1567)
 rotation = -0.25209507
-scale = Vector2(2, 2)
+scale = Vector2(2.340293, 2.340293)
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
 position = Vector2(5509.6216, -6.607666)
@@ -738,6 +738,7 @@ bus = &"SFX"
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
