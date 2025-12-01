@@ -253,7 +253,7 @@ func _on_hitbox_body_entered(body):
 			barrel.drop_barrel()
 			barrel.drop_barrel()
 			
-		if body.is_in_group("obstacle"):
+		if body.is_in_group("obstacle") && !body.is_in_group("iceberg"):
 			body.get_parent().queue_free()
 
 
