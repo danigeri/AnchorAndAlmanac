@@ -159,6 +159,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
+[connection signal="intro_finished" from="StartingPopup" to="." method="_on_starting_popup_intro_finished"]
 [connection signal="toggled" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CompleteAll" to="." method="_on_complete_all_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
