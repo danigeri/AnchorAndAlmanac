@@ -247,6 +247,12 @@ func _on_hitbox_body_entered(body):
 		animation_player.play("hit")
 		handle_hit_sound()
 		barrel.drop_barrel()
+		if body.is_in_group("orveny"):
+			print("instakill")
+			Globals.instakill()
+			barrel.drop_barrel()
+			barrel.drop_barrel()
+			
 		if body.is_in_group("obstacle"):
 			body.get_parent().queue_free()
 
