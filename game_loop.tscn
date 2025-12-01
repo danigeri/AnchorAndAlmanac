@@ -89,7 +89,7 @@ position = Vector2(-4727.4194, 3747.813)
 scale = Vector2(3.0000002, 3.0000002)
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(-6335.7964, 5422.6733)
+position = Vector2(5540.8555, 48.830933)
 scale = Vector2(0.5000001, 0.5000001)
 
 [node name="MapItem" parent="." instance=ExtResource("2_q3nly")]
