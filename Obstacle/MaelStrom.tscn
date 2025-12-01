@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7t7exr4alvro"]
+[gd_scene load_steps=18 format=3 uid="uid://w5cmkwpgcahp"]
 
 [ext_resource type="PackedScene" uid="uid://cbap81erct4wo" path="res://Obstacle/Obstacle.tscn" id="1_s8863"]
 [ext_resource type="Texture2D" uid="uid://cvs6yo7km558v" path="res://Obstacle/maelstrom.png" id="2_hkpde"]
@@ -109,10 +109,12 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Obstacle" instance=ExtResource("1_s8863")]
+[node name="Obstacle" groups=["orveny"] instance=ExtResource("1_s8863")]
 
 [node name="ObstacleImage" parent="." index="0"]
 visible = false
+
+[node name="StaticBody2D" parent="." index="1" groups=["orveny"]]
 
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 position = Vector2(-62, -63)
