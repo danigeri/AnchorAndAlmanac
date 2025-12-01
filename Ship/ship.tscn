@@ -108,14 +108,7 @@ height = 2031.738
 
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_1p84g")
-max_speed_mps = null
-min_speed_mps = null
-inertia = null
 thunder_sound = ExtResource("2_eti42")
-sway_amplitude = null
-sway_speed = null
-bob_amplitude = null
-bob_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -123)

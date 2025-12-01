@@ -283,7 +283,7 @@ bus = &"BarnaMusic"
 [node name="WaveDefault" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_othpu")
 autoplay = true
-bus = &"SFX"
+bus = &"WaveAtmo"
 
 [node name="Obstacle" parent="." instance=ExtResource("11_fe781")]
 position = Vector2(-9387.749, 565.8898)
