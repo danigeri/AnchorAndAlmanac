@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=46 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" path="res://WaterShader/water.tscn" id="2_lxk7w"]
@@ -21,29 +21,28 @@
 [ext_resource type="Texture2D" uid="uid://5ryqur20fewh" path="res://Landmark/7_wreck (1).png" id="19_snff3"]
 [ext_resource type="Texture2D" uid="uid://crigt3cd7rc6e" path="res://Landmark/8_father_carcass (1).png" id="20_bwr8o"]
 [ext_resource type="AudioStream" uid="uid://cagtcyos6k2yi" path="res://Landmark/Waves_001_temetes.mp3" id="21_2yl5a"]
-[ext_resource type="PackedScene" uid="uid://bimueenop2tcj" path="res://StartingPopup/starting_popup.tscn" id="23_arced"]
-[ext_resource type="PackedScene" uid="uid://cxd4kwyxdexfw" path="res://Obstacle/Allat2.tscn" id="21_othpu"]
-[ext_resource type="PackedScene" uid="uid://cdci2g208go12" path="res://Obstacle/Allat3.tscn" id="22_xbbwk"]
-[ext_resource type="PackedScene" uid="uid://bcrbpvl35gfeu" path="res://Obstacle/Allat4.tscn" id="23_8im6v"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat2.tscn" id="21_othpu"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat3.tscn" id="22_xbbwk"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat4.tscn" id="23_8im6v"]
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
 [ext_resource type="PackedScene" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
-[ext_resource type="PackedScene" uid="uid://bi8peloho5rvd" path="res://Obstacle/Iceberg1.tscn" id="24_hok5h"]
+[ext_resource type="PackedScene" path="res://Obstacle/Iceberg1.tscn" id="24_hok5h"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
+[ext_resource type="PackedScene" path="res://Obstacle/Iceberg2.tscn" id="25_jx8du"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
+[ext_resource type="PackedScene" path="res://Obstacle/Iceberg4.tscn" id="26_1ujhl"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
-[ext_resource type="PackedScene" uid="uid://blr4vpjycycrc" path="res://Obstacle/Iceberg2.tscn" id="25_jx8du"]
-[ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
-[ext_resource type="PackedScene" uid="uid://bspvq6cx2kdsg" path="res://Obstacle/Iceberg4.tscn" id="26_1ujhl"]
-[ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
-[ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
-[ext_resource type="PackedScene" uid="uid://b1h6ulakq6hjy" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
-[ext_resource type="PackedScene" uid="uid://cnyjtohu837c8" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
-[ext_resource type="PackedScene" uid="uid://ukop5jdb1734" path="res://Obstacle/Iceberg3.tscn" id="35_xbbwk"]
-[ext_resource type="PackedScene" uid="uid://0d8yeelkadvq" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
-[ext_resource type="PackedScene" uid="uid://daiml7r7r2fnk" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
-[ext_resource type="PackedScene" uid="uid://b85r256pi0hmm" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
-[ext_resource type="PackedScene" uid="uid://l1fxl7ibc42" path="res://Obstacle/Allat6.tscn" id="39_18374"]
-[ext_resource type="PackedScene" uid="uid://bm6a7va7qsc76" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
+[ext_resource type="PackedScene" path="res://Obstacle/Iceberg3.tscn" id="35_xbbwk"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat6.tscn" id="39_18374"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -99,27 +98,27 @@ scale = Vector2(1, 8.982871)
 position = Vector2(6355.123, -36.887695)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(3113.8796, 3131.476)
+position = Vector2(6381.814, 562.5405)
 checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(480.01123, 6998.3286)
+position = Vector2(6266.685, 1148.001)
 checkpoint_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-134.48315, 178.15247)
+position = Vector2(5643.5415, 1370.3816)
 checkpoint_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-3612.816, 3856.2778)
+position = Vector2(4936.431, 1445.5847)
 checkpoint_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-5119.876, 7744.756)
+position = Vector2(4407.335, 1665.27)
 checkpoint_type = 5
 
 [node name="Checkpoint7" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(-8483.943, 5129.8604)
+position = Vector2(3649.1582, 1672.7578)
 checkpoint_type = 6
 
 [node name="Checkpoint8" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
@@ -236,16 +235,6 @@ position = Vector2(2902.2026, -8288.557)
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
 position = Vector2(-16758.355, 6905.303)
 
-[node name="StartingPopup" parent="." instance=ExtResource("23_arced")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 6687.1343
-offset_top = 685.78546
-offset_right = 6687.1343
-offset_bottom = 685.78546
-metadata/_edit_use_anchors_ = true
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VignetteFilter" type="MeshInstance2D" parent="CanvasLayer"]
@@ -261,6 +250,7 @@ player = NodePath("../Ship")
 stream = ExtResource("28_ee6d0")
 volume_db = -8.0
 bus = &"SFX"
+
 [node name="Obstacle" parent="." instance=ExtResource("27_t3vja")]
 position = Vector2(-9519.72, 707.0736)
 

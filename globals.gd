@@ -21,7 +21,7 @@ var collected_checkpoints := {
 	CheckpointType.FIFTH: false,
 	CheckpointType.SIXTH: false,
 	CheckpointType.SEVENTH: false,
-	CheckpointType.EIGHT: false,
+	CheckpointType.EIGHT: true,
 }
 
 var current_hp: int = 3
@@ -36,13 +36,14 @@ func mark_collected(type: int, checkpoint_position: Vector2) -> void:
 	collected_checkpoints[type] = true
 	last_checkpoint_positon = checkpoint_position
 	emit_signal("checkpoint_collected", type)
-
+	print("checkpoint_to_collect", type)
 	if type != CheckpointType.EIGHT:
 		if are_all_checkpoints_collected():
 			all_checkpoints_collected.emit()
 
 
 func are_all_checkpoints_collected() -> bool:
+	print(collected_checkpoints)
 	for value in CheckpointType.values():
 		if not collected_checkpoints[value]:
 			return false
@@ -63,4 +64,3 @@ func restore_hp() -> void:
 
 func emit_wobble_toggle(on: bool) -> void:
 	emit_signal("wobble_toggle", on)
-	
