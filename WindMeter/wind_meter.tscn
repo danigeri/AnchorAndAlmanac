@@ -46,4 +46,5 @@ text = "50"
 horizontal_alignment = 1
 
 [node name="WindChangeSoundPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 10.0
 bus = &"SFX"

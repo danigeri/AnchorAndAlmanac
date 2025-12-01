@@ -68,16 +68,15 @@ func _ready() -> void:
 	Globals.last_audio_finsihed.connect(_on_last_audio_finished)
 	ship_camera = ship.get_camera()
 	endgame_barrier_camera = endgame_barrier.get_camera()
-	# AudioManager.play_music(idle_music)
 	base_music_player.play()
 	# Initialize storm mode to 0
 	if world_shader_material:
 		world_shader_material.set_shader_parameter("storm_mode", 0.0)
 
-	# starting_popup.start()
+	starting_popup.start()
 	
 	storm_trigger_area.disabled = true
-	enter_storm()
+	#enter_storm()
 	#exit_storm()
 	#base_music_player.stop()
 
