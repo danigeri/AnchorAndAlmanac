@@ -4,6 +4,8 @@ extends Node2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 
 func _ready() -> void:
 	## set to always so barrier animation is possible while paused
@@ -22,3 +24,4 @@ func get_camera() -> Camera2D:
 func _on_game_loop_endgame_barrier_destroy() -> void:
 	await get_tree().create_timer(1).timeout
 	animation_player.play("destroy")
+	audio_stream_player.play()

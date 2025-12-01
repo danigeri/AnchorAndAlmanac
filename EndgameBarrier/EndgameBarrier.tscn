@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://v4jrth8hl4h6"]
+[gd_scene load_steps=8 format=3 uid="uid://v4jrth8hl4h6"]
 
 [ext_resource type="Script" uid="uid://crnqk7esdquo" path="res://EndgameBarrier/endgame_barrier.gd" id="1_xpcmi"]
-[ext_resource type="Texture2D" uid="uid://bd1xdv64wa3ya" path="res://EndgameBarrier/icewall_2.png" id="2_p7103"]
+[ext_resource type="Texture2D" uid="uid://behh2e7dne30x" path="res://EndgameBarrier/icewall_3.png" id="2_p7103"]
+[ext_resource type="AudioStream" uid="uid://dab4f2xdeb065" path="res://EndgameBarrier/ice_crack.mp3" id="3_8kpbc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvspd"]
 
@@ -101,3 +102,8 @@ polygon = PackedVector2Array(187, -113, -162.5, -113, -188.1, -107, -190.6, -107
 libraries = {
 &"": SubResource("AnimationLibrary_8kpbc")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8kpbc")
+volume_db = 4.771
+bus = &"SFX"
