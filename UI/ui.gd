@@ -7,8 +7,6 @@ var _steering_degrees: int = 0
 
 @onready var debug_label: Label = $UserInterface/DebugPanel/MarginContainer/VBoxContainer/DebugLabel
 @onready var questlog: Node2D = $Questlog
-@onready var minimap: Node2D = $Minimap
-@onready var minimap_icon: Sprite2D = $UserInterface/MinimapIcon
 @onready var barrell: Sprite2D = $Barrell
 @onready var barrell_2: Sprite2D = $Barrell2
 @onready var barrell_3: Sprite2D = $Barrell3
@@ -21,7 +19,6 @@ var _steering_degrees: int = 0
 func _ready() -> void:
 	## set to always so unpause is possible with InputEvent
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	minimap.player = player
 	Globals.hp_changed.connect(on_hp_changed)
 	Globals.checkpoint_collected.connect(on_play_subtitle)
 	fade_rect.color.a = 0.0  # Start fully transparent
@@ -31,9 +28,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_Q:
 			show_quest_log()
-		if event.keycode == KEY_M:
-			minimap.visible = !minimap.visible
-			minimap_icon.visible = !minimap_icon.visible
 		if event.is_action_pressed("ui_cancel"): # disable esc key
 			pass
 

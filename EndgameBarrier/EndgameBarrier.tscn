@@ -1,35 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://v4jrth8hl4h6"]
+[gd_scene load_steps=7 format=3 uid="uid://v4jrth8hl4h6"]
 
 [ext_resource type="Script" uid="uid://crnqk7esdquo" path="res://EndgameBarrier/endgame_barrier.gd" id="1_xpcmi"]
+[ext_resource type="Texture2D" uid="uid://bd1xdv64wa3ya" path="res://EndgameBarrier/icewall_2.png" id="2_p7103"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvspd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpcmi"]
-size = Vector2(77, 73.905106)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p7103"]
 
 [sub_resource type="Animation" id="Animation_p7103"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StaticBody2D:skew")
+tracks/0/path = NodePath("StaticBody2D/Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StaticBody2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -77,6 +61,18 @@ tracks/2/keys = {
 "method": &"remove_barrier"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StaticBody2D/Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.53333336, 0.7, 0.9, 1.1333333, 1.3333334, 1.4974601, 1.59746, 1.6974602, 1.7962344, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.12156863), Color(1, 1, 1, 1), Color(1, 1, 1, 0.12156863), Color(1, 1, 1, 1), Color(1, 1, 1, 0.12156863), Color(1, 1, 1, 1), Color(1, 1, 1, 0.12156863), Color(1, 1, 1, 1), Color(1, 1, 1, 0.12156863), Color(1, 1, 1, 1), Color(1, 1, 1, 0.12156863)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8kpbc"]
 _data = {
@@ -87,18 +83,17 @@ _data = {
 [node name="EndgameBarrier" type="Node2D"]
 script = ExtResource("1_xpcmi")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(1, 5.48)
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["damaging"]]
 physics_material_override = SubResource("PhysicsMaterial_nvspd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["damaging"]]
-position = Vector2(0.5, 5.9306574)
-shape = SubResource("RectangleShape2D_xpcmi")
+[node name="Sprite2D" type="Polygon2D" parent="StaticBody2D" groups=["damaging"]]
+texture = ExtResource("2_p7103")
+polygon = PackedVector2Array(217, -113, -193.5, -113, -230, -7.699997, -230, -6.0999985, -277, 65.3, -277, 97.7, -270, 112.3, -270, 113, -183.8, 113, -101.600006, 103.2, 117.899994, 109, 124.100006, 109, 154.5, 95.3, 266.5, 107, 277, 107, 277, 42.899994, 244.20001, -12.400002, 217, -104.5)
+uv = PackedVector2Array(494, 0, 83.5, 0, 47, 105.3, 47, 106.9, 0, 178.3, 0, 210.7, 7, 225.3, 7, 226, 93.2, 226, 175.4, 216.2, 394.9, 222, 401.1, 222, 431.5, 208.3, 543.5, 220, 554, 220, 554, 155.9, 521.2, 100.6, 494, 8.5)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17)]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" groups=["damaging"]]
-position = Vector2(0.4999981, 6.0218925)
-scale = Vector2(77.00001, 74.452545)
-texture = SubResource("PlaceholderTexture2D_p7103")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(187, -113, -162.5, -113, -188.1, -107, -190.6, -107, -200, -68.2, -200, -63.6, -207.1, -52, -208.7, -52, -211, -39.199997, -211, -36.699997, -217.1, -27, -218.5, -27, -225, -6.300003, -225, -3.5999985, -253, 42.399994, -253, 44.300003, -277, 75, -277, 89.2, -271, 97, -271, 108.100006, -265, 112.100006, -265, 113, -254.9, 113, -252.9, 109.100006, -229, 104, -140, 97, -101, 94, -10, 94, 17, 92, 48, 92, 87, 92, 113, 91, 152.9, 90.899994, 195, 90, 213, 89, 222, 88, 245, 90, 258, 96, 263, 98, 266, 102, 270.8, 102, 274, 98.8, 274, 95.2, 271, 92.2, 271, 91.600006, 276.09998, 84, 277, 84, 277, 53.5, 255, 22, 254.29999, 22, 239.29999, -12, 238.5, -12, 226, -67, 226, -71.5, 215, -94.5, 215, -100.7, 209, -108.7, 209, -110.8)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
