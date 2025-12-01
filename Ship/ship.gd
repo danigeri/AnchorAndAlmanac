@@ -63,6 +63,7 @@ var ship_hit_sounds = {
 @onready var ship_hit_sound_player: AudioStreamPlayer = $ShipHitSoundPlayer
 @onready var ship_nyikorgas_player: AudioStreamPlayer = $ShipNyikorgasPlayer
 @onready var ripple_effect: AnimatedSprite2D = $Sprite2D/RippleEffect
+@onready var barrel: Node2D = $Barrel
 
 
 var sway_timer := 0.0
@@ -245,6 +246,7 @@ func _on_hitbox_body_entered(body):
 		Globals.remove_hp()
 		animation_player.play("hit")
 		handle_hit_sound()
+		barrel.drop_barrel()
 		if body.is_in_group("obstacle"):
 			body.get_parent().queue_free()
 
