@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=43 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
@@ -31,14 +31,15 @@
 [ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
 [ext_resource type="PackedScene" uid="uid://bspvq6cx2kdsg" path="res://Obstacle/Iceberg4.tscn" id="26_1ujhl"]
 [ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
-[ext_resource type="Texture2D" uid="uid://cy2t8xsn3anv7" path="res://Obstacle/allat_11.png" id="28_dwnf7"]
-[ext_resource type="Texture2D" uid="uid://bu62kqvm1ynms" path="res://Obstacle/allat_13.png" id="29_18374"]
-[ext_resource type="Texture2D" uid="uid://bsg8k4njq2510" path="res://Obstacle/allat_10.png" id="30_fe781"]
-[ext_resource type="Texture2D" uid="uid://b0cyvwr6gem8l" path="res://Obstacle/allat_8.png" id="31_ajgm3"]
-[ext_resource type="Texture2D" uid="uid://jwgk6qcvyvxo" path="res://Obstacle/allat_7.png" id="32_qobi3"]
-[ext_resource type="Texture2D" uid="uid://c75j3pb6k4omf" path="res://Obstacle/allat_2.png" id="33_ephyg"]
-[ext_resource type="Texture2D" uid="uid://cxl264ypfjdlr" path="res://Obstacle/allat_4.png" id="34_ikk7k"]
+[ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
+[ext_resource type="PackedScene" uid="uid://b1h6ulakq6hjy" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
+[ext_resource type="PackedScene" uid="uid://cnyjtohu837c8" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
 [ext_resource type="PackedScene" uid="uid://ukop5jdb1734" path="res://Obstacle/Iceberg3.tscn" id="35_xbbwk"]
+[ext_resource type="PackedScene" uid="uid://0d8yeelkadvq" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
+[ext_resource type="PackedScene" uid="uid://daiml7r7r2fnk" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
+[ext_resource type="PackedScene" uid="uid://b85r256pi0hmm" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
+[ext_resource type="PackedScene" uid="uid://l1fxl7ibc42" path="res://Obstacle/Allat6.tscn" id="39_18374"]
+[ext_resource type="PackedScene" uid="uid://bm6a7va7qsc76" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -80,7 +81,7 @@ metadata/_edit_group_ = true
 script = ExtResource("2_x7b5a")
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(5873.468, 295.46613)
+position = Vector2(5922.409, 300.14453)
 scale = Vector2(0.5, 0.5)
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
@@ -128,11 +129,11 @@ position = Vector2(770, 362)
 scale = Vector2(1.0000002, 1.0000002)
 
 [node name="Obstacle" parent="Obstacles" instance=ExtResource("25_xuo4s")]
-position = Vector2(5457.71, 58.678894)
+position = Vector2(4898.963, 252.95021)
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Obstacle2" parent="Obstacles" instance=ExtResource("23_tdvic")]
-position = Vector2(5585.0586, 683.5046)
+position = Vector2(3257.6978, 1198.284)
 
 [node name="Landmarks" type="Node2D" parent="."]
 scale = Vector2(1.0000005, 1.0000005)
@@ -203,42 +204,6 @@ position = Vector2(-8569.359, 327.21405)
 [node name="Obstacle9" parent="EndGameStuff" instance=ExtResource("27_t3vja")]
 position = Vector2(-5466.189, -384.82767)
 
-[node name="Allat11" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-8955.959, 439.8645)
-texture = ExtResource("28_dwnf7")
-
-[node name="Allat13" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-9381.62, 700.9876)
-texture = ExtResource("29_18374")
-
-[node name="Allat10" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-9100.231, 674.8867)
-texture = ExtResource("30_fe781")
-
-[node name="Allat8" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-8010.7246, 68.93494)
-texture = ExtResource("31_ajgm3")
-
-[node name="Allat7" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-9452.094, 951.03455)
-texture = ExtResource("32_qobi3")
-
-[node name="Allat2" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-9744.522, -895.1973)
-texture = ExtResource("33_ephyg")
-
-[node name="Allat4" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-10067.293, -48.591415)
-texture = ExtResource("34_ikk7k")
-
-[node name="Allat9" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-11269.144, 148.76341)
-texture = ExtResource("31_ajgm3")
-
-[node name="Allat12" type="Sprite2D" parent="EndGameStuff"]
-position = Vector2(-10630.898, -1018.49915)
-texture = ExtResource("30_fe781")
-
 [node name="Obstacle10" parent="EndGameStuff" instance=ExtResource("26_1ujhl")]
 position = Vector2(-8160.981, -851.23676)
 
@@ -247,6 +212,11 @@ position = Vector2(-8788.869, -430.90228)
 
 [node name="Obstacle12" parent="EndGameStuff" instance=ExtResource("25_jx8du")]
 position = Vector2(-9266.746, -82.49478)
+
+[node name="StormTrigger" type="Area2D" parent="EndGameStuff"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EndGameStuff/StormTrigger"]
+polygon = PackedVector2Array(-8651.0205, 3980.4326, -7365.1895, 3857.2493, -7100.4287, 4236.9565, -8351.038, 4488.6406)
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
 visible = false
@@ -266,7 +236,35 @@ texture = ExtResource("24_xuo4s")
 [node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_vfyqg")]
 player = NodePath("../Ship")
 
+[node name="Obstacle" parent="." instance=ExtResource("27_t3vja")]
+position = Vector2(-9519.72, 707.0736)
+
+[node name="Obstacle2" parent="." instance=ExtResource("33_8im6v")]
+position = Vector2(-9210.131, 450.3415)
+
+[node name="Obstacle3" parent="." instance=ExtResource("34_hok5h")]
+position = Vector2(-8956.082, 592.8777)
+
+[node name="Obstacle4" parent="." instance=ExtResource("35_jx8du")]
+position = Vector2(-8109.688, 137.56943)
+
+[node name="Obstacle5" parent="." instance=ExtResource("36_1ujhl")]
+position = Vector2(-10174.939, -147.09344)
+
+[node name="Obstacle6" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(-9673.118, -996.2172)
+
+[node name="Obstacle7" parent="." instance=ExtResource("38_dwnf7")]
+position = Vector2(-9459.979, 1230.9524)
+
+[node name="Obstacle8" parent="." instance=ExtResource("39_18374")]
+position = Vector2(-7820.4756, -308.46347)
+
+[node name="Obstacle9" parent="." instance=ExtResource("40_fe781")]
+position = Vector2(-11336.916, 275.83606)
+
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
+[connection signal="body_entered" from="EndGameStuff/StormTrigger" to="." method="_on_storm_trigger_body_entered"]

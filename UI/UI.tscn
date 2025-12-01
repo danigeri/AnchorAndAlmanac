@@ -43,6 +43,7 @@ position = Vector2(960, 540)
 texture = ExtResource("2_vx7wu")
 
 [node name="StartingPopup" parent="." instance=ExtResource("11_r2vy3")]
+visible = false
 
 [node name="TextureRect" parent="StartingPopup" index="0"]
 offset_left = 358.0
