@@ -8,9 +8,15 @@ var endgame_barrier_camera: Camera2D
 @onready var ship: CharacterBody2D = $Ship
 @onready var endgame_barrier: Node2D = $EndgameBarrier
 @onready var felho_of_war_container: Node2D = $FelhoOfWarContainer
-@onready var starting_popup: Control = $StartingPopup
+@onready var starting_popup: Control = $UI/StartingPopup
 @onready
 var world_shader_material: ShaderMaterial = $CanvasLayer/VignetteFilter.material as ShaderMaterial
+@onready var ui: CanvasLayer = $UI
+
+@onready var storm_trigger_area: CollisionPolygon2D = $EndGameStuff/StormTrigger/CollisionPolygon2D
+
+
+
 
 # Storm control variables
 var is_storm_active: bool = false
@@ -20,6 +26,7 @@ var current_storm_value: float = 0.0
 func _ready() -> void:
 	Globals.all_checkpoints_collected.connect(_on_all_checkpoints_collected)
 	Globals.go_to_last_checkpoint.connect(_on_go_to_last_checkpoint)
+	Globals.last_audio_finsihed.connect(_on_last_audio_finished)
 	ship_camera = ship.get_camera()
 	endgame_barrier_camera = endgame_barrier.get_camera()
 	
@@ -29,6 +36,7 @@ func _ready() -> void:
 	
 	starting_popup.start()
 	
+	storm_trigger_area.disabled = true
 	#enter_storm()
 
 
@@ -53,6 +61,7 @@ func enter_storm():
 	"""Call this when the boat enters a storm zone"""
 	is_storm_active = true
 	ship.enter_storm()
+	
 
 func exit_storm():
 	"""Call this when the boat leaves a storm zone"""
@@ -82,7 +91,8 @@ func set_storm_intensity(darkness: float = 0.5, lightning_freq: float = 2.0, lig
 
 func _on_all_checkpoints_collected():
 	trigger_barrier_remove()
-	enter_storm() #TODO ezt majd rendes helyre tenni
+	#enter_storm() #TODO ezt majd rendes helyre tenni
+	storm_trigger_area.disabled = false
 	
 
 func trigger_barrier_remove() -> void:
@@ -144,3 +154,13 @@ func _on_go_to_last_checkpoint(last_checkpoint_position: Vector2):
 	ship_camera.position_smoothing_enabled = true
 	ship_camera.position_smoothing_speed = 2.5
 	ship.position = last_checkpoint_position
+
+func _on_last_audio_finished() -> void:
+	ui.fade_out()
+	pass
+
+
+func _on_storm_trigger_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		enter_storm()
+	

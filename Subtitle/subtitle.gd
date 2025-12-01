@@ -76,32 +76,32 @@ var subtitles: Array[SubtitleItem] = [
 		)
 	),
 	(
-		SubtitleItem
-		. new(
-			38,
-			(
-				"We found my father's frozen remains on a nameless island. I recognised him not from "
-				+ "his clothes, but from his old cutlass, that he held tightly to his chest 'til the very end. "
-				+ "I recon, he found passage through the ice with his boat, eventually reaching Cape Loïc. "
-				+ "I buried him along his journal. "
-				+ "He couldn't make it home, but it was him who first discovered "
-				+ "this desolate passage, not us. I named the island Isola Frederico after my father. May he, "
-				+ "whose fate was sealed by his curiosity, rest in peace now."
-			)
+	SubtitleItem
+	. new(
+		38,
+		(
+			"We found my father's frozen remains on a nameless island. I recognised him not from "
+			+ "his clothes, but from his old cutlass, that he held tightly to his chest 'til the very end. "
+			+ "I recon, he found passage through the ice with his boat, eventually reaching Cape Loïc. "
+			+ "I buried him along his journal. "
+			+ "He couldn't make it home, but it was him who first discovered "
+			+ "this desolate passage, not us. I named the island Isola Frederico after my father. May he, "
+			+ "whose fate was sealed by his curiosity, rest in peace now."
 		)
+	)
 	),
 	(
-		SubtitleItem
-		. new(
-			22,
-			(
-				"Oi, laddie! Were at the bay fishing on me boat when I found this. "
-				+ "Washed up on the rocks, Neptune knows how it got home.. "
-				+ "'Tis the first page of your father's journal, I'm bloody sure.. "
-				+ "His ship's log, I tells ya! You 'swell follow his voyage through the Arctic, eh? "
-				+ "Hm. It belongs to you now, laddie. May ye can find him widdit, or may ye find what he could not."
-			)
+	SubtitleItem
+	. new(
+		22,
+		(
+			"Oi, laddie! Were at the bay fishing on me boat when I found this. "
+			+ "Washed up on the rocks, Neptune knows how it got home.. "
+			+ "'Tis the first page of your father's journal, I'm bloody sure.. "
+			+ "His ship's log, I tells ya! You 'swell follow his voyage through the Arctic, eh? "
+			+ "Hm. It belongs to you now, laddie. May ye can find him widdit, or may ye find what he could not."
 		)
+	)
 	)
 ]
 
@@ -111,6 +111,7 @@ var subtitles: Array[SubtitleItem] = [
 
 
 func type_text(checkpoint_number: int) -> void:
+	print("type text called with", checkpoint_number)
 	var subtitle = subtitles[checkpoint_number]
 	text = subtitle.subtitle
 	duration = subtitle.duration
