@@ -550,7 +550,7 @@ position = Vector2(-4727.4194, 3747.813)
 scale = Vector2(3.0000002, 3.0000002)
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(5540.8555, 48.830933)
+position = Vector2(-6957.338, 5890.1006)
 scale = Vector2(0.5000001, 0.5000001)
 
 [node name="MapItem" parent="." instance=ExtResource("2_q3nly")]
@@ -638,6 +638,24 @@ position = Vector2(5027.8076, 1346.8416)
 position = Vector2(7137.645, 724.0355)
 wobble = true
 
+[node name="Obstacle7" parent="Obstacles" instance=ExtResource("11_fe781")]
+position = Vector2(-1436.5529, 4501.5137)
+
+[node name="Obstacle8" parent="Obstacles" instance=ExtResource("40_ephyg")]
+position = Vector2(-9545.094, 7369.36)
+
+[node name="Obstacle9" parent="Obstacles" instance=ExtResource("39_qobi3")]
+position = Vector2(-6285.5254, 7783.595)
+
+[node name="Obstacle10" parent="Obstacles" instance=ExtResource("11_fe781")]
+position = Vector2(-3565.8425, 5950.129)
+
+[node name="Obstacle11" parent="Obstacles" instance=ExtResource("39_qobi3")]
+position = Vector2(-2712.453, 2826.6619)
+
+[node name="Obstacle12" parent="Obstacles" instance=ExtResource("40_ephyg")]
+position = Vector2(-907.0777, 7572.149)
+
 [node name="Landmarks" type="Node2D" parent="."]
 scale = Vector2(1.0000005, 1.0000005)
 
@@ -713,6 +731,7 @@ bus = &"SFX"
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
@@ -945,6 +964,129 @@ scale = Vector2(-2.075, 2.075)
 
 [node name="Obstacle62" parent="." instance=ExtResource("39_qobi3")]
 position = Vector2(-8908.51, -313.54996)
+
+[node name="Obstacle63" parent="." instance=ExtResource("17_qobi3")]
+position = Vector2(2423.1975, 6277.2026)
+
+[node name="Obstacle64" parent="." instance=ExtResource("40_fe781")]
+position = Vector2(-1926.0435, 3451.6265)
+
+[node name="Obstacle65" parent="." instance=ExtResource("35_jx8du")]
+position = Vector2(5248.3604, 5852.334)
+
+[node name="Obstacle66" parent="." instance=ExtResource("34_hok5h")]
+position = Vector2(4052.091, 7305.8867)
+
+[node name="Obstacle67" parent="." instance=ExtResource("33_8im6v")]
+position = Vector2(2026.9982, 8091.884)
+
+[node name="Obstacle68" parent="." instance=ExtResource("27_t3vja")]
+position = Vector2(-701.688, 5381.788)
+
+[node name="Obstacle69" parent="." instance=ExtResource("38_dwnf7")]
+position = Vector2(-292.43994, 8323.746)
+
+[node name="Obstacle70" parent="." instance=ExtResource("9_18374")]
+position = Vector2(-1916.884, 7551.1484)
+
+[node name="Obstacle71" parent="." instance=ExtResource("39_18374")]
+position = Vector2(3928.7603, 4371.8945)
+
+[node name="Obstacle72" parent="." instance=ExtResource("38_dwnf7")]
+position = Vector2(1343.891, 5931.204)
+
+[node name="Obstacle73" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(286.82886, 3548.3184)
+
+[node name="Obstacle74" parent="." instance=ExtResource("40_fe781")]
+position = Vector2(767.7624, -482.40137)
+
+[node name="Obstacle75" parent="." instance=ExtResource("9_18374")]
+position = Vector2(983.4602, 1848.814)
+
+[node name="Obstacle76" parent="." instance=ExtResource("12_1ujhl")]
+position = Vector2(-1192.0044, -368.56305)
+
+[node name="Obstacle77" parent="." instance=ExtResource("17_qobi3")]
+position = Vector2(-1406.0938, 934.59393)
+
+[node name="Obstacle78" parent="." instance=ExtResource("25_xuo4s")]
+position = Vector2(-2673.1362, 1650.0946)
+
+[node name="Obstacle79" parent="." instance=ExtResource("39_18374")]
+position = Vector2(-2457.5024, 5500.455)
+
+[node name="Obstacle81" parent="." instance=ExtResource("38_dwnf7")]
+position = Vector2(-5159.6704, 4339.877)
+
+[node name="Obstacle82" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(-4434.79, 5219.012)
+
+[node name="Obstacle83" parent="." instance=ExtResource("36_1ujhl")]
+position = Vector2(-7434.349, 7690.6597)
+
+[node name="Obstacle84" parent="." instance=ExtResource("35_jx8du")]
+position = Vector2(-6122.9897, 5798.6606)
+
+[node name="Obstacle85" parent="." instance=ExtResource("36_1ujhl")]
+position = Vector2(1695.5254, 2858.7832)
+
+[node name="Obstacle86" parent="." instance=ExtResource("27_t3vja")]
+position = Vector2(-4926.6465, 8306.49)
+
+[node name="Obstacle87" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(-3599.234, 7636.8306)
+
+[node name="Obstacle88" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(-8822.545, 6613.3086)
+
+[node name="Obstacle89" parent="." instance=ExtResource("25_xuo4s")]
+position = Vector2(-10459.698, 8271.768)
+
+[node name="Obstacle90" parent="." instance=ExtResource("12_1ujhl")]
+position = Vector2(-10513.264, 6941.8975)
+
+[node name="Obstacle91" parent="." instance=ExtResource("17_qobi3")]
+position = Vector2(-1033.1992, 6570.3066)
+
+[node name="Obstacle92" parent="." instance=ExtResource("36_1ujhl")]
+position = Vector2(614.0484, 7357.2217)
+
+[node name="Obstacle93" parent="." instance=ExtResource("35_jx8du")]
+position = Vector2(1206.5347, 546.7816)
+
+[node name="Obstacle94" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-7047.264, 4441.7144)
+
+[node name="Obstacle95" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-6560.653, 4689.4854)
+
+[node name="Obstacle96" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-8891.548, 5531.2476)
+
+[node name="Obstacle97" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-8700.019, 5854.9346)
+
+[node name="Obstacle98" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-5840.0996, 4582.466)
+
+[node name="Obstacle99" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-5214.566, 5053.184)
+
+[node name="Obstacle100" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-9418.502, 5956.9824)
+
+[node name="Obstacle101" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-6670.3633, 6615.1494)
+
+[node name="Obstacle80" parent="." instance=ExtResource("12_1ujhl")]
+position = Vector2(-3135.2363, 4538.966)
+
+[node name="Obstacle102" parent="." instance=ExtResource("33_8im6v")]
+position = Vector2(-194.44328, 2338.529)
+
+[node name="Obstacle103" parent="." instance=ExtResource("27_t3vja")]
+position = Vector2(-1596.0776, 2086.0706)
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
