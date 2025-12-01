@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://675p0otu3tys"]
+[gd_scene load_steps=23 format=3 uid="uid://675p0otu3tys"]
 
 [ext_resource type="Script" uid="uid://bdhfe81q16ew7" path="res://UI/ui.gd" id="1_qui0h"]
 [ext_resource type="Texture2D" uid="uid://bkfr1vv1202um" path="res://UI/UI_cheat_sheet.png" id="2_vx7wu"]
@@ -10,6 +10,29 @@
 [ext_resource type="PackedScene" uid="uid://b3l65vd7vkrod" path="res://Subtitle/Subtitle.tscn" id="7_byuxr"]
 [ext_resource type="Texture2D" uid="uid://c5vcl6getmko7" path="res://UI/UI_hordo.png" id="8_qhxh2"]
 [ext_resource type="Texture2D" uid="uid://jl85ms33uuiq" path="res://UI/UI_q.png" id="9_017wa"]
+[ext_resource type="PackedScene" uid="uid://bimueenop2tcj" path="res://StartingPopup/starting_popup.tscn" id="11_r2vy3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2vy3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhxh2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_017wa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npmjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6q2ik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t31p1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kncd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1sm7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xtxff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yflil"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjxvo"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_qui0h")
@@ -18,6 +41,14 @@ script = ExtResource("1_qui0h")
 visible = false
 position = Vector2(960, 540)
 texture = ExtResource("2_vx7wu")
+
+[node name="StartingPopup" parent="." instance=ExtResource("11_r2vy3")]
+
+[node name="TextureRect" parent="StartingPopup" index="0"]
+offset_left = 358.0
+offset_top = -1054.0
+offset_right = 1055.0
+offset_bottom = -89.0
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -73,7 +104,7 @@ scale = Vector2(0.9, 0.9)
 
 [node name="Minimap" parent="." instance=ExtResource("4_2n5f6")]
 visible = false
-position = Vector2(8, -7)
+position = Vector2(4, -804)
 
 [node name="Base" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -101,26 +132,44 @@ texture = ExtResource("8_qhxh2")
 position = Vector2(1823, 1014)
 texture = ExtResource("9_017wa")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 1771.0
+offset_top = 954.0
+offset_right = 1906.0
+offset_bottom = 1065.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r2vy3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_qhxh2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_017wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_npmjx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6q2ik")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_t31p1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kncd2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_1sm7k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xtxff")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yflil")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rjxvo")
+
 [node name="Subtitle" parent="." instance=ExtResource("7_byuxr")]
 offset_left = 601.0
 offset_top = 850.0
 offset_right = 1601.0
 offset_bottom = 1086.0
 size_flags_horizontal = 0
-theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 32
 
 [node name="Label" parent="Subtitle/MarginContainer" index="0"]
 size_flags_vertical = 0
-text = ""
 vertical_alignment = 0
 
 [node name="FadeRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [connection signal="toggled" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CompleteAll" to="." method="_on_complete_all_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
+[editable path="StartingPopup"]
 [editable path="Subtitle"]

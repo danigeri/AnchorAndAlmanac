@@ -8,7 +8,7 @@ var endgame_barrier_camera: Camera2D
 @onready var ship: CharacterBody2D = $Ship
 @onready var endgame_barrier: Node2D = $EndgameBarrier
 @onready var felho_of_war_container: Node2D = $FelhoOfWarContainer
-@onready var starting_popup: Control = $StartingPopup
+@onready var starting_popup: Control = $UI/StartingPopup
 @onready
 var world_shader_material: ShaderMaterial = $CanvasLayer/VignetteFilter.material as ShaderMaterial
 @onready var ui: CanvasLayer = $UI

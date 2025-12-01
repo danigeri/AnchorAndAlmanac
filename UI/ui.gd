@@ -30,11 +30,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_Q:
-			questlog.visible = !questlog.visible
-			get_tree().paused = questlog.visible
+			show_quest_log()
 		if event.keycode == KEY_M:
 			minimap.visible = !minimap.visible
 			minimap_icon.visible = !minimap_icon.visible
+		if event.is_action_pressed("ui_cancel"): # disable esc key
+			pass
 
 
 func _on_ship_sail_state_change(sail_state: Variant) -> void:
@@ -103,3 +104,12 @@ func fade_out() -> void:
 func _on_fade_complete() -> void:
 	# Reload the scene or go to end screen
 	get_tree().reload_current_scene()
+
+
+func show_quest_log() -> void:
+	questlog.visible = !questlog.visible
+	get_tree().paused = questlog.visible
+
+func _on_button_pressed() -> void:
+	questlog.visible = !questlog.visible
+	get_tree().paused = questlog.visible
