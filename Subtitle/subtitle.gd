@@ -1,5 +1,7 @@
 extends MarginContainer
 
+@onready var arrows: Sprite2D = $Arrows
+
 var text := ""
 var duration := 0
 var char_index := 0
@@ -111,7 +113,7 @@ var subtitles: Array[SubtitleItem] = [
 
 
 func type_text(checkpoint_number: int) -> void:
-	print("type text called with", checkpoint_number)
+	arrows.hide()
 	var subtitle = subtitles[checkpoint_number]
 	text = subtitle.subtitle
 	duration = subtitle.duration
@@ -131,3 +133,4 @@ func _on_timer_timeout() -> void:
 
 func _on_duration_timer_timeout() -> void:
 	label.text = ""
+	arrows.show()
