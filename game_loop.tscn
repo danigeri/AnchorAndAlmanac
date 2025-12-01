@@ -1,19 +1,18 @@
 [gd_scene load_steps=54 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
-[ext_resource type="PackedScene" path="res://WaterShader/water.tscn" id="2_lxk7w"]
+[ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://5fljxt3pabyt" path="res://Map/MapItem.tscn" id="2_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
 [ext_resource type="Texture2D" uid="uid://gk8e4ad273am" path="res://Map/viz.png" id="3_ephyg"]
 [ext_resource type="PackedScene" uid="uid://v4jrth8hl4h6" path="res://EndgameBarrier/EndgameBarrier.tscn" id="5_v6ba6"]
 [ext_resource type="PackedScene" uid="uid://675p0otu3tys" path="res://UI/UI.tscn" id="5_vfyqg"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat4.tscn" id="9_18374"]
+[ext_resource type="PackedScene" uid="uid://bcrbpvl35gfeu" path="res://Obstacle/Allat4.tscn" id="9_18374"]
 [ext_resource type="PackedScene" uid="uid://cii0yvyu1gclv" path="res://Checkpoint/Checkpoint.tscn" id="9_vfyqg"]
 [ext_resource type="PackedScene" uid="uid://b3rw3vuine4lr" path="res://ShipLog/ShipLogSound.tscn" id="10_eufeh"]
 [ext_resource type="PackedScene" uid="uid://t7gxdw5a3ou" path="res://Obstacle/Iceberg1.tscn" id="11_fe781"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat3.tscn" id="12_1ujhl"]
-[ext_resource type="PackedScene" uid="uid://bejvlp18jesta" path="res://Questlog/ShipWreck.tscn" id="12_ajgm3"]
+[ext_resource type="PackedScene" uid="uid://cdci2g208go12" path="res://Obstacle/Allat3.tscn" id="12_1ujhl"]
 [ext_resource type="PackedScene" uid="uid://dlwphw117q6cb" path="res://Landmark/Landmark.tscn" id="13_afdo3"]
 [ext_resource type="Texture2D" uid="uid://8pegwo6xcng1" path="res://Landmark/1_puerto_gerappo_parchment.png" id="13_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://blb4gpo600x1r" path="res://Landmark/Waves_001_exploration.mp3" id="14_2yl5a"]
@@ -22,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b8dpnjcpifpnb" path="res://Landmark/3_tomb_at_neptune (1).png" id="15_2yl5a"]
 [ext_resource type="Texture2D" uid="uid://bvn5dl0thyxv" path="res://Landmark/4_cedar_parchment.png" id="16_ee6d0"]
 [ext_resource type="Texture2D" uid="uid://diivr74p65fg7" path="res://Landmark/5_leviathan (1).png" id="17_q81a1"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat2.tscn" id="17_qobi3"]
+[ext_resource type="PackedScene" uid="uid://cxd4kwyxdexfw" path="res://Obstacle/Allat2.tscn" id="17_qobi3"]
 [ext_resource type="Texture2D" uid="uid://byjkjo3gxav5j" path="res://Landmark/6_camp (1).png" id="18_m7vjf"]
 [ext_resource type="Texture2D" uid="uid://5ryqur20fewh" path="res://Landmark/7_wreck (1).png" id="19_snff3"]
 [ext_resource type="Texture2D" uid="uid://crigt3cd7rc6e" path="res://Landmark/8_father_carcass (1).png" id="20_bwr8o"]
@@ -36,20 +35,21 @@
 [ext_resource type="AudioStream" uid="uid://g4s74ogcn1uf" path="res://EndGame/bossfight_ending_wind_atmo.mp3" id="25_xbbwk"]
 [ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://bllkasrsj3ggh" path="res://EndGame/bossfight_waves_atmo.mp3" id="27_8im6v"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
+[ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
 [ext_resource type="AudioStream" uid="uid://ca8dcnbh7ypcv" path="res://EndGame/bossfight_wind_atmo.mp3" id="28_hok5h"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat6.tscn" id="39_18374"]
+[ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
+[ext_resource type="PackedScene" uid="uid://b1h6ulakq6hjy" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
+[ext_resource type="PackedScene" uid="uid://cnyjtohu837c8" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
+[ext_resource type="PackedScene" uid="uid://0d8yeelkadvq" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
+[ext_resource type="PackedScene" uid="uid://daiml7r7r2fnk" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
+[ext_resource type="PackedScene" uid="uid://b85r256pi0hmm" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
+[ext_resource type="PackedScene" uid="uid://l1fxl7ibc42" path="res://Obstacle/Allat6.tscn" id="39_18374"]
 [ext_resource type="PackedScene" uid="uid://rcug8du0bfqv" path="res://Obstacle/Iceberg2.tscn" id="39_qobi3"]
 [ext_resource type="PackedScene" uid="uid://dujrgfv37qest" path="res://Obstacle/Iceberg3.tscn" id="40_ephyg"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
+[ext_resource type="PackedScene" uid="uid://bm6a7va7qsc76" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
 [ext_resource type="PackedScene" uid="uid://rwlsgcn5rxy4" path="res://Obstacle/Iceberg4.tscn" id="41_ikk7k"]
+[ext_resource type="PackedScene" path="res://Questlog/ShipWreck.tscn" id="51_bwkxx"]
 [ext_resource type="PackedScene" uid="uid://cgimous7esh4j" path="res://WaterShader/Waves/water_wave.tscn" id="51_ikk7k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
@@ -560,7 +560,7 @@ script = ExtResource("2_x7b5a")
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
 position = Vector2(-7807.0703, 4206.1567)
 rotation = -0.25209507
-scale = Vector2(2, 2)
+scale = Vector2(2.340293, 2.340293)
 
 [node name="Ship" parent="." instance=ExtResource("2_u3r3m")]
 position = Vector2(5537.1177, -42.22986)
@@ -608,9 +608,19 @@ position = Vector2(2660.2588, 3822.253)
 [node name="Obstacle3" parent="Checkpoints" instance=ExtResource("11_fe781")]
 position = Vector2(2284.9922, 4560.121)
 
-[node name="Obstacle4" parent="Checkpoints" instance=ExtResource("12_ajgm3")]
+[node name="Obstacle4" parent="Checkpoints"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-8155.8022, 4761.3745)
 scale = Vector2(0.7, 0.7)
+script = null
 
 [node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
 position = Vector2(770, 362)
@@ -1206,12 +1216,14 @@ player = NodePath("../Ship")
 [node name="BaseMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_ee6d0")
 volume_db = -14.677
-bus = &"BarnaMusic"
 
 [node name="WaveDefault" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_othpu")
 autoplay = true
-bus = &"WaveAtmo"
+
+[node name="Obstacle" parent="." instance=ExtResource("51_bwkxx")]
+position = Vector2(-8143.8027, 4833.5483)
+scale = Vector2(0.60297227, 0.60297227)
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
