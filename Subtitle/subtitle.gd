@@ -7,7 +7,7 @@ var duration := 0
 var char_index := 0
 var subtitles: Array[SubtitleItem] = [
 	SubtitleItem.new(
-		35,
+		38,
 		(
 			"June 24. We set sail on our ship the Lady Bastet from Puerto Gerappo "
 			+ "to be the first to sail past the icy Cape Loïc. We took all the supplies "
@@ -18,7 +18,7 @@ var subtitles: Array[SubtitleItem] = [
 		)
 	),
 	SubtitleItem.new(
-		27,
+		30,
 		(
 			"July 9. We passed a welcome sight: the lighthouse of Great Bear Bay. "
 			+ "It feels as if its fire warms our weary bones in the chill of the night. "
@@ -27,7 +27,7 @@ var subtitles: Array[SubtitleItem] = [
 		)
 	),
 	SubtitleItem.new(
-		27,
+		30,
 		(
 			"August 2. Our first death. Sir Kenneth Kendo, our quartermaster, fell "
 			+ "sick last night, and did not make it through the night. The doctor said "
@@ -37,7 +37,7 @@ var subtitles: Array[SubtitleItem] = [
 		)
 	),
 	SubtitleItem.new(
-		26,
+		29,
 		(
 			"August 29. We see a giant, lonely cedar tree on top of the crags. An "
 			+ "unlikely resident in this harsh environment. The crew says it's a bad omen. "
@@ -46,7 +46,7 @@ var subtitles: Array[SubtitleItem] = [
 		)
 	),
 	SubtitleItem.new(
-		33,
+		36,
 		(
 			"September 21. A gruesome day. We were ambushed by the Grand Leviathan, "
 			+ "the Elephant of the Sea, as they call her. We fought off the beast, earning "
@@ -56,7 +56,7 @@ var subtitles: Array[SubtitleItem] = [
 		)
 	),
 	SubtitleItem.new(
-		42,
+		45,
 		(
 			"October 5. It's been two weeks since our ship was attacked. The rudder was "
 			+ "seriously damaged, our uncontrollable ship stranded on a small island. We "
@@ -68,7 +68,7 @@ var subtitles: Array[SubtitleItem] = [
 		)
 	),
 	SubtitleItem.new(
-		36,
+		39,
 		(
 			"November 18. I leave with the last lifeboat, as the sole survivor of the crew. "
 			+ "Our ship was trapped in ice. We couldn't break free. Some of us froze, some died "
@@ -80,7 +80,7 @@ var subtitles: Array[SubtitleItem] = [
 	(
 	SubtitleItem
 	. new(
-		38,
+		41,
 		(
 			"We found my father's frozen remains on a nameless island. I recognised him not from "
 			+ "his clothes, but from his old cutlass, that he held tightly to his chest 'til the very end. "
@@ -95,7 +95,7 @@ var subtitles: Array[SubtitleItem] = [
 	(
 	SubtitleItem
 	. new(
-		22,
+		25,
 		(
 			"Oi, laddie! Were at the bay fishing on me boat when I found this. "
 			+ "Washed up on the rocks, Neptune knows how it got home.. "
