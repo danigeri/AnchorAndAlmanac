@@ -88,10 +88,6 @@ visible = false
 position = Vector2(-4727.4194, 3747.813)
 scale = Vector2(3.0000002, 3.0000002)
 
-[node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(5540.8555, 48.830933)
-scale = Vector2(0.5000001, 0.5000001)
-
 [node name="MapItem" parent="." instance=ExtResource("2_q3nly")]
 position = Vector2(-4519.55, 3758.6958)
 scale = Vector2(5, 5)
@@ -104,6 +100,17 @@ script = ExtResource("2_x7b5a")
 position = Vector2(-7807.0703, 4206.1567)
 rotation = -0.25209507
 scale = Vector2(2, 2)
+
+[node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
+position = Vector2(5509.6216, -6.607666)
+scale = Vector2(0.50000006, 0.50000006)
+max_speed_mps = 50
+min_speed_mps = 0
+inertia = 100.0
+sway_amplitude = 0.03490658503988659
+sway_speed = -0.5
+bob_amplitude = 5.0
+bob_speed = 1.2
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -251,7 +258,6 @@ bus = &"SFX"
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]

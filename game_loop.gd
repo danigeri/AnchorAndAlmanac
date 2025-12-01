@@ -89,13 +89,12 @@ func _process(delta: float) -> void:
 		world_shader_material.set_shader_parameter("storm_mode", current_storm_value)
 
 
-func _unhandled_input(event):
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_ESCAPE:
-			get_tree().quit()
-
-
-# ===== STORM CONTROL METHODS =====
+#func _unhandled_input(event):
+	#if event is InputEventKey and event.pressed:
+		#if event.keycode == KEY_ESCAPE:
+			#get_tree().quit()
+#
+#
 
 
 func enter_storm():
@@ -123,7 +122,6 @@ func exit_storm():
 	
 
 
-
 func set_storm_instant(active: bool):
 	"""Instantly set storm without transition"""
 	is_storm_active = active
@@ -142,8 +140,6 @@ func set_storm_intensity(
 		world_shader_material.set_shader_parameter("lightning_frequency", lightning_freq)
 		world_shader_material.set_shader_parameter("lightning_intensity", lightning_intensity)
 
-
-# ===== EXISTING METHODS =====
 
 
 func _on_all_checkpoints_collected():
