@@ -36,7 +36,7 @@ func _ready() -> void:
 	if world_shader_material:
 		world_shader_material.set_shader_parameter("storm_mode", 0.0)
 
-	starting_popup.start()
+	# starting_popup.start()
 	
 	storm_trigger_area.disabled = true
 	#enter_storm()
@@ -177,4 +177,8 @@ func _on_last_audio_finished() -> void:
 func _on_storm_trigger_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		enter_storm()
-	
+
+
+func _on_storm_out_trigger_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		exit_storm()
