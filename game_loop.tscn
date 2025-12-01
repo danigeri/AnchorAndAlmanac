@@ -887,8 +887,16 @@ scale = Vector2(1.3999996, -1.4999995)
 position = Vector2(-12434.429, -920.4963)
 scale = Vector2(0.9999997, 0.9999997)
 
+[node name="Obstacle120" parent="Obstacles" instance=ExtResource("41_ikk7k")]
+position = Vector2(-14805.314, 208.7388)
+scale = Vector2(0.9999997, 0.9999997)
+
 [node name="Obstacle69" parent="Obstacles" instance=ExtResource("11_fe781")]
 position = Vector2(-12620.946, -668.05835)
+scale = Vector2(1.3599654, 1.3599654)
+
+[node name="Obstacle119" parent="Obstacles" instance=ExtResource("11_fe781")]
+position = Vector2(-15329.828, 386.48315)
 scale = Vector2(1.3599654, 1.3599654)
 
 [node name="Obstacle70" parent="Obstacles" instance=ExtResource("39_qobi3")]
@@ -904,8 +912,26 @@ scale = Vector2(1.4810643, -1.5988314)
 position = Vector2(-13076.211, 573.7485)
 scale = Vector2(2.3887725, 2.3887725)
 
+[node name="Obstacle117" parent="Obstacles" instance=ExtResource("40_ephyg")]
+position = Vector2(-15152.984, -178.11884)
+scale = Vector2(2.3887725, 2.3887725)
+
+[node name="Obstacle118" parent="Obstacles" instance=ExtResource("40_ephyg")]
+position = Vector2(-15688.494, 143.48691)
+scale = Vector2(2.3887725, 2.3887725)
+
 [node name="Obstacle73" parent="Obstacles" instance=ExtResource("41_ikk7k")]
 position = Vector2(-12672.361, -133.71986)
+rotation = 3.1415927
+scale = Vector2(2.0749993, -2.0749993)
+
+[node name="Obstacle121" parent="Obstacles" instance=ExtResource("41_ikk7k")]
+position = Vector2(-15745.852, 601.7356)
+rotation = 3.1415927
+scale = Vector2(2.0749993, -2.0749993)
+
+[node name="Obstacle116" parent="Obstacles" instance=ExtResource("41_ikk7k")]
+position = Vector2(-14750.097, -455.55933)
 rotation = 3.1415927
 scale = Vector2(2.0749993, -2.0749993)
 
@@ -1149,6 +1175,7 @@ bus = &"SFX"
 bus = &"SFX"
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
