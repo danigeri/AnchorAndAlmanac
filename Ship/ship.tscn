@@ -160,7 +160,7 @@ bus = &"SFX"
 
 [node name="ShipNyikorgasPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bpstu")
-volume_db = 24.0
+volume_db = 14.926
 bus = &"SFX"
 
 [node name="ShipHitSoundPlayer" type="AudioStreamPlayer" parent="."]

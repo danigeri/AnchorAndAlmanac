@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpldpxdm4omtm"]
+[gd_scene load_steps=3 format=3 uid="uid://bl67lgskmg7rj"]
 
 [sub_resource type="GDScript" id="GDScript_4kp2s"]
 script/source = "extends Button
