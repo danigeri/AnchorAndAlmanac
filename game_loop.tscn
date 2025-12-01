@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=42 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
@@ -25,7 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b7t7exr4alvro" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
+[ext_resource type="AudioStream" uid="uid://dbmliypufl2as" path="res://EndGame/waves_atmo.mp3" id="24_othpu"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
+[ext_resource type="AudioStream" uid="uid://g4s74ogcn1uf" path="res://EndGame/bossfight_ending_wind_atmo.mp3" id="25_xbbwk"]
 [ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
 [ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
@@ -78,7 +80,7 @@ metadata/_edit_group_ = true
 script = ExtResource("2_x7b5a")
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(-7674.2754, 4943.069)
+position = Vector2(-7873.803, 4691.2783)
 scale = Vector2(0.5, 0.5)
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
@@ -178,8 +180,51 @@ landmark_texture = ExtResource("20_bwr8o")
 
 [node name="EndGameStuff" parent="." instance=ExtResource("23_83dqn")]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="EndGameStuff"]
+[node name="Obstacle13" parent="EndGameStuff/EndGameObstacles" index="12" instance=ExtResource("27_t3vja")]
+position = Vector2(-9519.719, 707.0735)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Obstacle14" parent="EndGameStuff/EndGameObstacles" index="13" instance=ExtResource("33_8im6v")]
+position = Vector2(-9210.13, 450.3414)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Obstacle15" parent="EndGameStuff/EndGameObstacles" index="14" instance=ExtResource("34_hok5h")]
+position = Vector2(-8956.079, 592.87756)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Obstacle16" parent="EndGameStuff/EndGameObstacles" index="15" instance=ExtResource("35_jx8du")]
+position = Vector2(-8109.687, 137.56941)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Obstacle17" parent="EndGameStuff/EndGameObstacles" index="16" instance=ExtResource("36_1ujhl")]
+position = Vector2(-10174.9375, -147.0934)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Obstacle18" parent="EndGameStuff/EndGameObstacles" index="17" instance=ExtResource("37_t3vja")]
+position = Vector2(-9673.115, -996.21704)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Obstacle19" parent="EndGameStuff/EndGameObstacles" index="18" instance=ExtResource("38_dwnf7")]
+position = Vector2(-9459.978, 1230.9523)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Obstacle20" parent="EndGameStuff/EndGameObstacles" index="19" instance=ExtResource("39_18374")]
+position = Vector2(-7820.4746, -308.46338)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Obstacle21" parent="EndGameStuff/EndGameObstacles" index="20" instance=ExtResource("40_fe781")]
+position = Vector2(-11336.915, 275.836)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="WaveAtmoGraveyard" type="AudioStreamPlayer2D" parent="EndGameStuff"]
 position = Vector2(-14625.957, 905.29266)
+stream = ExtResource("24_othpu")
+autoplay = true
+
+[node name="WindAtmoGraveyard" type="AudioStreamPlayer2D" parent="EndGameStuff"]
+position = Vector2(-14625.957, 905.29266)
+stream = ExtResource("25_xbbwk")
+autoplay = true
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
 visible = false
@@ -203,33 +248,6 @@ player = NodePath("../Ship")
 stream = ExtResource("28_ee6d0")
 volume_db = -8.0
 bus = &"SFX"
-
-[node name="Obstacle" parent="." instance=ExtResource("27_t3vja")]
-position = Vector2(-9519.72, 707.0736)
-
-[node name="Obstacle2" parent="." instance=ExtResource("33_8im6v")]
-position = Vector2(-9210.131, 450.3415)
-
-[node name="Obstacle3" parent="." instance=ExtResource("34_hok5h")]
-position = Vector2(-8956.082, 592.8777)
-
-[node name="Obstacle4" parent="." instance=ExtResource("35_jx8du")]
-position = Vector2(-8109.688, 137.56943)
-
-[node name="Obstacle5" parent="." instance=ExtResource("36_1ujhl")]
-position = Vector2(-10174.939, -147.09344)
-
-[node name="Obstacle6" parent="." instance=ExtResource("37_t3vja")]
-position = Vector2(-9673.118, -996.2172)
-
-[node name="Obstacle7" parent="." instance=ExtResource("38_dwnf7")]
-position = Vector2(-9459.979, 1230.9524)
-
-[node name="Obstacle8" parent="." instance=ExtResource("39_18374")]
-position = Vector2(-7820.4756, -308.46347)
-
-[node name="Obstacle9" parent="." instance=ExtResource("40_fe781")]
-position = Vector2(-11336.916, 275.83606)
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]

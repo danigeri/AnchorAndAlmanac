@@ -56,9 +56,6 @@ func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
 			get_tree().quit()
-		# Debug key to test storm (optional - remove in production)
-		if event.keycode == KEY_T:
-			toggle_storm()
 
 
 # ===== STORM CONTROL METHODS =====
@@ -79,10 +76,6 @@ func exit_storm():
 	ship.exit_storm()
 	challange_music_player.stop()
 
-
-func toggle_storm():
-	"""Toggle storm on/off (useful for testing)"""
-	is_storm_active = !is_storm_active
 
 
 func set_storm_instant(active: bool):

@@ -21,6 +21,8 @@ const TURN_SPEED_QUOTIENT: float = 0.01
 @export var min_speed_mps: int = 0
 @export var inertia: float = 100
 
+@export var thunder_sound: AudioStream
+
 var current_speed_mps: float
 var direction: Vector2
 var facing_rad: float
@@ -315,12 +317,14 @@ func _on_felho_of_war_vision_area_entered(felho_area: Area2D) -> void:
 		felho_scene.remove_felho()
 
 
+
 func enter_storm() -> void:
 	print("entered storm")
 	self.sway_amplitude = deg_to_rad(4)  # Max rotation in radians
 	self.sway_speed = -2  # How fast it rocks
 	self.bob_amplitude = 15.0  # pixels
 	self.bob_speed = 1.7
+	AudioManager.play_sound(thunder_sound)
 
 func exit_storm() -> void:
 	print("exited storm")
