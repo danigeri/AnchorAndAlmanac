@@ -24,5 +24,5 @@ bus/4/name = &"BarnaMusic"
 bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
-bus/4/volume_db = -24.136963
+bus/4/volume_db = -18.984375
 bus/4/send = &"Master"

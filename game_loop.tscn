@@ -29,7 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://cagtcyos6k2yi" path="res://Landmark/Waves_001_temetes.mp3" id="21_2yl5a"]
 [ext_resource type="PackedScene" uid="uid://cppspkkl88o5e" path="res://EndGame/end_game_stuff.tscn" id="23_83dqn"]
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
-[ext_resource type="PackedScene" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
+[ext_resource type="PackedScene" uid="uid://w5cmkwpgcahp" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
 [ext_resource type="AudioStream" uid="uid://dbmliypufl2as" path="res://EndGame/waves_atmo.mp3" id="24_othpu"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
@@ -258,6 +258,7 @@ bus = &"SFX"
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
@@ -282,6 +283,7 @@ bus = &"BarnaMusic"
 [node name="WaveDefault" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_othpu")
 autoplay = true
+bus = &"SFX"
 
 [node name="Obstacle" parent="." instance=ExtResource("11_fe781")]
 position = Vector2(-9387.749, 565.8898)

@@ -17,29 +17,29 @@ script = ExtResource("1_t2jcq")
 texture = ExtResource("2_3mure")
 
 [node name="QuestlogItem" type="Sprite2D" parent="."]
-visible = false
+position = Vector2(-4, -1)
 texture = ExtResource("3_0ldm8")
 
 [node name="QuestlogItem2" type="Sprite2D" parent="."]
-visible = false
+position = Vector2(-4, -1)
 texture = ExtResource("4_mtfpb")
 
 [node name="QuestlogItem3" type="Sprite2D" parent="."]
-visible = false
+position = Vector2(-4, -1)
 texture = ExtResource("5_ywn70")
 
 [node name="QuestlogItem4" type="Sprite2D" parent="."]
-visible = false
+position = Vector2(-4, -1)
 texture = ExtResource("6_8eq5w")
 
 [node name="QuestlogItem5" type="Sprite2D" parent="."]
-visible = false
+position = Vector2(2, 1)
 texture = ExtResource("7_73440")
 
 [node name="QuestlogItem6" type="Sprite2D" parent="."]
-visible = false
+position = Vector2(2, 1)
 texture = ExtResource("8_xnlvr")
 
 [node name="QuestlogItem7" type="Sprite2D" parent="."]
-visible = false
+position = Vector2(2, 1)
 texture = ExtResource("9_6gh8g")
