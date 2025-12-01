@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=45 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://b3rw3vuine4lr" path="res://ShipLog/ShipLogSound.tscn" id="10_eufeh"]
 [ext_resource type="PackedScene" uid="uid://cdci2g208go12" path="res://Obstacle/Allat3.tscn" id="12_1ujhl"]
 [ext_resource type="PackedScene" uid="uid://dlwphw117q6cb" path="res://Landmark/Landmark.tscn" id="13_afdo3"]
-[ext_resource type="AudioStream" uid="uid://dobib2vet26rp" path="res://Obstacle/allat_1.mp3" id="13_t3vja"]
 [ext_resource type="Texture2D" uid="uid://8pegwo6xcng1" path="res://Landmark/1_puerto_gerappo_parchment.png" id="13_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://blb4gpo600x1r" path="res://Landmark/Waves_001_exploration.mp3" id="14_2yl5a"]
 [ext_resource type="AudioStream" uid="uid://tx4d7it6381u" path="res://Landmark/0_fisherman_1_puerto_gerappo_atmo.mp3" id="14_lwaqr"]
@@ -141,7 +140,6 @@ position = Vector2(3257.6978, 1198.284)
 
 [node name="Obstacle3" parent="Obstacles" instance=ExtResource("12_1ujhl")]
 position = Vector2(-7736.4434, 6397.3447)
-audio_stream = ExtResource("13_t3vja")
 
 [node name="Landmarks" type="Node2D" parent="."]
 scale = Vector2(1.0000005, 1.0000005)
@@ -254,7 +252,6 @@ scale = Vector2(0.9999997, 0.9999997)
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
