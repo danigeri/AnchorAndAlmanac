@@ -36,7 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://g4s74ogcn1uf" path="res://EndGame/bossfight_ending_wind_atmo.mp3" id="25_xbbwk"]
 [ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://bllkasrsj3ggh" path="res://EndGame/bossfight_waves_atmo.mp3" id="27_8im6v"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
+[ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
 [ext_resource type="AudioStream" uid="uid://ca8dcnbh7ypcv" path="res://EndGame/bossfight_wind_atmo.mp3" id="28_hok5h"]
 [ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
@@ -251,7 +251,6 @@ bus = &"SFX"
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
