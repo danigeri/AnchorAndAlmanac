@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3e5wvna1fkp5"]
+[gd_scene load_steps=13 format=3 uid="uid://b3e5wvna1fkp5"]
 
 [ext_resource type="Script" uid="uid://cyhid3hiv7efg" path="res://Ship/ship.gd" id="1_1p84g"]
 [ext_resource type="Texture2D" uid="uid://bbieh6ykr1utn" path="res://Ship/ship_sail_0.png" id="2_q4ev1"]
 [ext_resource type="Texture2D" uid="uid://bhycrauchho3c" path="res://Ship/lapat.png" id="3_edrfk"]
 [ext_resource type="AudioStream" uid="uid://dd602jionc70u" path="res://Ship/sfx/boat_on_the_move.mp3" id="4_1w8ol"]
 [ext_resource type="SpriteFrames" uid="uid://btokg8662e2ew" path="res://Ship/ripple_effect.tres" id="4_d6neq"]
+[ext_resource type="PackedScene" uid="uid://od4vh351b2k2" path="res://Barrel/Barrel.tscn" id="6_eti42"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4ev1"]
 radius = 27.41936
@@ -105,6 +106,13 @@ height = 2031.738
 
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_1p84g")
+max_speed_mps = null
+min_speed_mps = null
+inertia = null
+sway_amplitude = null
+sway_speed = null
+bob_amplitude = null
+bob_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -123)
@@ -166,5 +174,8 @@ collision_mask = 2
 position = Vector2(-13.970606, -325)
 scale = Vector2(0.8482346, 1)
 shape = SubResource("CapsuleShape2D_1w8ol")
+
+[node name="Barrel" parent="." instance=ExtResource("6_eti42")]
+position = Vector2(7, 276)
 
 [connection signal="area_entered" from="FelhoOfWarVision" to="." method="_on_felho_of_war_vision_area_entered"]

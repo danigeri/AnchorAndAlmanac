@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://od4vh351b2k2"]
+
+[ext_resource type="Script" uid="uid://b2d74i0uiyy00" path="res://Barrel/barrel.gd" id="1_psije"]
+[ext_resource type="SpriteFrames" uid="uid://8vtn23f7bhjy" path="res://Barrel/barrel_drop.tres" id="2_p57bs"]
+
+[node name="Barrell" type="Node2D"]
+script = ExtResource("1_psije")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = ExtResource("2_p57bs")

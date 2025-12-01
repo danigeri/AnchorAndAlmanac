@@ -58,6 +58,7 @@ var ship_hit_sounds = {
 @onready var ship_move_sound_player: AudioStreamPlayer = $ShipMoveSoundPlayer
 @onready var ship_hit_sound_player: AudioStreamPlayer = $ShipHitSoundPlayer
 @onready var ripple_effect: AnimatedSprite2D = $Sprite2D/RippleEffect
+@onready var barrel: Node2D = $Barrel
 
 var sway_timer := 0.0
 @export var sway_amplitude := deg_to_rad(2)  # Max rotation in radians
@@ -238,6 +239,7 @@ func _on_hitbox_body_entered(body):
 		Globals.remove_hp()
 		animation_player.play("hit")
 		handle_hit_sound()
+		barrel.drop_barrel()
 		if body.is_in_group("obstacle"):
 			body.get_parent().queue_free()
 
