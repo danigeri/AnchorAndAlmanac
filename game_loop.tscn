@@ -1,15 +1,19 @@
-[gd_scene load_steps=45 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=53 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
-[ext_resource type="PackedScene" path="res://WaterShader/water.tscn" id="2_lxk7w"]
+[ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://5fljxt3pabyt" path="res://Map/MapItem.tscn" id="2_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
+[ext_resource type="Texture2D" uid="uid://gk8e4ad273am" path="res://Map/viz.png" id="3_ephyg"]
 [ext_resource type="PackedScene" uid="uid://v4jrth8hl4h6" path="res://EndgameBarrier/EndgameBarrier.tscn" id="5_v6ba6"]
 [ext_resource type="PackedScene" uid="uid://675p0otu3tys" path="res://UI/UI.tscn" id="5_vfyqg"]
+[ext_resource type="PackedScene" uid="uid://bcrbpvl35gfeu" path="res://Obstacle/Allat4.tscn" id="9_18374"]
 [ext_resource type="PackedScene" uid="uid://cii0yvyu1gclv" path="res://Checkpoint/Checkpoint.tscn" id="9_vfyqg"]
 [ext_resource type="PackedScene" uid="uid://b3rw3vuine4lr" path="res://ShipLog/ShipLogSound.tscn" id="10_eufeh"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat3.tscn" id="12_1ujhl"]
+[ext_resource type="PackedScene" uid="uid://bi8peloho5rvd" path="res://Obstacle/Iceberg1.tscn" id="11_fe781"]
+[ext_resource type="PackedScene" uid="uid://cdci2g208go12" path="res://Obstacle/Allat3.tscn" id="12_1ujhl"]
+[ext_resource type="PackedScene" uid="uid://bejvlp18jesta" path="res://Obstacle/ShipWreck.tscn" id="12_ajgm3"]
 [ext_resource type="PackedScene" uid="uid://dlwphw117q6cb" path="res://Landmark/Landmark.tscn" id="13_afdo3"]
 [ext_resource type="Texture2D" uid="uid://8pegwo6xcng1" path="res://Landmark/1_puerto_gerappo_parchment.png" id="13_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://blb4gpo600x1r" path="res://Landmark/Waves_001_exploration.mp3" id="14_2yl5a"]
@@ -18,13 +22,14 @@
 [ext_resource type="Texture2D" uid="uid://b8dpnjcpifpnb" path="res://Landmark/3_tomb_at_neptune (1).png" id="15_2yl5a"]
 [ext_resource type="Texture2D" uid="uid://bvn5dl0thyxv" path="res://Landmark/4_cedar_parchment.png" id="16_ee6d0"]
 [ext_resource type="Texture2D" uid="uid://diivr74p65fg7" path="res://Landmark/5_leviathan (1).png" id="17_q81a1"]
+[ext_resource type="PackedScene" uid="uid://cxd4kwyxdexfw" path="res://Obstacle/Allat2.tscn" id="17_qobi3"]
 [ext_resource type="Texture2D" uid="uid://byjkjo3gxav5j" path="res://Landmark/6_camp (1).png" id="18_m7vjf"]
 [ext_resource type="Texture2D" uid="uid://5ryqur20fewh" path="res://Landmark/7_wreck (1).png" id="19_snff3"]
 [ext_resource type="Texture2D" uid="uid://crigt3cd7rc6e" path="res://Landmark/8_father_carcass (1).png" id="20_bwr8o"]
 [ext_resource type="AudioStream" uid="uid://cagtcyos6k2yi" path="res://Landmark/Waves_001_temetes.mp3" id="21_2yl5a"]
 [ext_resource type="PackedScene" uid="uid://cppspkkl88o5e" path="res://EndGame/end_game_stuff.tscn" id="23_83dqn"]
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
-[ext_resource type="PackedScene" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
+[ext_resource type="PackedScene" uid="uid://b7t7exr4alvro" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
 [ext_resource type="AudioStream" uid="uid://dbmliypufl2as" path="res://EndGame/waves_atmo.mp3" id="24_othpu"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
@@ -34,14 +39,17 @@
 [ext_resource type="PackedScene" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
 [ext_resource type="AudioStream" uid="uid://ca8dcnbh7ypcv" path="res://EndGame/bossfight_wind_atmo.mp3" id="28_hok5h"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat6.tscn" id="39_18374"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
+[ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
+[ext_resource type="PackedScene" uid="uid://b1h6ulakq6hjy" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
+[ext_resource type="PackedScene" uid="uid://cnyjtohu837c8" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
+[ext_resource type="PackedScene" uid="uid://0d8yeelkadvq" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
+[ext_resource type="PackedScene" uid="uid://daiml7r7r2fnk" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
+[ext_resource type="PackedScene" uid="uid://b85r256pi0hmm" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
+[ext_resource type="PackedScene" uid="uid://l1fxl7ibc42" path="res://Obstacle/Allat6.tscn" id="39_18374"]
+[ext_resource type="PackedScene" uid="uid://blr4vpjycycrc" path="res://Obstacle/Iceberg2.tscn" id="39_qobi3"]
+[ext_resource type="PackedScene" uid="uid://ukop5jdb1734" path="res://Obstacle/Iceberg3.tscn" id="40_ephyg"]
+[ext_resource type="PackedScene" uid="uid://bm6a7va7qsc76" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
+[ext_resource type="PackedScene" uid="uid://bspvq6cx2kdsg" path="res://Obstacle/Iceberg4.tscn" id="41_ikk7k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -69,6 +77,11 @@ size = Vector2(1920, 1080)
 rotation = -0.013865815
 script = ExtResource("1_7f3si")
 idle_music = ExtResource("28_ee6d0")
+
+[node name="Water2" type="Sprite2D" parent="."]
+position = Vector2(-4519.5503, 3758.6965)
+scale = Vector2(5.0000005, 5.0000005)
+texture = ExtResource("3_ephyg")
 
 [node name="Water" parent="." instance=ExtResource("2_lxk7w")]
 visible = false
@@ -105,7 +118,7 @@ bob_speed = 1.2
 position = Vector2(6355.123, -36.887695)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(3113.8796, 3131.476)
+position = Vector2(3047.3545, 2303.4744)
 checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
@@ -132,6 +145,19 @@ checkpoint_type = 6
 position = Vector2(-14213.244, 1001.0244)
 checkpoint_type = 7
 
+[node name="Obstacle" parent="Checkpoints" instance=ExtResource("9_18374")]
+position = Vector2(3956.0732, 2330.0767)
+
+[node name="Obstacle2" parent="Checkpoints" instance=ExtResource("40_fe781")]
+position = Vector2(2660.2588, 3822.253)
+
+[node name="Obstacle3" parent="Checkpoints" instance=ExtResource("11_fe781")]
+position = Vector2(2284.9922, 4560.121)
+
+[node name="Obstacle4" parent="Checkpoints" instance=ExtResource("12_ajgm3")]
+position = Vector2(-8155.8022, 4761.3745)
+scale = Vector2(0.7, 0.7)
+
 [node name="ShipLogSound" parent="." instance=ExtResource("10_eufeh")]
 position = Vector2(770, 362)
 
@@ -139,14 +165,23 @@ position = Vector2(770, 362)
 scale = Vector2(1.0000002, 1.0000002)
 
 [node name="Obstacle" parent="Obstacles" instance=ExtResource("25_xuo4s")]
-position = Vector2(4898.963, 252.95021)
+position = Vector2(6246.998, 2062.8147)
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Obstacle2" parent="Obstacles" instance=ExtResource("23_tdvic")]
-position = Vector2(3257.6978, 1198.284)
+position = Vector2(6267.026, 1556.0438)
 
 [node name="Obstacle3" parent="Obstacles" instance=ExtResource("12_1ujhl")]
 position = Vector2(-7736.4434, 6397.3447)
+
+[node name="Obstacle4" parent="Obstacles" instance=ExtResource("23_tdvic")]
+position = Vector2(-7553.265, 5231.773)
+
+[node name="Obstacle5" parent="Obstacles" instance=ExtResource("17_qobi3")]
+position = Vector2(5027.8076, 1346.8416)
+
+[node name="Obstacle6" parent="Obstacles" instance=ExtResource("12_1ujhl")]
+position = Vector2(7137.645, 724.0355)
 
 [node name="Landmarks" type="Node2D" parent="."]
 scale = Vector2(1.0000005, 1.0000005)
@@ -194,7 +229,7 @@ landmark_texture = ExtResource("20_bwr8o")
 
 [node name="EndGameStuff" parent="." instance=ExtResource("23_83dqn")]
 
-[node name="ChallangeMusicPlayer" parent="EndGameStuff" index="3"]
+[node name="ChallangeMusicPlayer" parent="EndGameStuff" index="2"]
 volume_db = 0.0
 bus = &"Master"
 
@@ -219,42 +254,6 @@ bus = &"SFX"
 [node name="WindAtmoStorm" type="AudioStreamPlayer" parent="EndGameStuff"]
 stream = ExtResource("28_hok5h")
 bus = &"SFX"
-
-[node name="Obstacle13" parent="EndGameStuff" instance=ExtResource("27_t3vja")]
-position = Vector2(-9519.719, 707.0735)
-scale = Vector2(0.9999997, 0.9999997)
-
-[node name="Obstacle14" parent="EndGameStuff" instance=ExtResource("33_8im6v")]
-position = Vector2(-9210.13, 450.3414)
-scale = Vector2(0.9999997, 0.9999997)
-
-[node name="Obstacle15" parent="EndGameStuff" instance=ExtResource("34_hok5h")]
-position = Vector2(-8956.078, 592.87756)
-scale = Vector2(0.9999997, 0.9999997)
-
-[node name="Obstacle16" parent="EndGameStuff" instance=ExtResource("35_jx8du")]
-position = Vector2(-8109.687, 137.56941)
-scale = Vector2(0.9999997, 0.9999997)
-
-[node name="Obstacle17" parent="EndGameStuff" instance=ExtResource("36_1ujhl")]
-position = Vector2(-10174.9375, -147.09338)
-scale = Vector2(0.9999997, 0.9999997)
-
-[node name="Obstacle18" parent="EndGameStuff" instance=ExtResource("37_t3vja")]
-position = Vector2(-9673.114, -996.217)
-scale = Vector2(0.9999997, 0.9999997)
-
-[node name="Obstacle19" parent="EndGameStuff" instance=ExtResource("38_dwnf7")]
-position = Vector2(-9459.978, 1230.9523)
-scale = Vector2(0.9999997, 0.9999997)
-
-[node name="Obstacle20" parent="EndGameStuff" instance=ExtResource("39_18374")]
-position = Vector2(-7820.4746, -308.46335)
-scale = Vector2(0.9999997, 0.9999997)
-
-[node name="Obstacle21" parent="EndGameStuff" instance=ExtResource("40_fe781")]
-position = Vector2(-11336.915, 275.836)
-scale = Vector2(0.9999997, 0.9999997)
 
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
@@ -283,10 +282,219 @@ volume_db = -14.677
 stream = ExtResource("24_othpu")
 autoplay = true
 
+[node name="Obstacle" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-9387.749, 565.8898)
+scale = Vector2(2, 2)
+
+[node name="Obstacle23" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-9421.023, 1811.5483)
+scale = Vector2(-2, 2)
+
+[node name="Obstacle2" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-8917.6875, 348.38644)
+scale = Vector2(2, 2)
+
+[node name="Obstacle3" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-8455.055, 233.79001)
+scale = Vector2(2, 2)
+
+[node name="Obstacle4" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-7855.6523, 281.1055)
+scale = Vector2(2, 2)
+
+[node name="Obstacle5" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-8067.6, 492.18707)
+
+[node name="Obstacle6" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-8889.545, 626.8034)
+
+[node name="Obstacle7" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-9336.746, 277.5692)
+
+[node name="Obstacle8" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-8594.007, 517.89075)
+
+[node name="Obstacle9" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-8026.18, 173.73074)
+
+[node name="Obstacle10" parent="." instance=ExtResource("35_jx8du")]
+position = Vector2(-10497.077, -860.6289)
+
+[node name="Obstacle11" parent="." instance=ExtResource("34_hok5h")]
+position = Vector2(-9492.528, -604.6758)
+
+[node name="Obstacle12" parent="." instance=ExtResource("33_8im6v")]
+position = Vector2(-8147.155, 2046.2335)
+
+[node name="Obstacle13" parent="." instance=ExtResource("27_t3vja")]
+position = Vector2(-8297.04, 2830.2305)
+
+[node name="Obstacle14" parent="." instance=ExtResource("36_1ujhl")]
+position = Vector2(-11050.195, 153.79956)
+
+[node name="Obstacle15" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(-8184.752, -651.5471)
+
+[node name="Obstacle16" parent="." instance=ExtResource("38_dwnf7")]
+position = Vector2(-8928.105, 1460.3489)
+
+[node name="Obstacle17" parent="." instance=ExtResource("39_18374")]
+position = Vector2(-7379.2715, 761.7569)
+
+[node name="Obstacle18" parent="." instance=ExtResource("40_fe781")]
+position = Vector2(-12045.32, -1070.1157)
+
+[node name="Obstacle19" parent="." instance=ExtResource("9_18374")]
+position = Vector2(-5455.478, -796.719)
+
+[node name="Obstacle20" parent="." instance=ExtResource("12_1ujhl")]
+position = Vector2(-6003.552, 358.79285)
+
+[node name="Obstacle21" parent="." instance=ExtResource("17_qobi3")]
+position = Vector2(-8120.9326, 3400.7278)
+
+[node name="Obstacle22" parent="." instance=ExtResource("25_xuo4s")]
+position = Vector2(-8319.523, 989.74194)
+
+[node name="Obstacle24" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-8937.401, 3212.389)
+scale = Vector2(-1.819, 1.819)
+
+[node name="Obstacle25" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-7571.192, 2918.3035)
+scale = Vector2(1.321286, 1.321286)
+
+[node name="Obstacle26" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-9120.653, 2940.8218)
+
+[node name="Obstacle27" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-9061.002, 2533.6096)
+
+[node name="Obstacle28" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-7676.8706, 2533.8013)
+
+[node name="Obstacle29" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-9112.769, 2155.8555)
+
+[node name="Obstacle30" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-7148.3726, 337.91757)
+
+[node name="Obstacle31" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-9660.455, 1408.1897)
+
+[node name="Obstacle32" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-9565.114, 1528.5232)
+
+[node name="Obstacle33" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-9576.231, 1176.3352)
+
+[node name="Obstacle34" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-6684.695, 364.34937)
+scale = Vector2(0.6362812, 0.41245228)
+
+[node name="Obstacle35" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-7690.296, 1482.5139)
+
+[node name="Obstacle36" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-6288.069, 898.90015)
+
+[node name="Obstacle37" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-6309.8945, -123.50089)
+scale = Vector2(-2, 2)
+
+[node name="Obstacle38" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-5156.896, -187.5203)
+scale = Vector2(2, 2)
+
+[node name="Obstacle39" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-4990.9785, -685.26764)
+scale = Vector2(1.7, 1.7)
+
+[node name="Obstacle40" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-5485.968, -1122.1729)
+scale = Vector2(2, 2)
+
+[node name="Obstacle41" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-6606.575, -797.6793)
+scale = Vector2(1.3, 1.3)
+
+[node name="Obstacle42" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-7432.5254, -879.1393)
+
+[node name="Obstacle43" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-5590.0864, 616.5507)
+scale = Vector2(1.4, 1.4)
+
+[node name="Obstacle44" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-8163.5254, -956.2823)
+
+[node name="Obstacle45" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-7803.381, -964.28955)
+
+[node name="Obstacle46" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-9760.362, 102.67883)
+
+[node name="Obstacle47" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-9118.143, -990.52167)
+
+[node name="Obstacle48" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-8640.1455, -914.8868)
+scale = Vector2(-1.5, 1.5)
+
+[node name="Obstacle49" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-9562.268, -984.67914)
+scale = Vector2(-1.3, 1.3)
+
+[node name="Obstacle50" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-9896.847, -1017.3212)
+
+[node name="Obstacle51" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-9806.796, -804.05225)
+
+[node name="Obstacle52" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-10225.904, -77.79343)
+scale = Vector2(-3, 3)
+
+[node name="Obstacle53" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-10892.587, -1115.137)
+
+[node name="Obstacle54" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-11203.463, -1270.4624)
+
+[node name="Obstacle55" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-11593.743, -1180.8651)
+scale = Vector2(-1.4, 1.5)
+
+[node name="Obstacle56" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-12434.432, -920.4965)
+
+[node name="Obstacle57" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-12620.95, -668.0585)
+scale = Vector2(1.3599658, 1.3599658)
+
+[node name="Obstacle58" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-11598.37, 523.2346)
+scale = Vector2(1.718266, 1.718266)
+
+[node name="Obstacle59" parent="." instance=ExtResource("11_fe781")]
+position = Vector2(-12114.083, 571.0887)
+scale = Vector2(-1.4810646, 1.5988319)
+
+[node name="Obstacle60" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-13076.214, 573.74866)
+scale = Vector2(2.3887732, 2.3887732)
+
+[node name="Obstacle61" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-12672.365, -133.7199)
+scale = Vector2(-2.075, 2.075)
+
+[node name="Obstacle62" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-8908.51, -313.54996)
+
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
-[connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
+[connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="body_entered" from="EndGameStuff/StormTrigger" to="." method="_on_storm_trigger_body_entered"]
 [connection signal="body_entered" from="EndGameStuff/StormOutTrigger" to="." method="_on_storm_out_trigger_body_entered"]
 
