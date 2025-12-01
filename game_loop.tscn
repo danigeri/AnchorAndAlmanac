@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=45 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" path="res://WaterShader/water.tscn" id="2_lxk7w"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://675p0otu3tys" path="res://UI/UI.tscn" id="5_vfyqg"]
 [ext_resource type="PackedScene" uid="uid://cii0yvyu1gclv" path="res://Checkpoint/Checkpoint.tscn" id="9_vfyqg"]
 [ext_resource type="PackedScene" uid="uid://b3rw3vuine4lr" path="res://ShipLog/ShipLogSound.tscn" id="10_eufeh"]
+[ext_resource type="PackedScene" uid="uid://cdci2g208go12" path="res://Obstacle/Allat3.tscn" id="12_1ujhl"]
 [ext_resource type="PackedScene" uid="uid://dlwphw117q6cb" path="res://Landmark/Landmark.tscn" id="13_afdo3"]
 [ext_resource type="Texture2D" uid="uid://8pegwo6xcng1" path="res://Landmark/1_puerto_gerappo_parchment.png" id="13_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://blb4gpo600x1r" path="res://Landmark/Waves_001_exploration.mp3" id="14_2yl5a"]
@@ -25,18 +26,23 @@
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
 [ext_resource type="PackedScene" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
+[ext_resource type="AudioStream" uid="uid://dbmliypufl2as" path="res://EndGame/waves_atmo.mp3" id="24_othpu"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
+[ext_resource type="AudioStream" uid="uid://g4s74ogcn1uf" path="res://EndGame/bossfight_ending_wind_atmo.mp3" id="25_xbbwk"]
+[ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
+[ext_resource type="AudioStream" uid="uid://bllkasrsj3ggh" path="res://EndGame/bossfight_waves_atmo.mp3" id="27_8im6v"]
+[ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat6.tscn" id="39_18374"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
+[ext_resource type="AudioStream" uid="uid://ca8dcnbh7ypcv" path="res://EndGame/bossfight_wind_atmo.mp3" id="28_hok5h"]
+[ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
+[ext_resource type="PackedScene" uid="uid://b1h6ulakq6hjy" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
+[ext_resource type="PackedScene" uid="uid://cnyjtohu837c8" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
+[ext_resource type="PackedScene" uid="uid://0d8yeelkadvq" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
+[ext_resource type="PackedScene" uid="uid://daiml7r7r2fnk" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
+[ext_resource type="PackedScene" uid="uid://b85r256pi0hmm" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
+[ext_resource type="PackedScene" uid="uid://l1fxl7ibc42" path="res://Obstacle/Allat6.tscn" id="39_18374"]
+[ext_resource type="PackedScene" uid="uid://bm6a7va7qsc76" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -63,6 +69,7 @@ size = Vector2(1920, 1080)
 [node name="GameLoop" type="Node2D"]
 rotation = -0.013865815
 script = ExtResource("1_7f3si")
+idle_music = ExtResource("28_ee6d0")
 
 [node name="Water" parent="." instance=ExtResource("2_lxk7w")]
 visible = false
@@ -132,6 +139,9 @@ scale = Vector2(0.9999998, 0.9999998)
 [node name="Obstacle2" parent="Obstacles" instance=ExtResource("23_tdvic")]
 position = Vector2(3257.6978, 1198.284)
 
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource("12_1ujhl")]
+position = Vector2(-7736.4434, 6397.3447)
+
 [node name="Landmarks" type="Node2D" parent="."]
 scale = Vector2(1.0000005, 1.0000005)
 
@@ -178,11 +188,71 @@ landmark_texture = ExtResource("20_bwr8o")
 
 [node name="EndGameStuff" parent="." instance=ExtResource("23_83dqn")]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="EndGameStuff"]
+[node name="ChallangeMusicPlayer" parent="EndGameStuff" index="3"]
+volume_db = 0.0
+bus = &"Music"
+
+[node name="WaveAtmoGraveyard" type="AudioStreamPlayer2D" parent="EndGameStuff"]
 position = Vector2(-14625.957, 905.29266)
+stream = ExtResource("24_othpu")
+autoplay = true
+bus = &"SFX"
+area_mask = 536870913
+
+[node name="WindAtmoGraveyard" type="AudioStreamPlayer2D" parent="EndGameStuff"]
+position = Vector2(-14625.957, 905.29266)
+stream = ExtResource("25_xbbwk")
+autoplay = true
+bus = &"SFX"
+
+[node name="WaveAtmoStorm" type="AudioStreamPlayer" parent="EndGameStuff"]
+stream = ExtResource("27_8im6v")
+autoplay = true
+bus = &"SFX"
+
+[node name="WindAtmoStorm" type="AudioStreamPlayer" parent="EndGameStuff"]
+stream = ExtResource("28_hok5h")
+bus = &"SFX"
+
+[node name="Obstacle13" parent="EndGameStuff" instance=ExtResource("27_t3vja")]
+position = Vector2(-9519.719, 707.0735)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="Obstacle14" parent="EndGameStuff" instance=ExtResource("33_8im6v")]
+position = Vector2(-9210.13, 450.3414)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="Obstacle15" parent="EndGameStuff" instance=ExtResource("34_hok5h")]
+position = Vector2(-8956.078, 592.87756)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="Obstacle16" parent="EndGameStuff" instance=ExtResource("35_jx8du")]
+position = Vector2(-8109.687, 137.56941)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="Obstacle17" parent="EndGameStuff" instance=ExtResource("36_1ujhl")]
+position = Vector2(-10174.9375, -147.09338)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="Obstacle18" parent="EndGameStuff" instance=ExtResource("37_t3vja")]
+position = Vector2(-9673.114, -996.217)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="Obstacle19" parent="EndGameStuff" instance=ExtResource("38_dwnf7")]
+position = Vector2(-9459.978, 1230.9523)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="Obstacle20" parent="EndGameStuff" instance=ExtResource("39_18374")]
+position = Vector2(-7820.4746, -308.46335)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="Obstacle21" parent="EndGameStuff" instance=ExtResource("40_fe781")]
+position = Vector2(-11336.915, 275.836)
+scale = Vector2(0.9999997, 0.9999997)
+
+[node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
@@ -201,39 +271,17 @@ player = NodePath("../Ship")
 
 [node name="BaseMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_ee6d0")
-volume_db = -8.0
-bus = &"SFX"
+bus = &"Music"
 
-[node name="Obstacle" parent="." instance=ExtResource("27_t3vja")]
-position = Vector2(-9519.72, 707.0736)
-
-[node name="Obstacle2" parent="." instance=ExtResource("33_8im6v")]
-position = Vector2(-9210.131, 450.3415)
-
-[node name="Obstacle3" parent="." instance=ExtResource("34_hok5h")]
-position = Vector2(-8956.082, 592.8777)
-
-[node name="Obstacle4" parent="." instance=ExtResource("35_jx8du")]
-position = Vector2(-8109.688, 137.56943)
-
-[node name="Obstacle5" parent="." instance=ExtResource("36_1ujhl")]
-position = Vector2(-10174.939, -147.09344)
-
-[node name="Obstacle6" parent="." instance=ExtResource("37_t3vja")]
-position = Vector2(-9673.118, -996.2172)
-
-[node name="Obstacle7" parent="." instance=ExtResource("38_dwnf7")]
-position = Vector2(-9459.979, 1230.9524)
-
-[node name="Obstacle8" parent="." instance=ExtResource("39_18374")]
-position = Vector2(-7820.4756, -308.46347)
-
-[node name="Obstacle9" parent="." instance=ExtResource("40_fe781")]
-position = Vector2(-11336.916, 275.83606)
+[node name="WaveDefault" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_othpu")
+autoplay = true
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
+[connection signal="body_entered" from="EndGameStuff/StormTrigger" to="." method="_on_storm_trigger_body_entered"]
+[connection signal="body_entered" from="EndGameStuff/StormOutTrigger" to="." method="_on_storm_out_trigger_body_entered"]
 
 [editable path="EndGameStuff"]

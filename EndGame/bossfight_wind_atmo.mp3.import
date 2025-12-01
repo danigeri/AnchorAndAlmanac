@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/bossfight_wind_atmo.mp3-22e01fe0b05f7dee98528
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

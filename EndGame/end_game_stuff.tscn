@@ -16,40 +16,40 @@ scale = Vector2(1.0000001, 1.0000001)
 
 [node name="EndGameObstacles" type="Node2D" parent="."]
 
-[node name="Obstacle" parent="." instance=ExtResource("1_1bvj4")]
+[node name="Obstacle" parent="EndGameObstacles" instance=ExtResource("1_1bvj4")]
 position = Vector2(-8852.092, 3046.555)
 
-[node name="Obstacle2" parent="." instance=ExtResource("2_4pu0v")]
+[node name="Obstacle2" parent="EndGameObstacles" instance=ExtResource("2_4pu0v")]
 position = Vector2(-8092.547, 2724.0554)
 
-[node name="Obstacle3" parent="." instance=ExtResource("3_cjqt0")]
+[node name="Obstacle3" parent="EndGameObstacles" instance=ExtResource("3_cjqt0")]
 position = Vector2(-9279.424, 1841.5142)
 
-[node name="Obstacle4" parent="." instance=ExtResource("4_diirh")]
+[node name="Obstacle4" parent="EndGameObstacles" instance=ExtResource("4_diirh")]
 position = Vector2(-8186.3984, 1486.6353)
 
-[node name="Obstacle5" parent="." instance=ExtResource("5_8weor")]
+[node name="Obstacle5" parent="EndGameObstacles" instance=ExtResource("5_8weor")]
 position = Vector2(-7678.1855, 3277.8538)
 
-[node name="Obstacle6" parent="." instance=ExtResource("6_6hsec")]
+[node name="Obstacle6" parent="EndGameObstacles" instance=ExtResource("6_6hsec")]
 position = Vector2(-8141.3296, 400.15585)
 
-[node name="Obstacle7" parent="." instance=ExtResource("7_fpgfo")]
+[node name="Obstacle7" parent="EndGameObstacles" instance=ExtResource("7_fpgfo")]
 position = Vector2(-8342.128, 456.3771)
 
-[node name="Obstacle8" parent="." instance=ExtResource("6_6hsec")]
+[node name="Obstacle8" parent="EndGameObstacles" instance=ExtResource("6_6hsec")]
 position = Vector2(-8569.359, 327.21405)
 
-[node name="Obstacle9" parent="." instance=ExtResource("8_q1xju")]
+[node name="Obstacle9" parent="EndGameObstacles" instance=ExtResource("8_q1xju")]
 position = Vector2(-5466.189, -384.82767)
 
-[node name="Obstacle10" parent="." instance=ExtResource("7_fpgfo")]
+[node name="Obstacle10" parent="EndGameObstacles" instance=ExtResource("7_fpgfo")]
 position = Vector2(-8160.981, -851.23676)
 
-[node name="Obstacle11" parent="." instance=ExtResource("9_bxcxq")]
+[node name="Obstacle11" parent="EndGameObstacles" instance=ExtResource("9_bxcxq")]
 position = Vector2(-8788.869, -430.90228)
 
-[node name="Obstacle12" parent="." instance=ExtResource("6_6hsec")]
+[node name="Obstacle12" parent="EndGameObstacles" instance=ExtResource("6_6hsec")]
 position = Vector2(-9266.746, -82.49478)
 
 [node name="StormTrigger" type="Area2D" parent="."]
