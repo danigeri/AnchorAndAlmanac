@@ -106,16 +106,9 @@ _data = {
 radius = 1015.869
 height = 2031.738
 
-[node name="Ship" type="CharacterBody2D"]
+[node name="Ship" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_1p84g")
-max_speed_mps = null
-min_speed_mps = null
-inertia = null
 thunder_sound = ExtResource("2_eti42")
-sway_amplitude = null
-sway_speed = null
-bob_amplitude = null
-bob_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -123)
@@ -136,7 +129,7 @@ animation = &"ripple"
 frame_progress = 0.8366888
 speed_scale = 0.35
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2(-5, -53)
 scale = Vector2(-3.297335, 6.4935703)
 shape = SubResource("CapsuleShape2D_q4ev1")
@@ -145,7 +138,7 @@ shape = SubResource("CapsuleShape2D_q4ev1")
 position = Vector2(-3.0000005, -48)
 scale = Vector2(2.2000017, -1.9071214)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" groups=["player"]]
 position = Vector2(1.3636354, 39.326286)
 scale = Vector2(0.45454508, -0.52435046)
 polygon = PackedVector2Array(-10.000001, -173, -46.000004, -137, -83.00001, -83, -94.00001, -59, -105.000015, -14, -101.000015, 43, -100.000015, 50, -94.00001, 116, -98.000015, 135, -91.00001, 189, -70.00001, 280, -16.000002, 282, 36.000004, 281, 55.000008, 281, 90.00001, 135, 81.00001, 114, 86.00001, 78, 93.00001, 41, 93.00001, 40, 95.00001, 4, 94.00001, -21, 83.00001, -63, 76.00001, -77, 71.00001, -86, 2.0000005, -173)
@@ -167,7 +160,7 @@ bus = &"SFX"
 
 [node name="ShipNyikorgasPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bpstu")
-volume_db = 24.0
+volume_db = 14.926
 bus = &"SFX"
 
 [node name="ShipHitSoundPlayer" type="AudioStreamPlayer" parent="."]

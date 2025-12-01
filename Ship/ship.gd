@@ -253,20 +253,22 @@ func _on_hitbox_body_entered(body):
 			barrel.drop_barrel()
 			barrel.drop_barrel()
 			
-		if body.is_in_group("obstacle"):
+		if body.is_in_group("obstacle") && !body.is_in_group("iceberg"):
 			body.get_parent().queue_free()
 
 
 func _on_go_to_last_checkpoint(_last_cp_position: Vector2) -> void:
 	await animation_player.animation_finished
-	sink_ship()
 	current_speed_mps = 0
-	sail_state = SailStates.SAIL_STATE_DOWN
-	sail_state_change.emit(0)
+	sail_state = SailStates.SAIL_STATE_ANCHORED
+	sail_state_change.emit(SailStates.SAIL_STATE_ANCHORED)
+	sink_ship()
 	Globals.restore_hp()
 
 
 func sink_ship() -> void:
+	set_max_speed(sail_state)
+	set_ship_texture(sail_state)
 	animation_player.play("sink")
 	await animation_player.animation_finished
 	sprite_2d.scale = Vector2(1, 1)
@@ -278,11 +280,11 @@ func set_max_speed(sail_state: SailStates) -> void:
 			max_speed_mps = 0
 			min_speed_mps = 0
 		1:
-			max_speed_mps = 75
-			min_speed_mps = 50
-		2:
-			max_speed_mps = 100
+			max_speed_mps = 125
 			min_speed_mps = 75
+		2:
+			max_speed_mps = 200
+			min_speed_mps = 125
 		3:
 			max_speed_mps = 300
 			min_speed_mps = 200

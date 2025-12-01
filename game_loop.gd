@@ -75,7 +75,7 @@ func _ready() -> void:
 
 	starting_popup.start()
 	
-	storm_trigger_area.disabled = true
+	storm_trigger_area.set_deferred("disabled", true)
 	#enter_storm()
 	#exit_storm()
 	#base_music_player.stop()
@@ -98,7 +98,7 @@ func _process(delta: float) -> void:
 
 
 func enter_storm():
-	"""Call this when the boat enters a storm zone"""
+	print("""Call this when the boat enters a storm zone""")
 	is_storm_active = true
 	ship.enter_storm()
 	base_music_player.stop()
@@ -113,7 +113,7 @@ func enter_storm():
 
 
 func exit_storm():
-	"""Call this when the boat leaves a storm zone"""
+	print("""Call this when the boat leaves a storm zone""")
 	is_storm_active = false
 	ship.exit_storm()
 	challange_music_player.stop()
@@ -145,7 +145,7 @@ func set_storm_intensity(
 func _on_all_checkpoints_collected():
 	trigger_barrier_remove()
 	#enter_storm() #TODO ezt majd rendes helyre tenni
-	storm_trigger_area.disabled = false
+	storm_trigger_area.set_deferred("disabled", false)
 	
 
 func trigger_barrier_remove() -> void:
@@ -212,13 +212,3 @@ func _on_go_to_last_checkpoint(last_checkpoint_position: Vector2):
 func _on_last_audio_finished() -> void:
 	ui.fade_out()
 	pass
-
-
-func _on_storm_trigger_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		enter_storm()
-
-
-func _on_storm_out_trigger_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		exit_storm()

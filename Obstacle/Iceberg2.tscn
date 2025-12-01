@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://blr4vpjycycrc"]
+[gd_scene load_steps=3 format=3 uid="uid://rcug8du0bfqv"]
 
 [ext_resource type="PackedScene" uid="uid://cbap81erct4wo" path="res://Obstacle/Obstacle.tscn" id="1_sf2vf"]
 [ext_resource type="Texture2D" uid="uid://b5r26dcie6ohy" path="res://Obstacle/iceberg_2.png" id="2_v6hrv"]
 
-[node name="Obstacle" instance=ExtResource("1_sf2vf")]
+[node name="Obstacle" groups=["iceberg"] instance=ExtResource("1_sf2vf")]
 
 [node name="ObstacleImage" parent="." index="0"]
 texture = ExtResource("2_v6hrv")
 
-[node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+[node name="StaticBody2D" parent="." index="1" groups=["iceberg"]]
+
+[node name="CollisionPolygon2D" parent="StaticBody2D" index="0" groups=["iceberg"]]
 polygon = PackedVector2Array(10, 22, -15, 28, -28, 41, -57, 41, -73, 57, -51, 87, 92, 83, 151, 56, 97, 32, 66, -35)

@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cppspkkl88o5e"]
+[gd_scene load_steps=3 format=3 uid="uid://cppspkkl88o5e"]
 
+[ext_resource type="Script" uid="uid://cw1ud7mlx8af0" path="res://EndGame/end_game_stuff.gd" id="1_3lwis"]
 [ext_resource type="AudioStream" uid="uid://d4lbg4ueb7a86" path="res://EndGame/Waves_002_challenge.mp3" id="10_tpx27"]
 
 [node name="EndGameStuff" type="Node2D"]
 scale = Vector2(1.0000001, 1.0000001)
+script = ExtResource("1_3lwis")
 
 [node name="StormTrigger" type="Area2D" parent="."]
 
@@ -17,5 +19,7 @@ polygon = PackedVector2Array(-13459.684, -476.66925, -13336.395, 1162.1975, -129
 
 [node name="ChallangeMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_tpx27")
-volume_db = -8.0
-bus = &"SFX"
+bus = &"BarnaMusic"
+
+[connection signal="body_entered" from="StormTrigger" to="." method="_on_storm_trigger_body_entered"]
+[connection signal="body_entered" from="StormOutTrigger" to="." method="_on_storm_out_trigger_body_entered"]
