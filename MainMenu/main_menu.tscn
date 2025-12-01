@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdwedeohryclo"]
+[gd_scene load_steps=5 format=3 uid="uid://cdwedeohryclo"]
 
 [ext_resource type="Script" uid="uid://1ik2fjtqa7qp" path="res://MainMenu/main_menu.gd" id="1_nhkf3"]
+[ext_resource type="Texture2D" uid="uid://bpmg2kigcypn6" path="res://MainMenu/main_menu.jpg" id="2_3w4mj"]
+[ext_resource type="Texture2D" uid="uid://b2cwgwh665dqh" path="res://MainMenu/start_button.png" id="3_ajn5b"]
+[ext_resource type="Texture2D" uid="uid://c1f5rv0aau5k1" path="res://MainMenu/start_button_hovered.png" id="4_po2gx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,34 +14,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nhkf3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.5
-offset_top = -46.5
-offset_right = 100.5
-offset_bottom = 46.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_3w4mj")
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "GerappaGamesTemplate"
+[node name="StartButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 180.0
+offset_right = 1600.0
+offset_bottom = 900.0
+texture_normal = ExtResource("3_ajn5b")
+texture_hover = ExtResource("4_po2gx")
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Start"
-
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Exit
-"
-
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
