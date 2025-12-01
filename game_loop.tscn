@@ -91,6 +91,13 @@ scale = Vector2(2, 2)
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
 position = Vector2(5509.6216, -6.607666)
 scale = Vector2(0.50000006, 0.50000006)
+max_speed_mps = 50
+min_speed_mps = 0
+inertia = 100.0
+sway_amplitude = 0.03490658503988659
+sway_speed = -0.5
+bob_amplitude = 5.0
+bob_speed = 1.2
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
