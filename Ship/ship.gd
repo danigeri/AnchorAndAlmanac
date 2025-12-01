@@ -313,3 +313,10 @@ func _on_felho_of_war_vision_area_entered(felho_area: Area2D) -> void:
 	if felho_area.is_in_group("felho"):
 		var felho_scene = felho_area.get_parent()
 		felho_scene.remove_felho()
+		
+func enter_storm() -> void:
+	print("fasztyu")
+	self.sway_amplitude = deg_to_rad(4) # Max rotation in radians
+	self.sway_speed =  -2  # How fast it rocks
+	self.bob_amplitude = 15.0  # pixels
+	self.bob_speed = 1.7

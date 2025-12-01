@@ -5,6 +5,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvspd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpcmi"]
+size = Vector2(77, 73.905106)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p7103"]
 
@@ -90,11 +91,13 @@ script = ExtResource("1_xpcmi")
 scale = Vector2(1, 5.48)
 physics_material_override = SubResource("PhysicsMaterial_nvspd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["damaging"]]
+position = Vector2(0.5, 5.9306574)
 shape = SubResource("RectangleShape2D_xpcmi")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(20, 20)
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" groups=["damaging"]]
+position = Vector2(0.4999981, 6.0218925)
+scale = Vector2(77.00001, 74.452545)
 texture = SubResource("PlaceholderTexture2D_p7103")
 
 [node name="Camera2D" type="Camera2D" parent="."]

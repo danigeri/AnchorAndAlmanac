@@ -21,10 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://crigt3cd7rc6e" path="res://Landmark/8_father_carcass (1).png" id="20_bwr8o"]
 [ext_resource type="PackedScene" uid="uid://bimueenop2tcj" path="res://StartingPopup/starting_popup.tscn" id="23_arced"]
 [ext_resource type="PackedScene" uid="uid://deg2xbfv71itx" path="res://FelhoOfWar/FelhoOfWarXL.tscn" id="23_q3nly"]
-[ext_resource type="PackedScene" uid="uid://c758c30pneo3m" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
+[ext_resource type="PackedScene" uid="uid://b7t7exr4alvro" path="res://Obstacle/MaelStrom.tscn" id="23_tdvic"]
 [ext_resource type="Shader" uid="uid://d3cir71gxoek4" path="res://game_loop_vignette.gdshader" id="24_arced"]
 [ext_resource type="Texture2D" uid="uid://dc47mu0i6eofr" path="res://Obstacle/allat_1.png" id="24_xuo4s"]
-[ext_resource type="PackedScene" uid="uid://dpxmeu5r860n2" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
+[ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -32,10 +32,18 @@ shader_parameter/ShakeStrength = 0.0
 shader_parameter/FactorA = Vector2(100, 100)
 shader_parameter/FactorB = Vector2(1, 1)
 shader_parameter/magnitude = Vector2(0.015, 0.015)
-shader_parameter/intensity = 0.8310000394725
-shader_parameter/radius = 0.5850000277875
-shader_parameter/softness = 0.90100004209898
-shader_parameter/vignette_color = Color(0.24807987, 0.17814538, 0.11986523, 1)
+shader_parameter/intensity = 0.8570000407075
+shader_parameter/radius = 0.44800002128
+shader_parameter/softness = 1.0
+shader_parameter/vignette_color = Color(0.18275529, 0.12767074, 0.08174201, 1)
+shader_parameter/storm_mode = 1.0
+shader_parameter/storm_darkness = 0.5690000270275
+shader_parameter/storm_color = Color(0.16746667, 0.20163712, 0.24265054, 1)
+shader_parameter/lightning_frequency = 0.3810000180975
+shader_parameter/lightning_intensity = 0.1670000079325
+shader_parameter/lightning_speed = 4.3290002056275
+shader_parameter/storm_shake_amount = 0.0
+shader_parameter/storm_shake_speed = 9.7570004634575
 
 [sub_resource type="QuadMesh" id="QuadMesh_tdvic"]
 size = Vector2(1920, 1080)

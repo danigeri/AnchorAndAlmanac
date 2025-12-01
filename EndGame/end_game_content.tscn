@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cnoxbahwoqnck"]
+
+[node name="EndGameContent" type="Node2D"]
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="EndGameObstacles" type="Node2D" parent="."]
