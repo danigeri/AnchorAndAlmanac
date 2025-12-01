@@ -98,27 +98,27 @@ scale = Vector2(1, 8.982871)
 position = Vector2(6355.123, -36.887695)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(6381.814, 562.5405)
+position = Vector2(3113.8796, 3131.476)
 checkpoint_type = 1
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(6266.685, 1148.001)
+position = Vector2(480.01123, 6998.3286)
 checkpoint_type = 2
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(5643.5415, 1370.3816)
+position = Vector2(-134.48315, 178.15247)
 checkpoint_type = 3
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(4936.431, 1445.5847)
+position = Vector2(-3612.816, 3856.2778)
 checkpoint_type = 4
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(4407.335, 1665.27)
+position = Vector2(-5119.876, 7744.756)
 checkpoint_type = 5
 
 [node name="Checkpoint7" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
-position = Vector2(3649.1582, 1672.7578)
+position = Vector2(-8483.943, 5129.8604)
 checkpoint_type = 6
 
 [node name="Checkpoint8" parent="Checkpoints" instance=ExtResource("9_vfyqg")]
