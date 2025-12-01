@@ -185,6 +185,6 @@ scale = Vector2(0.8482346, 1)
 shape = SubResource("CapsuleShape2D_1w8ol")
 
 [node name="Barrel" parent="." instance=ExtResource("6_eti42")]
-position = Vector2(7, 276)
+position = Vector2(3, 412)
 
 [connection signal="area_entered" from="FelhoOfWarVision" to="." method="_on_felho_of_war_vision_area_entered"]
