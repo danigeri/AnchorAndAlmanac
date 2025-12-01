@@ -1,22 +1,22 @@
 [gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://btokg8662e2ew"]
 
-[ext_resource type="Texture2D" uid="uid://ddiiwljy74r2h" path="res://Ship/ripple_effect_delay.png" id="1_jywc3"]
+[ext_resource type="Texture2D" uid="uid://bgrkr2qo1v5xh" path="res://Ship/ship_ripple.png" id="1_jywc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_154he"]
 atlas = ExtResource("1_jywc3")
-region = Rect2(892, 0, 223, 354)
+region = Rect2(0, 0, 223, 354)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xw0d"]
 atlas = ExtResource("1_jywc3")
-region = Rect2(1115, 0, 223, 354)
+region = Rect2(223, 0, 223, 354)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hvk8e"]
 atlas = ExtResource("1_jywc3")
-region = Rect2(1338, 0, 223, 354)
+region = Rect2(446, 0, 223, 354)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ol6gx"]
 atlas = ExtResource("1_jywc3")
-region = Rect2(1561, 0, 223, 354)
+region = Rect2(669, 0, 223, 354)
 
 [resource]
 animations = [{
@@ -35,5 +35,5 @@ animations = [{
 }],
 "loop": true,
 "name": &"ripple",
-"speed": 8.0
+"speed": 4.0
 }]
