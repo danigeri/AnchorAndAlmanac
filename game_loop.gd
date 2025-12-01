@@ -19,12 +19,47 @@ var world_shader_material: ShaderMaterial = $CanvasLayer/VignetteFilter.material
 @onready var challange_music_player: AudioStreamPlayer = $EndGameStuff/ChallangeMusicPlayer
 
 
-
-
 # Storm control variables
 var is_storm_active: bool = false
 var current_storm_value: float = 0.0
 @export var storm_transition_speed: float = 1.0
+
+@export var idle_music: AudioStream
+@onready var wave_atmo_storm = $EndGameStuff/WaveAtmoStorm
+@onready var wind_atmo_storm = $EndGameStuff/WindAtmoStorm
+
+@onready var wave_default: AudioStreamPlayer = $WaveDefault
+
+const lightning_sounds := {
+	1: preload("uid://c4fbkv12ogdbm"),
+	2: preload("uid://bp61l4eutnbux")
+}
+
+@onready var lightning_player: AudioStreamPlayer = $EndGameStuff/LightningPlayer
+
+var lightning_loop_running := false
+@export var lightning_min_delay := 6.0
+@export var lightning_max_delay := 8.0
+
+func _lightning_loop() -> void:
+	lightning_loop_running = true
+
+	while is_storm_active:
+		var delay = randf_range(lightning_min_delay, lightning_max_delay)
+		await get_tree().create_timer(delay).timeout
+
+		# Storm ended mid-wait → exit safely
+		if !is_storm_active:
+			break
+
+		# Pick random lightning sound
+		var keys = lightning_sounds.keys()
+		var random_key = keys[randi() % keys.size()]
+		lightning_player.stream = lightning_sounds[random_key]
+
+		lightning_player.play()
+
+	lightning_loop_running = false
 
 
 func _ready() -> void:
@@ -33,6 +68,7 @@ func _ready() -> void:
 	Globals.last_audio_finsihed.connect(_on_last_audio_finished)
 	ship_camera = ship.get_camera()
 	endgame_barrier_camera = endgame_barrier.get_camera()
+	# AudioManager.play_music(idle_music)
 	base_music_player.play()
 	# Initialize storm mode to 0
 	if world_shader_material:
@@ -41,7 +77,9 @@ func _ready() -> void:
 	# starting_popup.start()
 	
 	storm_trigger_area.disabled = true
-	#enter_storm()
+	enter_storm()
+	#exit_storm()
+	#base_music_player.stop()
 
 
 func _process(delta: float) -> void:
@@ -67,6 +105,12 @@ func enter_storm():
 	ship.enter_storm()
 	base_music_player.stop()
 	challange_music_player.play()
+	wave_atmo_storm.play()
+	wind_atmo_storm.play()
+	wave_default.stop()
+	
+	if !lightning_loop_running:
+		_lightning_loop()
 	
 
 
@@ -75,6 +119,9 @@ func exit_storm():
 	is_storm_active = false
 	ship.exit_storm()
 	challange_music_player.stop()
+	wave_atmo_storm.stop()
+	wind_atmo_storm.stop()
+	
 
 
 

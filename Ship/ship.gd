@@ -51,6 +51,8 @@ var ship_hit_sounds = {
 	2: preload("uid://kkwqnuq1fbac")  #sink sound
 }
 
+
+
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -59,14 +61,15 @@ var ship_hit_sounds = {
 @onready var sail_sounds_player: AudioStreamPlayer = $SailSoundsPlayer
 @onready var ship_move_sound_player: AudioStreamPlayer = $ShipMoveSoundPlayer
 @onready var ship_hit_sound_player: AudioStreamPlayer = $ShipHitSoundPlayer
+@onready var ship_nyikorgas_player: AudioStreamPlayer = $ShipNyikorgasPlayer
 @onready var ripple_effect: AnimatedSprite2D = $Sprite2D/RippleEffect
+
 
 var sway_timer := 0.0
 @export var sway_amplitude := deg_to_rad(2)  # Max rotation in radians
 @export var sway_speed := -0.5  # How fast it rocks
 @export var bob_amplitude := 5.0  # pixels
 @export var bob_speed := 1.2
-
 
 func _ready() -> void:
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -83,6 +86,8 @@ func _ready() -> void:
 	set_rotation_degrees(90)
 
 	Globals.last_checkpoint_positon = global_position
+	
+	ship_nyikorgas_player.play()
 
 
 func _process(delta: float) -> void:
@@ -324,7 +329,6 @@ func enter_storm() -> void:
 	self.sway_speed = -2  # How fast it rocks
 	self.bob_amplitude = 15.0  # pixels
 	self.bob_speed = 1.7
-	AudioManager.play_sound(thunder_sound)
 
 func exit_storm() -> void:
 	print("exited storm")
