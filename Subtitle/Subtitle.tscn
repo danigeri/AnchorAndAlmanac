@@ -13,6 +13,10 @@ offset_left = 460.0
 offset_top = 961.0
 offset_right = 1416.0
 offset_bottom = 1125.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 script = ExtResource("1_m3twq")
 
 [node name="Timer" type="Timer" parent="."]

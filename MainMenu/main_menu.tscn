@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://1ik2fjtqa7qp" path="res://MainMenu/main_menu.gd" id="1_nhkf3"]
 [ext_resource type="Texture2D" uid="uid://bpmg2kigcypn6" path="res://MainMenu/main_menu.jpg" id="2_3w4mj"]
-[ext_resource type="Texture2D" uid="uid://b2cwgwh665dqh" path="res://MainMenu/start_button.png" id="3_ajn5b"]
-[ext_resource type="Texture2D" uid="uid://c1f5rv0aau5k1" path="res://MainMenu/start_button_hovered.png" id="4_po2gx"]
+[ext_resource type="Texture2D" uid="uid://cpajq4sleo2aa" path="res://MainMenu/start_button.png" id="3_ajn5b"]
+[ext_resource type="Texture2D" uid="uid://b4c1e63ne1kjd" path="res://MainMenu/start_button_hovered.png" id="4_po2gx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -19,13 +18,20 @@ position = Vector2(960, 540)
 texture = ExtResource("2_3w4mj")
 
 [node name="StartButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 180.0
-offset_right = 1600.0
-offset_bottom = 900.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6614583
+anchor_top = 0.46388888
+anchor_right = 1.6614584
+anchor_bottom = 1.4638889
+offset_right = -1686.0
+offset_bottom = -977.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("3_ajn5b")
 texture_hover = ExtResource("4_po2gx")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
