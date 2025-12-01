@@ -562,8 +562,8 @@ position = Vector2(-7807.0703, 4206.1567)
 rotation = -0.25209507
 scale = Vector2(2, 2)
 
-[node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(5509.6216, -6.607666)
+[node name="Ship" parent="." instance=ExtResource("2_u3r3m")]
+position = Vector2(5537.1177, -42.22986)
 scale = Vector2(0.50000006, 0.50000006)
 
 [node name="Checkpoints" type="Node2D" parent="."]
@@ -1123,10 +1123,6 @@ landmark_texture = ExtResource("20_bwr8o")
 
 [node name="EndGameStuff" parent="." instance=ExtResource("23_83dqn")]
 
-[node name="ChallangeMusicPlayer" parent="EndGameStuff" index="2"]
-volume_db = 0.0
-bus = &"Master"
-
 [node name="WaveAtmoGraveyard" type="AudioStreamPlayer2D" parent="EndGameStuff"]
 position = Vector2(-14625.957, 905.29266)
 stream = ExtResource("24_othpu")
@@ -1150,8 +1146,10 @@ stream = ExtResource("28_hok5h")
 bus = &"SFX"
 
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
+bus = &"SFX"
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
@@ -1182,7 +1180,3 @@ bus = &"WaveAtmo"
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
 [connection signal="sail_state_change" from="Ship" to="UI" method="_on_ship_sail_state_change"]
 [connection signal="speed_change" from="Ship" to="UI" method="_on_ship_speed_change"]
-[connection signal="body_entered" from="EndGameStuff/StormTrigger" to="." method="_on_storm_trigger_body_entered"]
-[connection signal="body_entered" from="EndGameStuff/StormOutTrigger" to="." method="_on_storm_out_trigger_body_entered"]
-
-[editable path="EndGameStuff"]

@@ -50,7 +50,6 @@ offset_right = 1055.0
 offset_bottom = -89.0
 
 [node name="UserInterface" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1128.0
