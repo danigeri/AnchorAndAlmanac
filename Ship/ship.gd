@@ -314,8 +314,12 @@ func handle_move_sound(velocity: Vector2) -> void:
 
 
 func handle_hit_sound() -> void:
-	ship_hit_sound_player.stream = ship_hit_sounds[Globals.current_hp]
+	if  ship_hit_sounds[Globals.current_hp]:
+		ship_hit_sound_player.stream = ship_hit_sounds[Globals.current_hp]
+	else:
+		ship_hit_sound_player.stream = ship_hit_sounds[1]
 	ship_hit_sound_player.play(0.0)
+	
 
 
 func _on_felho_of_war_vision_area_entered(felho_area: Area2D) -> void:

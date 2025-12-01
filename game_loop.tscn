@@ -36,7 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://g4s74ogcn1uf" path="res://EndGame/bossfight_ending_wind_atmo.mp3" id="25_xbbwk"]
 [ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://bllkasrsj3ggh" path="res://EndGame/bossfight_waves_atmo.mp3" id="27_8im6v"]
-[ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
+[ext_resource type="PackedScene" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
 [ext_resource type="AudioStream" uid="uid://ca8dcnbh7ypcv" path="res://EndGame/bossfight_wind_atmo.mp3" id="28_hok5h"]
 [ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
@@ -224,7 +224,7 @@ landmark_texture = ExtResource("20_bwr8o")
 
 [node name="ChallangeMusicPlayer" parent="EndGameStuff" index="2"]
 volume_db = 0.0
-bus = &"Music"
+bus = &"Master"
 
 [node name="WaveAtmoGraveyard" type="AudioStreamPlayer2D" parent="EndGameStuff"]
 position = Vector2(-14625.957, 905.29266)
@@ -270,7 +270,7 @@ player = NodePath("../Ship")
 
 [node name="BaseMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_ee6d0")
-bus = &"Music"
+volume_db = -14.677
 
 [node name="WaveDefault" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_othpu")

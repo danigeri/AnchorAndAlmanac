@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://8vtn23f7bhjy" path="res://Barrel/barrel_drop.tres" id="2_p57bs"]
 
 [node name="Barrell" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_psije")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

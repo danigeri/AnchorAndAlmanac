@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func remove_barrier() -> void:
 	static_body_2d.queue_free()
+	Globals.last_checkpoint_positon = position
 
 
 func get_camera() -> Camera2D:
