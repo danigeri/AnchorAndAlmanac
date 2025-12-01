@@ -1,19 +1,19 @@
-[gd_scene load_steps=53 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=54 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
-[ext_resource type="PackedScene" path="res://WaterShader/water.tscn" id="2_lxk7w"]
+[ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
 [ext_resource type="PackedScene" uid="uid://5fljxt3pabyt" path="res://Map/MapItem.tscn" id="2_q3nly"]
 [ext_resource type="PackedScene" uid="uid://b3e5wvna1fkp5" path="res://Ship/ship.tscn" id="2_u3r3m"]
 [ext_resource type="Script" uid="uid://dh7fh7dy5lpkx" path="res://Wind/wind.gd" id="2_x7b5a"]
 [ext_resource type="Texture2D" uid="uid://gk8e4ad273am" path="res://Map/viz.png" id="3_ephyg"]
 [ext_resource type="PackedScene" uid="uid://v4jrth8hl4h6" path="res://EndgameBarrier/EndgameBarrier.tscn" id="5_v6ba6"]
 [ext_resource type="PackedScene" uid="uid://675p0otu3tys" path="res://UI/UI.tscn" id="5_vfyqg"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat4.tscn" id="9_18374"]
+[ext_resource type="PackedScene" uid="uid://bcrbpvl35gfeu" path="res://Obstacle/Allat4.tscn" id="9_18374"]
 [ext_resource type="PackedScene" uid="uid://cii0yvyu1gclv" path="res://Checkpoint/Checkpoint.tscn" id="9_vfyqg"]
 [ext_resource type="PackedScene" uid="uid://b3rw3vuine4lr" path="res://ShipLog/ShipLogSound.tscn" id="10_eufeh"]
-[ext_resource type="PackedScene" path="res://Obstacle/Iceberg1.tscn" id="11_fe781"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat3.tscn" id="12_1ujhl"]
-[ext_resource type="PackedScene" path="res://Obstacle/ShipWreck.tscn" id="12_ajgm3"]
+[ext_resource type="PackedScene" uid="uid://bi8peloho5rvd" path="res://Obstacle/Iceberg1.tscn" id="11_fe781"]
+[ext_resource type="PackedScene" uid="uid://cdci2g208go12" path="res://Obstacle/Allat3.tscn" id="12_1ujhl"]
+[ext_resource type="PackedScene" uid="uid://bejvlp18jesta" path="res://Obstacle/ShipWreck.tscn" id="12_ajgm3"]
 [ext_resource type="PackedScene" uid="uid://dlwphw117q6cb" path="res://Landmark/Landmark.tscn" id="13_afdo3"]
 [ext_resource type="Texture2D" uid="uid://8pegwo6xcng1" path="res://Landmark/1_puerto_gerappo_parchment.png" id="13_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://blb4gpo600x1r" path="res://Landmark/Waves_001_exploration.mp3" id="14_2yl5a"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b8dpnjcpifpnb" path="res://Landmark/3_tomb_at_neptune (1).png" id="15_2yl5a"]
 [ext_resource type="Texture2D" uid="uid://bvn5dl0thyxv" path="res://Landmark/4_cedar_parchment.png" id="16_ee6d0"]
 [ext_resource type="Texture2D" uid="uid://diivr74p65fg7" path="res://Landmark/5_leviathan (1).png" id="17_q81a1"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat2.tscn" id="17_qobi3"]
+[ext_resource type="PackedScene" uid="uid://cxd4kwyxdexfw" path="res://Obstacle/Allat2.tscn" id="17_qobi3"]
 [ext_resource type="Texture2D" uid="uid://byjkjo3gxav5j" path="res://Landmark/6_camp (1).png" id="18_m7vjf"]
 [ext_resource type="Texture2D" uid="uid://5ryqur20fewh" path="res://Landmark/7_wreck (1).png" id="19_snff3"]
 [ext_resource type="Texture2D" uid="uid://crigt3cd7rc6e" path="res://Landmark/8_father_carcass (1).png" id="20_bwr8o"]
@@ -36,20 +36,21 @@
 [ext_resource type="AudioStream" uid="uid://g4s74ogcn1uf" path="res://EndGame/bossfight_ending_wind_atmo.mp3" id="25_xbbwk"]
 [ext_resource type="PackedScene" uid="uid://ym6cob12p8w4" path="res://Obstacle/Allat1.tscn" id="25_xuo4s"]
 [ext_resource type="AudioStream" uid="uid://bllkasrsj3ggh" path="res://EndGame/bossfight_waves_atmo.mp3" id="27_8im6v"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
+[ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
 [ext_resource type="AudioStream" uid="uid://ca8dcnbh7ypcv" path="res://EndGame/bossfight_wind_atmo.mp3" id="28_hok5h"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat6.tscn" id="39_18374"]
-[ext_resource type="PackedScene" path="res://Obstacle/Iceberg2.tscn" id="39_qobi3"]
-[ext_resource type="PackedScene" path="res://Obstacle/Iceberg3.tscn" id="40_ephyg"]
-[ext_resource type="PackedScene" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
-[ext_resource type="PackedScene" path="res://Obstacle/Iceberg4.tscn" id="41_ikk7k"]
+[ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
+[ext_resource type="PackedScene" uid="uid://b1h6ulakq6hjy" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
+[ext_resource type="PackedScene" uid="uid://cnyjtohu837c8" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
+[ext_resource type="PackedScene" uid="uid://0d8yeelkadvq" path="res://Obstacle/Allat9.tscn" id="36_1ujhl"]
+[ext_resource type="PackedScene" uid="uid://daiml7r7r2fnk" path="res://Obstacle/Allat8.tscn" id="37_t3vja"]
+[ext_resource type="PackedScene" uid="uid://b85r256pi0hmm" path="res://Obstacle/Allat7.tscn" id="38_dwnf7"]
+[ext_resource type="PackedScene" uid="uid://l1fxl7ibc42" path="res://Obstacle/Allat6.tscn" id="39_18374"]
+[ext_resource type="PackedScene" uid="uid://blr4vpjycycrc" path="res://Obstacle/Iceberg2.tscn" id="39_qobi3"]
+[ext_resource type="PackedScene" uid="uid://ukop5jdb1734" path="res://Obstacle/Iceberg3.tscn" id="40_ephyg"]
+[ext_resource type="PackedScene" uid="uid://bm6a7va7qsc76" path="res://Obstacle/Allat5.tscn" id="40_fe781"]
+[ext_resource type="PackedScene" uid="uid://bspvq6cx2kdsg" path="res://Obstacle/Iceberg4.tscn" id="41_ikk7k"]
+[ext_resource type="PackedScene" uid="uid://cgimous7esh4j" path="res://WaterShader/Waves/water_wave.tscn" id="51_ikk7k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xuo4s"]
 shader = ExtResource("24_arced")
@@ -82,6 +83,466 @@ idle_music = ExtResource("28_ee6d0")
 position = Vector2(-4519.5503, 3758.6965)
 scale = Vector2(5.0000005, 5.0000005)
 texture = ExtResource("3_ephyg")
+
+[node name="WaterWave" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(2325.5093, -727.42584)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave2" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1909.7383, -602.5787)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave3" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(2176.5366, -643.88336)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave4" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1807.1611, -648.2053)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave5" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(2044.8557, -610.10596)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave6" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(2237.4922, -510.42538)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave7" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1793.7427, -531.5802)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave8" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1686.4742, -585.07263)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave9" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(2022.5107, -484.4037)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave10" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1719.8848, -470.1984)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave11" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1574.7871, -493.01236)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave12" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1930.1525, -387.0749)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave13" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1712.4851, -354.8899)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave14" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(2378.7993, -445.05984)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave15" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(2240.3193, -396.97528)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave16" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1558.627, -395.02704)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave17" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1252.9641, -291.65518)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave18" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1377.3539, -217.92346)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave19" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1158.0061, -194.36249)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave20" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1477.9988, -133.91986)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave21" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1261.832, -80.11194)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave22" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1607.3905, 55.092407)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave23" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1336.8273, 36.139038)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave24" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1620.0251, 168.07837)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave25" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1472.508, 262.04205)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave26" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1874.0935, 222.60645)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave27" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1930.8132, 358.6059)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave28" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1299.7024, 376.65704)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave29" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1403.6416, 468.30695)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave30" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1844.3804, 504.62164)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave31" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1941.4196, 560.1723)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave32" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1681.887, 596.7773)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave33" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1941.1199, 697.18134)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave34" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1792.4506, 686.71906)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave35" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1577.21, 673.73334)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave36" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1543.9404, 779.48224)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave37" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1233.4379, 813.58026)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave38" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1361.3284, 692.54193)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave39" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1161.7352, 632.9688)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave40" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1153.3362, 517.4411)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave41" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1274.7234, 591.33136)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave42" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1005.55225, 847.02386)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave43" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(864.71265, 704.6573)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave44" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(820.87573, 851.2636)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave45" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(646.65173, 765.2397)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave46" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(630.89343, 574.6027)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave47" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(471.43195, 866.41986)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave48" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(538.7791, 654.3333)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave49" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(147.99115, 751.7243)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave50" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(26.252563, 861.84686)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave51" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(268.54303, 857.0057)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave52" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-233.0581, 882.4533)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave53" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-418.2129, 733.6718)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave54" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-599.72156, 812.36285)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave55" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-488.93127, 597.4782)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave56" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-817.69104, 736.53314)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave57" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-881.8446, 545.2254)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave58" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1107.3839, 669.11005)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave59" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1080.0974, 807.3016)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave60" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1180.3623, 566.0883)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave61" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-323.05737, 391.35834)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave62" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1303.0928, 805.4095)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave63" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-752.4745, 389.60406)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave64" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(211.73535, 265.76135)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave65" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-128.16382, 198.44202)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave66" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(195.9588, 379.35333)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave67" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(462.40173, 89.619995)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave68" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(457.42023, -99.26721)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave69" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(944.9906, -64.9035)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave70" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(896.544, -249.39307)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave71" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(330.32605, -266.44556)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave72" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(619.42035, -516.4612)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave73" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(434.91025, -394.40768)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave74" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(419.78003, -572.63464)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave75" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(688.69617, -680.11633)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave76" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(510.15463, -699.9938)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave77" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(849.8155, -860.6997)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave78" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1029.2957, -850.8102)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave79" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(706.15015, -799.28577)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave80" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1144.0298, -441.38)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave81" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(1051.3469, -320.65353)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave82" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(457.52176, -279.6831)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave83" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(945.7635, -784.162)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave84" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(591.473, -390.63654)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave85" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(660.2544, -57.050842)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave86" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(845.7892, 64.333374)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave87" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(320.87408, -17.552734)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave88" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(575.577, 222.00183)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave89" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(449.37427, 423.27155)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave90" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(53.937622, 177.96503)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave91" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(722.221, 335.24615)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave92" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-332.07153, 219.2168)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave93" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(682.92163, 68.0755)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave94" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-841.77, -166.6875)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave95" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-832.2472, -362.9743)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave96" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-711.0779, -460.90366)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave97" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-406.04456, -634.29095)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave98" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-237.39941, -751.76385)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave99" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-317.80005, -882.0912)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave100" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-584.2494, -880.38544)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave101" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-887.88464, -908.7982)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave102" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-933.09644, -764.01117)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave103" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1297.031, -901.07043)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave104" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1486.8254, -715.2841)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave105" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1538.8872, -841.01807)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave106" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1928.302, -698.40375)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave107" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1837.7095, -538.5323)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave108" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-1939.0173, -315.11548)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave109" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-2082.7788, -333.31052)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave110" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-2030.5344, -220.77527)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave111" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-2248.8613, -775.6558)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave112" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-2116.2368, -834.2226)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave113" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-2123.8381, -675.5127)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave114" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-2206.3816, -247.41608)
+scale = Vector2(0.19999997, 0.19999997)
+
+[node name="WaterWave115" parent="Water2" instance=ExtResource("51_ikk7k")]
+position = Vector2(-2116.2231, -99.55176)
+scale = Vector2(0.19999997, 0.19999997)
 
 [node name="Water" parent="." instance=ExtResource("2_lxk7w")]
 visible = false
@@ -175,6 +636,25 @@ position = Vector2(5027.8076, 1346.8416)
 
 [node name="Obstacle6" parent="Obstacles" instance=ExtResource("12_1ujhl")]
 position = Vector2(7137.645, 724.0355)
+wobble = true
+
+[node name="Obstacle7" parent="Obstacles" instance=ExtResource("11_fe781")]
+position = Vector2(-1436.5529, 4501.5137)
+
+[node name="Obstacle8" parent="Obstacles" instance=ExtResource("40_ephyg")]
+position = Vector2(-9545.094, 7369.36)
+
+[node name="Obstacle9" parent="Obstacles" instance=ExtResource("39_qobi3")]
+position = Vector2(-6285.5254, 7783.595)
+
+[node name="Obstacle10" parent="Obstacles" instance=ExtResource("11_fe781")]
+position = Vector2(-3565.8425, 5950.129)
+
+[node name="Obstacle11" parent="Obstacles" instance=ExtResource("39_qobi3")]
+position = Vector2(-2712.453, 2826.6619)
+
+[node name="Obstacle12" parent="Obstacles" instance=ExtResource("40_ephyg")]
+position = Vector2(-907.0777, 7572.149)
 
 [node name="Obstacle7" parent="Obstacles" instance=ExtResource("11_fe781")]
 position = Vector2(-9387.746, 565.88965)
@@ -527,12 +1007,134 @@ player = NodePath("../Ship")
 [node name="BaseMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_ee6d0")
 volume_db = -14.677
-bus = &"BarnaMusic"
 
 [node name="WaveDefault" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_othpu")
 autoplay = true
 bus = &"WaveAtmo"
+
+[node name="Obstacle63" parent="." instance=ExtResource("17_qobi3")]
+position = Vector2(2423.1975, 6277.2026)
+
+[node name="Obstacle64" parent="." instance=ExtResource("40_fe781")]
+position = Vector2(-1926.0435, 3451.6265)
+
+[node name="Obstacle65" parent="." instance=ExtResource("35_jx8du")]
+position = Vector2(5248.3604, 5852.334)
+
+[node name="Obstacle66" parent="." instance=ExtResource("34_hok5h")]
+position = Vector2(4052.091, 7305.8867)
+
+[node name="Obstacle67" parent="." instance=ExtResource("33_8im6v")]
+position = Vector2(2026.9982, 8091.884)
+
+[node name="Obstacle68" parent="." instance=ExtResource("27_t3vja")]
+position = Vector2(-701.688, 5381.788)
+
+[node name="Obstacle69" parent="." instance=ExtResource("38_dwnf7")]
+position = Vector2(-292.43994, 8323.746)
+
+[node name="Obstacle70" parent="." instance=ExtResource("9_18374")]
+position = Vector2(-1916.884, 7551.1484)
+
+[node name="Obstacle71" parent="." instance=ExtResource("39_18374")]
+position = Vector2(3928.7603, 4371.8945)
+
+[node name="Obstacle72" parent="." instance=ExtResource("38_dwnf7")]
+position = Vector2(1343.891, 5931.204)
+
+[node name="Obstacle73" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(286.82886, 3548.3184)
+
+[node name="Obstacle74" parent="." instance=ExtResource("40_fe781")]
+position = Vector2(767.7624, -482.40137)
+
+[node name="Obstacle75" parent="." instance=ExtResource("9_18374")]
+position = Vector2(983.4602, 1848.814)
+
+[node name="Obstacle76" parent="." instance=ExtResource("12_1ujhl")]
+position = Vector2(-1192.0044, -368.56305)
+
+[node name="Obstacle77" parent="." instance=ExtResource("17_qobi3")]
+position = Vector2(-1406.0938, 934.59393)
+
+[node name="Obstacle78" parent="." instance=ExtResource("25_xuo4s")]
+position = Vector2(-2673.1362, 1650.0946)
+
+[node name="Obstacle79" parent="." instance=ExtResource("39_18374")]
+position = Vector2(-2457.5024, 5500.455)
+
+[node name="Obstacle81" parent="." instance=ExtResource("38_dwnf7")]
+position = Vector2(-5159.6704, 4339.877)
+
+[node name="Obstacle82" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(-4434.79, 5219.012)
+
+[node name="Obstacle83" parent="." instance=ExtResource("36_1ujhl")]
+position = Vector2(-7434.349, 7690.6597)
+
+[node name="Obstacle84" parent="." instance=ExtResource("35_jx8du")]
+position = Vector2(-6122.9897, 5798.6606)
+
+[node name="Obstacle85" parent="." instance=ExtResource("36_1ujhl")]
+position = Vector2(1695.5254, 2858.7832)
+
+[node name="Obstacle86" parent="." instance=ExtResource("27_t3vja")]
+position = Vector2(-4926.6465, 8306.49)
+
+[node name="Obstacle87" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(-3599.234, 7636.8306)
+
+[node name="Obstacle88" parent="." instance=ExtResource("37_t3vja")]
+position = Vector2(-8822.545, 6613.3086)
+
+[node name="Obstacle89" parent="." instance=ExtResource("25_xuo4s")]
+position = Vector2(-10459.698, 8271.768)
+
+[node name="Obstacle90" parent="." instance=ExtResource("12_1ujhl")]
+position = Vector2(-10513.264, 6941.8975)
+
+[node name="Obstacle91" parent="." instance=ExtResource("17_qobi3")]
+position = Vector2(-1033.1992, 6570.3066)
+
+[node name="Obstacle92" parent="." instance=ExtResource("36_1ujhl")]
+position = Vector2(614.0484, 7357.2217)
+
+[node name="Obstacle93" parent="." instance=ExtResource("35_jx8du")]
+position = Vector2(1206.5347, 546.7816)
+
+[node name="Obstacle94" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-7047.264, 4441.7144)
+
+[node name="Obstacle95" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-6560.653, 4689.4854)
+
+[node name="Obstacle96" parent="." instance=ExtResource("41_ikk7k")]
+position = Vector2(-8891.548, 5531.2476)
+
+[node name="Obstacle97" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-8700.019, 5854.9346)
+
+[node name="Obstacle98" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-5840.0996, 4582.466)
+
+[node name="Obstacle99" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-5214.566, 5053.184)
+
+[node name="Obstacle100" parent="." instance=ExtResource("39_qobi3")]
+position = Vector2(-9418.502, 5956.9824)
+
+[node name="Obstacle101" parent="." instance=ExtResource("40_ephyg")]
+position = Vector2(-6670.3633, 6615.1494)
+
+[node name="Obstacle80" parent="." instance=ExtResource("12_1ujhl")]
+position = Vector2(-3135.2363, 4538.966)
+
+[node name="Obstacle102" parent="." instance=ExtResource("33_8im6v")]
+position = Vector2(-194.44328, 2338.529)
+
+[node name="Obstacle103" parent="." instance=ExtResource("27_t3vja")]
+position = Vector2(-1596.0776, 2086.0706)
 
 [connection signal="endgame_barrier_destroy" from="." to="EndgameBarrier" method="_on_game_loop_endgame_barrier_destroy"]
 [connection signal="update_wind" from="Wind" to="Ship" method="_on_wind_update_wind"]
