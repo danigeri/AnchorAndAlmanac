@@ -175,6 +175,7 @@ position = Vector2(5027.8076, 1346.8416)
 
 [node name="Obstacle6" parent="Obstacles" instance=ExtResource("12_1ujhl")]
 position = Vector2(7137.645, 724.0355)
+wobble = true
 
 [node name="Landmarks" type="Node2D" parent="."]
 scale = Vector2(1.0000005, 1.0000005)
@@ -251,6 +252,7 @@ bus = &"SFX"
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
+visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]

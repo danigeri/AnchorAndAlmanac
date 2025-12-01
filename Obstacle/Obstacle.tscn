@@ -1,10 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbap81erct4wo"]
+[gd_scene load_steps=7 format=3 uid="uid://cbap81erct4wo"]
 
 [ext_resource type="Script" uid="uid://bjun367gnxjfo" path="res://Obstacle/obstacle.gd" id="1_5iw37"]
 [ext_resource type="Texture2D" uid="uid://wfyxxbhieksu" path="res://Obstacle/temp-obstacle.png" id="2_xv761"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5iw37"]
 radius = 348.89682
+
+[sub_resource type="Animation" id="Animation_5iw37"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ObstacleImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_xv761"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ObstacleImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l2avp"]
+_data = {
+&"RESET": SubResource("Animation_xv761"),
+&"new_animation": SubResource("Animation_5iw37")
+}
 
 [node name="Obstacle" type="Node2D"]
 script = ExtResource("1_5iw37")
@@ -25,5 +62,10 @@ bus = &"SFX"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5iw37")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l2avp")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
