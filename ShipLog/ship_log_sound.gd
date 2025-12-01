@@ -12,6 +12,8 @@ var checkpoint_stories = {
 	7: preload("uid://dch7jucqu0q2m")
 }
 
+# Signal to emit when the last checkpoint audio finishes
+signal last_audio_finished
 
 func _ready() -> void:
 	## set to always so ship log sound doesn't stop on pause
@@ -26,6 +28,12 @@ func on_play_checkpoint_story(checkpoint_number: int) -> void:
 		audio_stream_player.stream = checkpoint_stories[checkpoint_number]
 		audio_stream_player.bus = "ShipLogSounds"
 		audio_stream_player.play()
+		
 		var length = audio_stream_player.stream.get_length()
 		await get_tree().create_timer(length).timeout
+		
 		audio_stream_player.queue_free()
+		
+		# Emit signal if this was the last checkpoint
+		if checkpoint_number == checkpoint_stories.size() - 1:
+			Globals.last_audio_finsihed.emit()

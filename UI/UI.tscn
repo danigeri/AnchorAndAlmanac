@@ -92,5 +92,10 @@ offset_top = 988.0
 offset_right = 1509.0
 offset_bottom = 1070.0
 
+[node name="FadeRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="toggled" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="UserInterface/DebugPanel/MarginContainer/VBoxContainer/CompleteAll" to="." method="_on_complete_all_pressed"]

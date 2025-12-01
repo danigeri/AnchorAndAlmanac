@@ -202,7 +202,7 @@ func handle_ripple_effect() -> void:
 		else:
 			ripple_effect.speed_scale = 1.5
 		ripple_effect.play("ripple")
-		print(ripple_effect.speed_scale)
+		#print(ripple_effect.speed_scale)
 	else:
 		ripple_effect.hide()
 

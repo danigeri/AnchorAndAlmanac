@@ -11,6 +11,8 @@ var endgame_barrier_camera: Camera2D
 @onready var starting_popup: Control = $StartingPopup
 @onready
 var world_shader_material: ShaderMaterial = $CanvasLayer/VignetteFilter.material as ShaderMaterial
+@onready var ui: CanvasLayer = $UI
+
 
 # Storm control variables
 var is_storm_active: bool = false
@@ -20,6 +22,7 @@ var current_storm_value: float = 0.0
 func _ready() -> void:
 	Globals.all_checkpoints_collected.connect(_on_all_checkpoints_collected)
 	Globals.go_to_last_checkpoint.connect(_on_go_to_last_checkpoint)
+	Globals.last_audio_finsihed.connect(_on_last_audio_finished)
 	ship_camera = ship.get_camera()
 	endgame_barrier_camera = endgame_barrier.get_camera()
 	
@@ -144,3 +147,7 @@ func _on_go_to_last_checkpoint(last_checkpoint_position: Vector2):
 	ship_camera.position_smoothing_enabled = true
 	ship_camera.position_smoothing_speed = 2.5
 	ship.position = last_checkpoint_position
+
+func _on_last_audio_finished() -> void:
+	ui.fade_out()
+	pass

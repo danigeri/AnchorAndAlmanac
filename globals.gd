@@ -5,6 +5,7 @@ signal all_checkpoints_collected
 signal go_to_last_checkpoint(last_checkpoint_position: Vector2)
 signal hp_changed
 signal wobble_toggle(on: bool)
+signal last_audio_finsihed
 
 enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHT }
 
@@ -20,7 +21,7 @@ var collected_checkpoints := {
 	CheckpointType.FIFTH: false,
 	CheckpointType.SIXTH: false,
 	CheckpointType.SEVENTH: false,
-	CheckpointType.EIGHT: true,
+	CheckpointType.EIGHT: false,
 }
 
 var current_hp: int = 3
@@ -64,3 +65,4 @@ func restore_hp() -> void:
 
 func emit_wobble_toggle(on: bool) -> void:
 	emit_signal("wobble_toggle", on)
+	

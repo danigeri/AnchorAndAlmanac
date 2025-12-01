@@ -66,7 +66,7 @@ metadata/_edit_group_ = true
 script = ExtResource("2_x7b5a")
 
 [node name="Ship" parent="." groups=["player"] instance=ExtResource("2_u3r3m")]
-position = Vector2(5675.494, 3.693184)
+position = Vector2(5873.468, 295.46613)
 scale = Vector2(0.5, 0.5)
 
 [node name="EndgameBarrier" parent="." instance=ExtResource("5_v6ba6")]
