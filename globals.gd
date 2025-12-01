@@ -7,6 +7,8 @@ signal hp_changed
 signal wobble_toggle(on: bool)
 signal last_audio_finsihed
 
+var wave_wobble: bool = true
+
 enum CheckpointType { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHT }
 
 #todo set starting position when map is built
