@@ -122,11 +122,10 @@ centered = false
 offset = Vector2(-198.76425, -598.2791)
 
 [node name="RippleEffect" type="AnimatedSprite2D" parent="Sprite2D"]
-visible = false
 position = Vector2(-7, 454)
 sprite_frames = ExtResource("4_d6neq")
 animation = &"ripple"
-frame_progress = 0.9762427
+frame_progress = 0.8366888
 speed_scale = 0.35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

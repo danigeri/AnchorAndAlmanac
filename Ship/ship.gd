@@ -79,7 +79,7 @@ func _ready() -> void:
 	facing_rad = direction.angle()
 
 	set_rotation_degrees(90)
-	
+
 	Globals.last_checkpoint_positon = global_position
 
 
@@ -202,7 +202,6 @@ func handle_ripple_effect() -> void:
 		else:
 			ripple_effect.speed_scale = 1.5
 		ripple_effect.play("ripple")
-		print(ripple_effect.speed_scale)
 	else:
 		ripple_effect.hide()
 
