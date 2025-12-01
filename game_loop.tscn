@@ -259,7 +259,6 @@ scale = Vector2(0.9999997, 0.9999997)
 [node name="LightningPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
-visible = false
 position = Vector2(2902.2026, -8288.557)
 
 [node name="FelhoOfWarXl" parent="FelhoOfWarContainer" instance=ExtResource("23_q3nly")]
