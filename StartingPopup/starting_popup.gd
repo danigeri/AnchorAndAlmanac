@@ -1,5 +1,6 @@
 extends Control
 
+signal intro_finished
 var starting_dialog = preload("res://StartingPopup/0_Fisherman_22sec.mp3")
 
 @onready var texture: TextureRect = $TextureRect
@@ -38,4 +39,5 @@ func fade_out():
 	tween.tween_property(texture, "modulate:a", 0.0, 3.0)
 	await tween.finished
 	get_tree().paused = false
+	intro_finished.emit()
 	queue_free()

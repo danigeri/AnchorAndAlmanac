@@ -122,6 +122,8 @@ func type_text(checkpoint_number: int) -> void:
 	timer.start()
 	duration_timer.start(duration)
 
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_timer_timeout() -> void:
 	if char_index >= text.length():
