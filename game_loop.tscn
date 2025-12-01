@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cp03gm3dbew5m"]
+[gd_scene load_steps=47 format=3 uid="uid://cp03gm3dbew5m"]
 
 [ext_resource type="Script" uid="uid://dw8mem4hdxy6f" path="res://game_loop.gd" id="1_7f3si"]
 [ext_resource type="PackedScene" uid="uid://b6nvjopamqhc" path="res://WaterShader/water.tscn" id="2_lxk7w"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://bspvq6cx2kdsg" path="res://Obstacle/Iceberg4.tscn" id="26_1ujhl"]
 [ext_resource type="PackedScene" uid="uid://cenwiwtq1ad3l" path="res://Obstacle/Allat13.tscn" id="27_t3vja"]
 [ext_resource type="AudioStream" uid="uid://cyfu0p5x5rnuc" path="res://Waves_001_base.mp3" id="28_ee6d0"]
+[ext_resource type="AudioStream" uid="uid://d4lbg4ueb7a86" path="res://EndGame/Waves_002_challenge.mp3" id="31_t3vja"]
 [ext_resource type="PackedScene" uid="uid://4igfgajogexm" path="res://Obstacle/Allat12.tscn" id="33_8im6v"]
 [ext_resource type="PackedScene" uid="uid://b1h6ulakq6hjy" path="res://Obstacle/Allat11.tscn" id="34_hok5h"]
 [ext_resource type="PackedScene" uid="uid://cnyjtohu837c8" path="res://Obstacle/Allat10.tscn" id="35_jx8du"]
@@ -232,6 +233,11 @@ polygon = PackedVector2Array(-8651.0205, 3980.4326, -7365.1895, 3857.2493, -7100
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EndGameStuff/StormOutTrigger"]
 polygon = PackedVector2Array(-13459.684, -476.66925, -13336.395, 1162.1975, -12975.489, 955.1817, -13256.037, -521.85)
+
+[node name="ChallangeMusicPlayer" type="AudioStreamPlayer" parent="EndGameStuff"]
+stream = ExtResource("31_t3vja")
+volume_db = -8.0
+bus = &"SFX"
 
 [node name="FelhoOfWarContainer" type="Node2D" parent="."]
 visible = false

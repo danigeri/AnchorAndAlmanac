@@ -16,6 +16,8 @@ var world_shader_material: ShaderMaterial = $CanvasLayer/VignetteFilter.material
 
 @onready var storm_trigger_area: CollisionPolygon2D = $EndGameStuff/StormTrigger/CollisionPolygon2D
 
+@onready var challange_music_player: AudioStreamPlayer = $EndGameStuff/ChallangeMusicPlayer
+
 
 
 
@@ -66,6 +68,8 @@ func enter_storm():
 	"""Call this when the boat enters a storm zone"""
 	is_storm_active = true
 	ship.enter_storm()
+	base_music_player.stop()
+	challange_music_player.play()
 	
 
 
@@ -73,6 +77,7 @@ func exit_storm():
 	"""Call this when the boat leaves a storm zone"""
 	is_storm_active = false
 	ship.exit_storm()
+	challange_music_player.stop()
 
 
 func toggle_storm():

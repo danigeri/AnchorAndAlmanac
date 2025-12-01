@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Waves_001_exploration.mp3-dc6c74fcb40c23b7e8f
 [params]
 
 loop=true
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
