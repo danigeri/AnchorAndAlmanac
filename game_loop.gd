@@ -27,7 +27,7 @@ func _ready() -> void:
 	if world_shader_material:
 		world_shader_material.set_shader_parameter("storm_mode", 0.0)
 	
-	starting_popup.start()
+	#starting_popup.start()
 	
 	#enter_storm()
 

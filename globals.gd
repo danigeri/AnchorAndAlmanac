@@ -32,15 +32,13 @@ func present_opening_subtitle() -> void:
 
 
 func mark_collected(type: int, checkpoint_position: Vector2) -> void:
-	if not collected_checkpoints[type]:
-		collected_checkpoints[type] = true
-		last_checkpoint_positon = checkpoint_position
-		print("last checkpoint positon: ", last_checkpoint_positon)
-		emit_signal("checkpoint_collected", type)
+	collected_checkpoints[type] = true
+	last_checkpoint_positon = checkpoint_position
+	emit_signal("checkpoint_collected", type)
 
-		if type != 8:
-			if are_all_checkpoints_collected():
-				all_checkpoints_collected.emit()
+	if type != CheckpointType.EIGHT:
+		if are_all_checkpoints_collected():
+			all_checkpoints_collected.emit()
 
 
 func are_all_checkpoints_collected() -> bool:
